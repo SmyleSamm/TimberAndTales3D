@@ -15,8 +15,10 @@ func get_current_counter() -> CanvasLayer:
 func changeResources(resource: Item, value: int) -> void:
 	get_current_counter().changeResources(resource, value)
 
-func getResources():
-	return get_current_counter().resources
+func getResources() -> Array[Item]:
+	if get_current_counter():
+		return get_current_counter().resources
+	return []
 
 func get_current_debug() -> CanvasLayer:
 	for i in get_current_world().get_children():

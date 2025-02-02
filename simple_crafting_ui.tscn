@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://dyobdvrwhp8qj"]
+[gd_scene load_steps=5 format=3 uid="uid://dyobdvrwhp8qj"]
 
 [ext_resource type="Script" path="res://simple_crafting_ui.gd" id="1_65six"]
+[ext_resource type="Script" path="res://CraftingSystem/Recepie.gd" id="2_u8151"]
+[ext_resource type="Resource" uid="uid://b7klrwntaktl1" path="res://CraftingSystem/Recepies/Planks.tres" id="3_jenl6"]
+[ext_resource type="Resource" uid="uid://3olr63taiu3b" path="res://CraftingSystem/Recepies/Test.tres" id="3_n3rbb"]
 
 [node name="SimpleCraftingUI" type="Control"]
 layout_mode = 3
@@ -10,6 +13,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_65six")
+recipies = Array[ExtResource("2_u8151")]([ExtResource("3_n3rbb"), ExtResource("3_n3rbb"), ExtResource("3_jenl6")])
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1

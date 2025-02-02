@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://jwsj4uorut0u"]
+
+[ext_resource type="Theme" uid="uid://unui6pba6fad" path="res://pixelStyle.tres" id="1_vqhyy"]
+
+[node name="To" type="Label"]
+offset_right = 40.0
+offset_bottom = 23.0
+theme = ExtResource("1_vqhyy")
+text = "To"

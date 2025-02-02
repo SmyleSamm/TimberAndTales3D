@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cebf46t8ec3vt"]
+
+[ext_resource type="Theme" uid="uid://unui6pba6fad" path="res://pixelStyle.tres" id="1_56uqu"]
+[ext_resource type="Script" path="res://CraftingButton.gd" id="1_g0h0d"]
+
+[node name="CraftingButton" type="Button"]
+custom_minimum_size = Vector2(60, 31)
+offset_right = 60.0
+offset_bottom = 31.0
+theme = ExtResource("1_56uqu")
+text = "Craft"
+script = ExtResource("1_g0h0d")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
