@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://2y16wexd6xm7"
+path="res://.godot/imported/fence_corner.obj-e898cf54529752d5fd893f91ac897e1e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/fence_corner.obj-e898cf54529752d5fd893f91ac897e1e.mesh"]
+
+source_file="res://Assets/1/obj/fence_corner.obj"
+dest_files=["res://.godot/imported/fence_corner.obj-e898cf54529752d5fd893f91ac897e1e.mesh", "res://.godot/imported/fence_corner.obj-e898cf54529752d5fd893f91ac897e1e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

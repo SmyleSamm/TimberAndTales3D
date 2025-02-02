@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://lpcgcv7s5xef"
+path="res://.godot/imported/Window_Wide_Round1.obj-2077af76722449bdc9ae0c910c678afb.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Window_Wide_Round1.obj-2077af76722449bdc9ae0c910c678afb.mesh"]
+
+source_file="res://Medieval Village MegaKit[Standard]/OBJ/Window_Wide_Round1.obj"
+dest_files=["res://.godot/imported/Window_Wide_Round1.obj-2077af76722449bdc9ae0c910c678afb.mesh", "res://.godot/imported/Window_Wide_Round1.obj-2077af76722449bdc9ae0c910c678afb.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

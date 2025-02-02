@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c6e015dh2rvqs"
+path="res://.godot/imported/Overhang_Plaster_Long.obj-6a69afe50f7c622efc3931a236ad149c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Overhang_Plaster_Long.obj-6a69afe50f7c622efc3931a236ad149c.mesh"]
+
+source_file="res://Medieval Village MegaKit[Standard]/OBJ/Overhang_Plaster_Long.obj"
+dest_files=["res://.godot/imported/Overhang_Plaster_Long.obj-6a69afe50f7c622efc3931a236ad149c.mesh", "res://.godot/imported/Overhang_Plaster_Long.obj-6a69afe50f7c622efc3931a236ad149c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

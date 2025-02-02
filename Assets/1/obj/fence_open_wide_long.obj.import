@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bx7k6ja6p5yuo"
+path="res://.godot/imported/fence_open_wide_long.obj-86d888564d350bd0eff29e5e9d7aeb74.mesh"
+
+[deps]
+
+files=["res://.godot/imported/fence_open_wide_long.obj-86d888564d350bd0eff29e5e9d7aeb74.mesh"]
+
+source_file="res://Assets/1/obj/fence_open_wide_long.obj"
+dest_files=["res://.godot/imported/fence_open_wide_long.obj-86d888564d350bd0eff29e5e9d7aeb74.mesh", "res://.godot/imported/fence_open_wide_long.obj-86d888564d350bd0eff29e5e9d7aeb74.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

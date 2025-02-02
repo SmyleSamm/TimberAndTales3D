@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://bu8yf3e5q8njx"]
+
+[ext_resource type="Script" path="res://tree_stump.gd" id="1_7ttj4"]
+[ext_resource type="Material" uid="uid://b0i38if3u3uka" path="res://treeStump.tres" id="2_nslmy"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_dqhjb"]
+height = 1.0
+
+[node name="tree_stump" type="StaticBody3D"]
+script = ExtResource("1_7ttj4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("CylinderShape3D_dqhjb")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CollisionShape3D"]
+material_override = ExtResource("2_nslmy")
+height = 1.0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

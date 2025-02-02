@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b6l1un44uu00y"
+path="res://.godot/imported/Free Sample-0-Crossing.obj-1b6805c57fed37ed0467147797b5af4d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Free Sample-0-Crossing.obj-1b6805c57fed37ed0467147797b5af4d.mesh"]
+
+source_file="res://Free Sample/Free Sample-0-Crossing.obj"
+dest_files=["res://.godot/imported/Free Sample-0-Crossing.obj-1b6805c57fed37ed0467147797b5af4d.mesh", "res://.godot/imported/Free Sample-0-Crossing.obj-1b6805c57fed37ed0467147797b5af4d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

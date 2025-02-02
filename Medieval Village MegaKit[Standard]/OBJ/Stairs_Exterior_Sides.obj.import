@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://fgay8c06ilpy"
+path="res://.godot/imported/Stairs_Exterior_Sides.obj-52aa981d53dc13170abe07fa2a20af84.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Stairs_Exterior_Sides.obj-52aa981d53dc13170abe07fa2a20af84.mesh"]
+
+source_file="res://Medieval Village MegaKit[Standard]/OBJ/Stairs_Exterior_Sides.obj"
+dest_files=["res://.godot/imported/Stairs_Exterior_Sides.obj-52aa981d53dc13170abe07fa2a20af84.mesh", "res://.godot/imported/Stairs_Exterior_Sides.obj-52aa981d53dc13170abe07fa2a20af84.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

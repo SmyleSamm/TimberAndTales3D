@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dfghv36oydnh8"
+path="res://.godot/imported/Free Sample-11.obj-9f09f33f7cf7d976c1e0423592ce3126.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Free Sample-11.obj-9f09f33f7cf7d976c1e0423592ce3126.mesh"]
+
+source_file="res://Free Sample/Free Sample-11.obj"
+dest_files=["res://.godot/imported/Free Sample-11.obj-9f09f33f7cf7d976c1e0423592ce3126.mesh", "res://.godot/imported/Free Sample-11.obj-9f09f33f7cf7d976c1e0423592ce3126.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

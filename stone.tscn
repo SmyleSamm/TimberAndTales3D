@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://bd7t4yxnx7do1"]
+
+[ext_resource type="Material" uid="uid://b6hbsglx7kxke" path="res://stone.tres" id="1_2dl00"]
+[ext_resource type="Script" path="res://stone.gd" id="1_rqhma"]
+[ext_resource type="Script" path="res://CraftingSystem/Items/ItemDrops.gd" id="2_8t0dg"]
+[ext_resource type="Resource" uid="uid://pbobc08r3bgc" path="res://CraftingSystem/Items/ItemData/stone.tres" id="3_jd8hn"]
+
+[sub_resource type="Resource" id="Resource_v0vye"]
+script = ExtResource("2_8t0dg")
+item = ExtResource("3_jd8hn")
+maxCount = 20
+
+[node name="stone" type="StaticBody3D"]
+script = ExtResource("1_rqhma")
+maxHealth = 100
+resources = Array[ExtResource("2_8t0dg")]([SubResource("Resource_v0vye")])
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+material_override = ExtResource("1_2dl00")
+use_collision = true
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.311569, 0)
+material_override = ExtResource("1_2dl00")
+height = 0.623138
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.607309, 0)
+material_override = ExtResource("1_2dl00")
+radius = 0.619172
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.387446, -0.0130635, 0)
+material_override = ExtResource("1_2dl00")
+radius = 0.549656
+
+[node name="CSGSphere3D3" type="CSGSphere3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.128168, -0.462588)
+material_override = ExtResource("1_2dl00")
+radius = 0.413442
+
+[node name="CSGSphere3D4" type="CSGSphere3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.277549, 0.22268, 0)
+material_override = ExtResource("1_2dl00")
+radius = 0.528489
+
+[node name="CSGSphere3D5" type="CSGSphere3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0956498, 0.173871, 0.224598)
+radius = 0.550793
+
+[connection signal="destroyed" from="." to="." method="_on_destroyed"]

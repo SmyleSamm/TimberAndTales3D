@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ip3oq1lw3fxu"
+path="res://.godot/imported/Door_8_Flat.obj-354c1b67768bb550602518c3feca445e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Door_8_Flat.obj-354c1b67768bb550602518c3feca445e.mesh"]
+
+source_file="res://Medieval Village MegaKit[Standard]/OBJ/Door_8_Flat.obj"
+dest_files=["res://.godot/imported/Door_8_Flat.obj-354c1b67768bb550602518c3feca445e.mesh", "res://.godot/imported/Door_8_Flat.obj-354c1b67768bb550602518c3feca445e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

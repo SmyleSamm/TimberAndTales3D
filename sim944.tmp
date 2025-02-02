@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://dyobdvrwhp8qj"]
+
+[ext_resource type="Script" path="res://simple_crafting_ui.gd" id="1_65six"]
+[ext_resource type="Script" path="res://CraftingSystem/Items/ItemDrops.gd" id="2_ym5xn"]
+[ext_resource type="Resource" uid="uid://cdm73wjuahi2v" path="res://CraftingSystem/Items/ItemData/wood.tres" id="3_mc57d"]
+[ext_resource type="Resource" uid="uid://cpv4b1ncjdkf7" path="res://CraftingSystem/Items/ItemData/plank.tres" id="4_c5j7y"]
+
+[sub_resource type="Resource" id="Resource_kcfle"]
+script = ExtResource("2_ym5xn")
+item = ExtResource("3_mc57d")
+maxCount = 10
+
+[sub_resource type="Resource" id="Resource_q5nle"]
+script = ExtResource("2_ym5xn")
+item = ExtResource("4_c5j7y")
+maxCount = 1
+
+[node name="SimpleCraftingUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_65six")
+resources = Array[ExtResource("2_ym5xn")]([SubResource("Resource_kcfle")])
+craftedItems = Array[ExtResource("2_ym5xn")]([SubResource("Resource_q5nle")])
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true

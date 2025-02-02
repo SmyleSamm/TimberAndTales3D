@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dks2e5l0vwinm"
+path="res://.godot/imported/WindowShutters_Wide_Round_Closed.obj-1e0081722985ac7f5b2aaedac25568d9.mesh"
+
+[deps]
+
+files=["res://.godot/imported/WindowShutters_Wide_Round_Closed.obj-1e0081722985ac7f5b2aaedac25568d9.mesh"]
+
+source_file="res://Medieval Village MegaKit[Standard]/OBJ/WindowShutters_Wide_Round_Closed.obj"
+dest_files=["res://.godot/imported/WindowShutters_Wide_Round_Closed.obj-1e0081722985ac7f5b2aaedac25568d9.mesh", "res://.godot/imported/WindowShutters_Wide_Round_Closed.obj-1e0081722985ac7f5b2aaedac25568d9.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

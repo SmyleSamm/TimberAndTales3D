@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://d2numi1yd0a1y"
+path="res://.godot/imported/Free Sample-3-Street-6.obj-d161511cb4ce638f48b97d68c3a60724.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Free Sample-3-Street-6.obj-d161511cb4ce638f48b97d68c3a60724.mesh"]
+
+source_file="res://Free Sample/Free Sample-3-Street-6.obj"
+dest_files=["res://.godot/imported/Free Sample-3-Street-6.obj-d161511cb4ce638f48b97d68c3a60724.mesh", "res://.godot/imported/Free Sample-3-Street-6.obj-d161511cb4ce638f48b97d68c3a60724.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dfy3w6grt2s10"
+path="res://.godot/imported/Stair_Interior_SolidExtended.obj-65eb24dd2691d14327d320f6a7b14478.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Stair_Interior_SolidExtended.obj-65eb24dd2691d14327d320f6a7b14478.mesh"]
+
+source_file="res://Medieval Village MegaKit[Standard]/OBJ/Stair_Interior_SolidExtended.obj"
+dest_files=["res://.godot/imported/Stair_Interior_SolidExtended.obj-65eb24dd2691d14327d320f6a7b14478.mesh", "res://.godot/imported/Stair_Interior_SolidExtended.obj-65eb24dd2691d14327d320f6a7b14478.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

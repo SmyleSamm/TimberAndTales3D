@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://cdm73wjuahi2v"]
+
+[ext_resource type="Texture2D" uid="uid://gybsn2debeah" path="res://Items/Material/Wood Log.png" id="1_o2q75"]
+[ext_resource type="Script" path="res://CraftingSystem/Items/Item.gd" id="1_xhahh"]
+
+[resource]
+script = ExtResource("1_xhahh")
+name = "wood"
+icon = ExtResource("1_o2q75")
+maxStackSize = 999999

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://baqhdbi5qhl4c"]
+
+[ext_resource type="Texture2D" uid="uid://fdy6uewrqyla" path="res://Items/Ore & Gem/Silver Nugget.png" id="1_nijf2"]
+[ext_resource type="Script" path="res://CraftingSystem/Items/Item.gd" id="2_0vrec"]
+
+[resource]
+script = ExtResource("2_0vrec")
+name = "Iron"
+icon = ExtResource("1_nijf2")
+maxStackSize = 999999
