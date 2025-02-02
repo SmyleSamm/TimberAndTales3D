@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmt7hxdvjdw5n"]
+
+[ext_resource type="Script" path="res://sdkjhf.gd" id="1_ihgg7"]
+[ext_resource type="Texture2D" uid="uid://dcbprgq4mrhkd" path="res://Items/Weapon & Tool/Axe.png" id="1_ihm53"]
+
+[node name="Tool" type="StaticBody3D"]
+script = ExtResource("1_ihgg7")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+texture_filter = 0
+texture = ExtResource("1_ihm53")

@@ -8,6 +8,7 @@ const ATTACKDAMAGE = 10
 @onready var head: Node3D = $Head
 @onready var camera: Camera3D = $Head/Camera3D
 @onready var look: RayCast3D = $Head/RayCast3D
+@onready var hotbar: CanvasLayer = $Hotbar
 
 var isUIOpen: bool = false
 
@@ -35,7 +36,28 @@ func handleKeyInputs(event: InputEvent) -> void:
 		interact()
 	if event.is_action_pressed("ESC"):
 		quit()
-
+	handleHotbar(event)
+	
+func handleHotbar(event: InputEvent) -> void:
+	if event.is_action_pressed("slot_1"):
+		hotbar.activateSlot(1)
+	elif event.is_action_pressed("slot_2"):
+		hotbar.activateSlot(2)
+	elif event.is_action_pressed("slot_3"):
+		hotbar.activateSlot(3)
+	elif event.is_action_pressed("slot_4"):
+		hotbar.activateSlot(4)
+	elif event.is_action_pressed("slot_5"):
+		hotbar.activateSlot(5)
+	elif event.is_action_pressed("slot_6"):
+		hotbar.activateSlot(6)
+	elif event.is_action_pressed("slot_7"):
+		hotbar.activateSlot(7)
+	elif event.is_action_pressed("slot_8"):
+		hotbar.activateSlot(8)
+	elif event.is_action_pressed("slot_9"):
+		hotbar.activateSlot(9)
+		
 func _process(delta: float) -> void:
 	pass
 	
@@ -68,16 +90,16 @@ func _physics_process(delta: float) -> void:
 func quit() -> void:
 	get_tree().quit()
 
+func getAttack() -> Attack:
+	return hotbar.activeSlot.getAttack()
+
 func attack() -> void:	
 	if not look.is_colliding():
 		return
 	
 	var target = look.get_collider().get_parent()
 	if target is Minable:
-		var attack: Attack = Attack.new()
-		attack.base_damage = 10
-		attack.base_lvl = 1
-		target.hit(attack)
+		target.hit(getAttack())
 
 func interact() -> void:
 	if not look.is_colliding():

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Tool" load_steps=5 format=3 uid="uid://b6ke1m3ywkehq"]
+
+[ext_resource type="Script" path="res://CraftingSystem/Items/Attack.gd" id="1_51suu"]
+[ext_resource type="Script" path="res://Tool.gd" id="1_sthnu"]
+[ext_resource type="Texture2D" uid="uid://dcbprgq4mrhkd" path="res://Items/Weapon & Tool/Axe.png" id="2_6se6p"]
+
+[sub_resource type="Resource" id="Resource_7wbeq"]
+script = ExtResource("1_51suu")
+base_damage = 50
+base_lvl = 2
+
+[resource]
+script = ExtResource("1_sthnu")
+attack = SubResource("Resource_7wbeq")
+name = "Axe"
+icon = ExtResource("2_6se6p")
+maxStackSize = 1
