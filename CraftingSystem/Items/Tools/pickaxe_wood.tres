@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Tool" load_steps=6 format=3 uid="uid://dg1wunau0arlw"]
+
+[ext_resource type="Resource" uid="uid://cfbanx6cyi31e" path="res://stoneType.tres" id="1_ptoxg"]
+[ext_resource type="Script" path="res://Tool.gd" id="1_rhnep"]
+[ext_resource type="Script" path="res://CraftingSystem/Items/Attack.gd" id="2_71snm"]
+[ext_resource type="Texture2D" uid="uid://2tsui0rk4g5p" path="res://Items/Weapon & Tool/pickaxe_wood.png" id="3_85aho"]
+
+[sub_resource type="Resource" id="Resource_atem7"]
+script = ExtResource("2_71snm")
+base_damage = 10
+base_lvl = 1
+base_type = ExtResource("1_ptoxg")
+
+[resource]
+script = ExtResource("1_rhnep")
+attack = SubResource("Resource_atem7")
+name = "Wood Pickaxe"
+icon = ExtResource("3_85aho")
+maxStackSize = 1

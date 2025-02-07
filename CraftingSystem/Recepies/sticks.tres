@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Recipe" load_steps=7 format=3 uid="uid://7reikumr0m3p"]
+
+[ext_resource type="Script" path="res://CraftingSystem/Items/ItemDrops.gd" id="1_11ov2"]
+[ext_resource type="Resource" uid="uid://csli4ix7yha5k" path="res://CraftingSystem/Items/ItemData/stick.tres" id="2_58afh"]
+[ext_resource type="Script" path="res://CraftingSystem/Recepie.gd" id="2_duj5d"]
+[ext_resource type="Resource" uid="uid://cpv4b1ncjdkf7" path="res://CraftingSystem/Items/ItemData/plank.tres" id="3_ictmr"]
+
+[sub_resource type="Resource" id="Resource_wn4sj"]
+script = ExtResource("1_11ov2")
+item = ExtResource("2_58afh")
+maxCount = 4
+
+[sub_resource type="Resource" id="Resource_eigo0"]
+script = ExtResource("1_11ov2")
+item = ExtResource("3_ictmr")
+maxCount = 1
+
+[resource]
+script = ExtResource("2_duj5d")
+item = Array[ExtResource("1_11ov2")]([SubResource("Resource_wn4sj")])
+requirements = Array[ExtResource("1_11ov2")]([SubResource("Resource_eigo0")])

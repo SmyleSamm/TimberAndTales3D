@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Tool" load_steps=6 format=3 uid="uid://b6ke1m3ywkehq"]
+
+[ext_resource type="Resource" uid="uid://bbipk6jthal6p" path="res://woodType.tres" id="1_tuugr"]
+[ext_resource type="Script" path="res://CraftingSystem/Items/Attack.gd" id="2_lbftf"]
+[ext_resource type="Texture2D" uid="uid://dcbprgq4mrhkd" path="res://Items/Weapon & Tool/Axe.png" id="3_rb0y1"]
+[ext_resource type="Script" path="res://Tool.gd" id="4_1ive1"]
+
+[sub_resource type="Resource" id="Resource_7wbeq"]
+script = ExtResource("2_lbftf")
+base_damage = 50
+base_lvl = 2
+base_type = ExtResource("1_tuugr")
+
+[resource]
+script = ExtResource("4_1ive1")
+attack = SubResource("Resource_7wbeq")
+name = "Stone Axe"
+icon = ExtResource("3_rb0y1")
+maxStackSize = 1

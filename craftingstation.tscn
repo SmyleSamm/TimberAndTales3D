@@ -1,11 +1,15 @@
-[gd_scene load_steps=11 format=4 uid="uid://iu036fe11crv"]
+[gd_scene load_steps=15 format=4 uid="uid://iu036fe11crv"]
 
 [ext_resource type="Script" path="res://craftingstation.gd" id="1_83gd3"]
 [ext_resource type="Texture2D" uid="uid://clcal0b4kmj2d" path="res://Assets/2/gltf/dungeon_texture.png" id="2_t146n"]
 [ext_resource type="PackedScene" uid="uid://dyobdvrwhp8qj" path="res://simple_crafting_ui.tscn" id="3_8pfru"]
 [ext_resource type="Script" path="res://CraftingSystem/Recepie.gd" id="4_j52uv"]
 [ext_resource type="Resource" uid="uid://b7klrwntaktl1" path="res://CraftingSystem/Recepies/Planks.tres" id="5_bqrgs"]
-[ext_resource type="Resource" uid="uid://3olr63taiu3b" path="res://CraftingSystem/Recepies/Test.tres" id="6_adggr"]
+[ext_resource type="Resource" uid="uid://7reikumr0m3p" path="res://CraftingSystem/Recepies/sticks.tres" id="6_huo8l"]
+[ext_resource type="Resource" uid="uid://cgk2l6gfr2j4f" path="res://CraftingSystem/Recepies/pickaxe_wood.tres" id="7_abo7c"]
+[ext_resource type="Resource" uid="uid://bhcrlgh0i3o5g" path="res://CraftingSystem/Recepies/pickaxe_stone.tres" id="8_ifvuh"]
+[ext_resource type="Resource" uid="uid://ci825adbis0va" path="res://CraftingSystem/Recepies/axe_wood.tres" id="9_3431i"]
+[ext_resource type="Resource" uid="uid://c3t1i6f8x0wrr" path="res://CraftingSystem/Recepies/axe_stone.tres" id="10_vgb3y"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aayxb"]
 resource_name = "texture"
@@ -60,4 +64,4 @@ shape = SubResource("ConvexPolygonShape3D_urd65")
 
 [node name="SimpleCraftingUI" parent="." instance=ExtResource("3_8pfru")]
 top_level = true
-recipies = Array[ExtResource("4_j52uv")]([ExtResource("5_bqrgs"), ExtResource("6_adggr"), ExtResource("6_adggr"), ExtResource("5_bqrgs"), ExtResource("6_adggr")])
+recipies = Array[ExtResource("4_j52uv")]([ExtResource("5_bqrgs"), ExtResource("6_huo8l"), ExtResource("7_abo7c"), ExtResource("8_ifvuh"), ExtResource("9_3431i"), ExtResource("10_vgb3y")])
