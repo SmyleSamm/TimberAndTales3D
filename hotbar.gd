@@ -4,6 +4,7 @@ extends CanvasLayer
 @onready var player: Player = $".."
 @onready var item: Control = $Item
 
+var activeSlotID: int
 var activeSlot: Slot
 @onready var hand: Node3D = $"../Head/Hand"
 
@@ -20,8 +21,18 @@ func _ready() -> void:
 func getSlots() -> Array:
 	return gC.get_children()
 
+func getSlotID() -> int:
+	return activeSlotID
+
+func getAttack() -> Attack:
+	return activeSlot.getAttack()
+
+func getSlotsCount() -> int:
+	return len(getSlots())
+
 func activateSlot(slotID: int) -> void:
 	var slot: Slot = getSlots()[slotID-1]
+	activeSlotID = slotID
 	activeSlot = slot
 	if slot.item is Tool:
 		item.switchTool(slot.item)

@@ -22,6 +22,7 @@ func _input(event: InputEvent) -> void:
 func handleMouseInputs(event: InputEvent) -> void:
 	if isUIOpen:
 		return
+	
 	if event is InputEventMouseMotion:
 		head.rotate_y(-event.relative.x * SENSITIVITY)
 		camera.rotate_x(-event.relative.y * SENSITIVITY)
@@ -30,34 +31,37 @@ func handleMouseInputs(event: InputEvent) -> void:
 		look.rotation.y = camera.rotation.y
 		
 func handleKeyInputs(event: InputEvent) -> void:
-	if event.is_action_pressed("attack"):
-		attack()
-	if event.is_action_pressed("interact"):
-		interact()
 	if event.is_action_pressed("ESC"):
 		quit()
-	handleHotbar(event)
 	
+	if isUIOpen:
+		return
+	
+	if event.is_action_pressed("interact"):
+		interact()
+	
+	if event.is_action_pressed("attack"):
+		attack()
+	
+	handleHotbar(event)
+
 func handleHotbar(event: InputEvent) -> void:
-	if event.is_action_pressed("slot_1"):
-		hotbar.activateSlot(1)
-	elif event.is_action_pressed("slot_2"):
-		hotbar.activateSlot(2)
-	elif event.is_action_pressed("slot_3"):
-		hotbar.activateSlot(3)
-	elif event.is_action_pressed("slot_4"):
-		hotbar.activateSlot(4)
-	elif event.is_action_pressed("slot_5"):
-		hotbar.activateSlot(5)
-	elif event.is_action_pressed("slot_6"):
-		hotbar.activateSlot(6)
-	elif event.is_action_pressed("slot_7"):
-		hotbar.activateSlot(7)
-	elif event.is_action_pressed("slot_8"):
-		hotbar.activateSlot(8)
-	elif event.is_action_pressed("slot_9"):
-		hotbar.activateSlot(9)
+	if event.is_action_pressed("slot"):
+		var slotID: int = event.keycode - KEY_0
+		hotbar.activateSlot(slotID)
+	
+	if event.is_action("switchSlot") and event.is_pressed():
+		var up: bool = bool(event.button_index - MOUSE_BUTTON_WHEEL_DOWN)
+		var nextSlotID: int = int(up) * 2 - 1
+		var nextSlot: int = hotbar.getSlotID() + nextSlotID
 		
+		if nextSlot <= 0:
+			nextSlot = hotbar.getSlotsCount()
+		elif nextSlot > hotbar.getSlotsCount():
+			nextSlot = 1
+			
+		hotbar.activateSlot(nextSlot)
+
 func _process(delta: float) -> void:
 	pass
 	
@@ -90,16 +94,13 @@ func _physics_process(delta: float) -> void:
 func quit() -> void:
 	get_tree().quit()
 
-func getAttack() -> Attack:
-	return hotbar.activeSlot.getAttack()
-
 func attack() -> void:	
 	if not look.is_colliding():
 		return
 	
 	var target = look.get_collider().get_parent()
 	if target is Minable:
-		target.hit(getAttack())
+		target.hit(hotbar.getAttack())
 
 func interact() -> void:
 	if not look.is_colliding():
