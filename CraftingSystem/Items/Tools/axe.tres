@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="Tool" load_steps=5 format=3 uid="uid://b6ke1m3ywkehq"]
+[gd_resource type="Resource" script_class="Tool" load_steps=6 format=3 uid="uid://b6ke1m3ywkehq"]
 
 [ext_resource type="Script" path="res://CraftingSystem/Items/Attack.gd" id="1_51suu"]
+[ext_resource type="Resource" uid="uid://bbipk6jthal6p" path="res://woodType.tres" id="1_lw8xx"]
 [ext_resource type="Script" path="res://Tool.gd" id="1_sthnu"]
 [ext_resource type="Texture2D" uid="uid://dcbprgq4mrhkd" path="res://Items/Weapon & Tool/Axe.png" id="2_6se6p"]
 
@@ -8,6 +9,7 @@
 script = ExtResource("1_51suu")
 base_damage = 50
 base_lvl = 2
+base_type = ExtResource("1_lw8xx")
 
 [resource]
 script = ExtResource("1_sthnu")

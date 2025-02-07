@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bd7t4yxnx7do1"]
+[gd_scene load_steps=7 format=3 uid="uid://bd7t4yxnx7do1"]
 
 [ext_resource type="Material" uid="uid://b6hbsglx7kxke" path="res://stone.tres" id="1_2dl00"]
 [ext_resource type="Script" path="res://stone.gd" id="1_rqhma"]
 [ext_resource type="Script" path="res://CraftingSystem/Items/ItemDrops.gd" id="2_8t0dg"]
+[ext_resource type="Resource" uid="uid://cfbanx6cyi31e" path="res://stoneType.tres" id="2_pkyxa"]
 [ext_resource type="Resource" uid="uid://pbobc08r3bgc" path="res://CraftingSystem/Items/ItemData/stone.tres" id="3_jd8hn"]
 
 [sub_resource type="Resource" id="Resource_v0vye"]
@@ -13,6 +14,9 @@ maxCount = 20
 [node name="stone" type="StaticBody3D"]
 script = ExtResource("1_rqhma")
 maxHealth = 100
+strenght = 1
+requiresTool = true
+resourceType = ExtResource("2_pkyxa")
 resources = Array[ExtResource("2_8t0dg")]([SubResource("Resource_v0vye")])
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]

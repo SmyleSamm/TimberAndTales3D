@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://e6pau3e4hnrl"]
+[gd_scene load_steps=9 format=3 uid="uid://e6pau3e4hnrl"]
 
 [ext_resource type="Script" path="res://tree.gd" id="1_7vrpj"]
 [ext_resource type="Script" path="res://CraftingSystem/Items/ItemDrops.gd" id="2_iuwd5"]
+[ext_resource type="Resource" uid="uid://bbipk6jthal6p" path="res://woodType.tres" id="2_r252k"]
 [ext_resource type="Material" uid="uid://b0i38if3u3uka" path="res://treeStump.tres" id="2_v0vbb"]
 [ext_resource type="Material" uid="uid://v5bv2j1jd5qx" path="res://treeLeaves.tres" id="3_7are7"]
 [ext_resource type="Resource" uid="uid://cdm73wjuahi2v" path="res://CraftingSystem/Items/ItemData/wood.tres" id="3_f0q1g"]
@@ -17,6 +18,7 @@ radius = 0.379919
 [node name="Tree" type="StaticBody3D"]
 script = ExtResource("1_7vrpj")
 maxHealth = 50
+resourceType = ExtResource("2_r252k")
 resources = Array[ExtResource("2_iuwd5")]([SubResource("Resource_br3me")])
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]

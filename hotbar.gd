@@ -14,8 +14,13 @@ func _ready() -> void:
 		var tool: Tool = preload("res://CraftingSystem/Items/Tools/hand.tres")
 		slot.item = tool
 		gC.add_child(slot)
+	
 	getSlots()[0].item = preload("res://CraftingSystem/Items/Tools/axe.tres")
 	getSlots()[0].icon = getSlots()[0].item.icon
+	
+	getSlots()[1].item = preload("res://CraftingSystem/Items/Tools/pickaxe.tres")
+	getSlots()[1].icon = getSlots()[1].item.icon
+	
 	activateSlot(1)
 	
 func getSlots() -> Array:

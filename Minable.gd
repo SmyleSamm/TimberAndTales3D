@@ -5,6 +5,8 @@ signal destroyed
 var health: int
 @export var maxHealth: int
 @export var strenght: int
+@export var requiresTool: bool
+@export var resourceType: ToolType
 @export var resources: Array[ItemDrops]
 
 func _ready() -> void:
@@ -27,15 +29,35 @@ func _getRemainderHealth(attack: Attack) -> int:
 	return health - attack.base_damage
 	
 func _canAttack(attack: Attack) -> bool:
+	if not checkAttackType(attack):
+		return false
 	if strenght:
 		if attack.base_lvl >= strenght:
 			return true
 		else:
 			return false
+	else:
+		print("No strength was assigned")
 	return true
 	
+func checkAttackType(attack: Attack) -> bool:
+	if resourceType:
+		if attack.base_type:
+			if resourceType == attack.base_type:
+				return true
+			else:
+				return false
+		else:
+			print("No attack type assigned!")
+			if requiresTool:
+				return false
+			else:
+				return true
+	else:
+		print("No resource type assigned!")
+		return true
+		
 func _changeResources(attack: Attack) -> void:
-	
 	for i in resources:
 		if not i.count:
 			i.count = i.maxCount

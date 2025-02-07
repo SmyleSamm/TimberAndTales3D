@@ -101,7 +101,11 @@ func attack() -> void:
 	if not look.is_colliding():
 		return
 	
-	var target = look.get_collider().get_parent()
+	var target = look.get_collider()
+	
+	if target is not Minable:
+		target = target.get_parent()
+	
 	if target is Minable:
 		target.hit(hotbar.getAttack())
 

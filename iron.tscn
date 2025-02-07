@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://dokb05pj6cmhv"]
+[gd_scene load_steps=10 format=3 uid="uid://dokb05pj6cmhv"]
 
 [ext_resource type="Material" uid="uid://b6hbsglx7kxke" path="res://stone.tres" id="1_qmicv"]
 [ext_resource type="Script" path="res://iron.gd" id="1_try84"]
+[ext_resource type="Resource" uid="uid://cfbanx6cyi31e" path="res://stoneType.tres" id="2_4uvvg"]
 [ext_resource type="Script" path="res://CraftingSystem/Items/ItemDrops.gd" id="2_txd3d"]
 [ext_resource type="Resource" uid="uid://pbobc08r3bgc" path="res://CraftingSystem/Items/ItemData/stone.tres" id="3_4rudx"]
 [ext_resource type="Resource" uid="uid://baqhdbi5qhl4c" path="res://CraftingSystem/Items/ItemData/iron.tres" id="4_02x07"]
@@ -22,6 +23,9 @@ albedo_color = Color(0.733006, 0.523853, 0.20861, 1)
 [node name="Iron" type="StaticBody3D"]
 script = ExtResource("1_try84")
 maxHealth = 500
+strenght = 2
+requiresTool = true
+resourceType = ExtResource("2_4uvvg")
 resources = Array[ExtResource("2_txd3d")]([SubResource("Resource_2ptde"), SubResource("Resource_m6vd7")])
 
 [node name="Iron" type="CSGCombiner3D" parent="."]
