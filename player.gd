@@ -11,6 +11,7 @@ const ATTACKDAMAGE = 10
 @onready var hotbar: CanvasLayer = $Hotbar
 
 var isUIOpen: bool = false
+var currentUI: Control
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -31,12 +32,14 @@ func handleMouseInputs(event: InputEvent) -> void:
 		look.rotation.y = camera.rotation.y
 		
 func handleKeyInputs(event: InputEvent) -> void:
-	if event.is_action_pressed("ESC"):
-		quit()
-	
 	if isUIOpen:
+		if event.is_action_pressed("closeUI"):
+			closeUI(currentUI)
 		return
 	
+	if event.is_action_pressed("ESC"):
+		quit()
+		
 	if event.is_action_pressed("interact"):
 		interact()
 	
@@ -113,20 +116,14 @@ func interact() -> void:
 		if not ui:
 			printerr("The target has no UI defined!")
 			return
-		if isUIOpen:
-			closeUI(ui)
-		else:
-			openUI(ui)
-		#create new CanvasLayer
-		#set the crafting things
-		#display it
-		#disable movement
-		pass
+		openUI(ui)
+		
 	if target is Repairable:
 		target.interact()
 		
 func openUI(ui: Control) -> void:
 	isUIOpen = true
+	currentUI = ui
 	World.hideAllUI()
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	ui.show()
