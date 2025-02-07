@@ -2,9 +2,10 @@ extends CanvasLayer
 
 @onready var gC: GridContainer = $GridContainer
 @onready var player: Player = $".."
-@onready var item: StaticBody3D = $Item
+@onready var item: Control = $Item
 
 var activeSlot: Slot
+@onready var hand: Node3D = $"../Head/Hand"
 
 func _ready() -> void:
 	for i in range(9):
@@ -24,3 +25,4 @@ func activateSlot(slotID: int) -> void:
 	activeSlot = slot
 	if slot.item is Tool:
 		item.switchTool(slot.item)
+		hand.switchTool(slot.item)

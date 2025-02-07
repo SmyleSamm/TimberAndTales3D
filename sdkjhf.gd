@@ -1,7 +1,7 @@
-extends StaticBody3D
+extends Control
 
 @export var tool: Tool
-@onready var sprite: Sprite3D = $Sprite3D
+@onready var sprite: TextureRect = $Sprite3D
 
 func switchTool(tool: Tool) -> void:
 	self.tool = tool

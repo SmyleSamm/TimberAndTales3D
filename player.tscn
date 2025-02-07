@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bha6k8g1hp2ws"]
+[gd_scene load_steps=8 format=3 uid="uid://bha6k8g1hp2ws"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_cjsjp"]
+[ext_resource type="Texture2D" uid="uid://c0e4evlnadxi3" path="res://Items/Food/Ham.png" id="2_6rmsp"]
 [ext_resource type="PackedScene" uid="uid://bmt7hxdvjdw5n" path="res://item.tscn" id="2_ks54d"]
+[ext_resource type="Script" path="res://hand.gd" id="2_q4syh"]
 [ext_resource type="Script" path="res://hotbar.gd" id="3_bxy0k"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_8smjs"]
@@ -31,6 +33,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 target_position = Vector3(0, 0, -3)
 debug_shape_thickness = 1
 
+[node name="Hand" type="Node3D" parent="Head"]
+script = ExtResource("2_q4syh")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Head/Hand"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.337926, 1.14891, -0.345159)
+size = Vector3(0.209717, 0.186783, 0.750488)
+
+[node name="Sprite3D" type="Sprite3D" parent="Head/Hand/CSGBox3D"]
+transform = Transform3D(-0.258819, 0, 0.965926, 0.440863, 0.889767, 0.118129, -0.859449, 0.456415, -0.230289, -0.0743223, 0.230575, -0.40149)
+texture_filter = 0
+texture = ExtResource("2_6rmsp")
+
 [node name="Hotbar" type="CanvasLayer" parent="."]
 script = ExtResource("3_bxy0k")
 
@@ -48,4 +62,3 @@ grow_vertical = 0
 columns = 9
 
 [node name="Item" parent="Hotbar" instance=ExtResource("2_ks54d")]
-transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 0.5, 1.5, -0.542933)
