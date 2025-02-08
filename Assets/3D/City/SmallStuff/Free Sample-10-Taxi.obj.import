@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b1nbr2rs30aul"
+path="res://.godot/imported/Free Sample-10-Taxi.obj-147a93ad642493460f2b05b1846d1b1b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Free Sample-10-Taxi.obj-147a93ad642493460f2b05b1846d1b1b.mesh"]
+
+source_file="res://Assets/3D/City/SmallStuff/Free Sample-10-Taxi.obj"
+dest_files=["res://.godot/imported/Free Sample-10-Taxi.obj-147a93ad642493460f2b05b1846d1b1b.mesh", "res://.godot/imported/Free Sample-10-Taxi.obj-147a93ad642493460f2b05b1846d1b1b.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

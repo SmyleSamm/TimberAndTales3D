@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://cpv4b1ncjdkf7"]
+
+[ext_resource type="Texture2D" uid="uid://djff8g8874i45" path="res://Assets/2D/Items/Material/Wooden Plank.png" id="1_mxk0p"]
+[ext_resource type="Script" path="res://Scripts/Resources/Item.gd" id="1_x3251"]
+
+[resource]
+script = ExtResource("1_x3251")
+name = "plank"
+icon = ExtResource("1_mxk0p")
+maxStackSize = 999999

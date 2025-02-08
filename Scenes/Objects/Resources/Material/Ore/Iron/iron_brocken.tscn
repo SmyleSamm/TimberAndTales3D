@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://cob13ppigox6l"]
+
+[ext_resource type="Material" uid="uid://b6hbsglx7kxke" path="res://Resources/Material/stone.tres" id="1_kis4v"]
+[ext_resource type="Material" uid="uid://c1wobt1t0tqfy" path="res://Resources/Material/iron.tres" id="2_k8crx"]
+
+[node name="IronBrocken" type="StaticBody3D"]
+
+[node name="Stone" type="CSGCombiner3D" parent="."]
+material_override = ExtResource("1_kis4v")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="Stone"]
+radius = 0.376062
+
+[node name="Ore" type="CSGCombiner3D" parent="."]
+material_override = ExtResource("2_k8crx")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="Ore"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.243199, 0.138908)
+radius = 0.125531
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="Ore"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.174152, 0.208921, -0.0714327)
+radius = 0.125531
+
+[node name="CSGSphere3D3" type="CSGSphere3D" parent="Ore"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.153727, -0.22441)
+radius = 0.125531
+
+[node name="CSGSphere3D4" type="CSGSphere3D" parent="Ore"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.289408, 0.125365, 0.0247445)
+radius = 0.125531
+
+[node name="CSGSphere3D5" type="CSGSphere3D" parent="Ore"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.172278, 0.125365, 0.192913)
+radius = 0.125531
+
+[node name="CSGSphere3D6" type="CSGSphere3D" parent="Ore"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0844018, 0.252774, -0.0840049)
+radius = 0.125531

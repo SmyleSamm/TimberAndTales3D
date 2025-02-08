@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://li13uy8wuljv"
+path="res://.godot/imported/Free Sample-14.obj-8330b01b30d1e90a25c8c2da3ae64c1e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Free Sample-14.obj-8330b01b30d1e90a25c8c2da3ae64c1e.mesh"]
+
+source_file="res://Assets/3D/City/SmallStuff/Free Sample-14.obj"
+dest_files=["res://.godot/imported/Free Sample-14.obj-8330b01b30d1e90a25c8c2da3ae64c1e.mesh", "res://.godot/imported/Free Sample-14.obj-8330b01b30d1e90a25c8c2da3ae64c1e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Tool" load_steps=6 format=3 uid="uid://bks3gpd332o48"]
+
+[ext_resource type="Resource" uid="uid://cfbanx6cyi31e" path="res://Resources/Types/stoneType.tres" id="1_sv6m1"]
+[ext_resource type="Script" path="res://Scripts/Resources/Attack.gd" id="2_4tfk2"]
+[ext_resource type="Texture2D" uid="uid://b5d71f868hf08" path="res://Assets/2D/Items/Weapon & Tool/Pickaxe.png" id="3_6ypq7"]
+[ext_resource type="Script" path="res://Scripts/Tool.gd" id="4_03lm5"]
+
+[sub_resource type="Resource" id="Resource_4lj1w"]
+script = ExtResource("2_4tfk2")
+base_damage = 50
+base_lvl = 2
+base_type = ExtResource("1_sv6m1")
+
+[resource]
+script = ExtResource("4_03lm5")
+attack = SubResource("Resource_4lj1w")
+name = "Stone Pickaxe"
+icon = ExtResource("3_6ypq7")
+maxStackSize = 1

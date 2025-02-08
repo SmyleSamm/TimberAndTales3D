@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Tool" load_steps=5 format=3 uid="uid://saiysckyeetu"]
+
+[ext_resource type="Script" path="res://Scripts/Resources/Attack.gd" id="1_4aap5"]
+[ext_resource type="Script" path="res://Scripts/Tool.gd" id="1_48n16"]
+[ext_resource type="Texture2D" uid="uid://cx48yri4gb2dm" path="res://Assets/2D/empty.png" id="2_pt5ej"]
+
+[sub_resource type="Resource" id="Resource_5f2mc"]
+script = ExtResource("1_4aap5")
+base_damage = 10
+base_lvl = 1
+
+[resource]
+script = ExtResource("1_48n16")
+attack = SubResource("Resource_5f2mc")
+name = "Hand"
+icon = ExtResource("2_pt5ej")
+maxStackSize = 1

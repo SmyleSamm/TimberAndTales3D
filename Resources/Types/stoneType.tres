@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="ToolType" load_steps=2 format=3 uid="uid://cfbanx6cyi31e"]
+
+[ext_resource type="Script" path="res://Scripts/Resources/ToolType.gd" id="1_7p621"]
+
+[resource]
+script = ExtResource("1_7p621")
+type = "stone"

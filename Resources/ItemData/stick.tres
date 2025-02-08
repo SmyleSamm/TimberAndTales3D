@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://csli4ix7yha5k"]
+
+[ext_resource type="Texture2D" uid="uid://ctlo2q0sa6h6m" path="res://Assets/2D/Items/Material/stick.png" id="1_lt4ga"]
+[ext_resource type="Script" path="res://Scripts/Resources/Item.gd" id="1_tcvo2"]
+
+[resource]
+script = ExtResource("1_tcvo2")
+name = "stick"
+icon = ExtResource("1_lt4ga")
+maxStackSize = 999999

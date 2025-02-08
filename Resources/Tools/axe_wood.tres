@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Tool" load_steps=6 format=3 uid="uid://cp1ukhepurqi8"]
+
+[ext_resource type="Script" path="res://Scripts/Tool.gd" id="1_vetvi"]
+[ext_resource type="Resource" uid="uid://bbipk6jthal6p" path="res://Resources/Types/woodType.tres" id="1_wklou"]
+[ext_resource type="Script" path="res://Scripts/Resources/Attack.gd" id="2_tikop"]
+[ext_resource type="Texture2D" uid="uid://do3xofar64ah6" path="res://Assets/2D/Items/Weapon & Tool/axe_wood.png" id="3_i3clh"]
+
+[sub_resource type="Resource" id="Resource_xfkxu"]
+script = ExtResource("2_tikop")
+base_damage = 10
+base_lvl = 1
+base_type = ExtResource("1_wklou")
+
+[resource]
+script = ExtResource("1_vetvi")
+attack = SubResource("Resource_xfkxu")
+name = "Wood Axe"
+icon = ExtResource("3_i3clh")
+maxStackSize = 1

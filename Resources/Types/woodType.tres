@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="ToolType" load_steps=2 format=3 uid="uid://bbipk6jthal6p"]
+
+[ext_resource type="Script" path="res://Scripts/Resources/ToolType.gd" id="1_paxk0"]
+
+[resource]
+script = ExtResource("1_paxk0")
+type = "wood"

@@ -11,14 +11,14 @@ config_version=5
 [application]
 
 config/name="TimberAndTales3D"
-run/main_scene="res://world.tscn"
+run/main_scene="res://Worlds/world.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-Counter="*res://counter.gd"
-World="*res://world.gd"
+Counter="*res://Scripts/Counter.gd"
+World="*res://Scripts/world.gd"
 
 [display]
 
@@ -29,6 +29,17 @@ window/stretch/mode="canvas_items"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/Todo_Manager/plugin.cfg")
+
+[file_customization]
+
+folder_colors={
+"res://Assets/": "orange",
+"res://Resources/": "yellow",
+"res://Scenes/": "green",
+"res://Scripts/": "blue",
+"res://Worlds/": "purple",
+"res://addons/": "red"
+}
 
 [input]
 

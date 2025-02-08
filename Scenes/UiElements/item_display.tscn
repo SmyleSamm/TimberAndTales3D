@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://cw2n4uc7shew8"]
+
+[ext_resource type="Script" path="res://Scripts/item_display.gd" id="1_2xvwu"]
+[ext_resource type="Texture2D" uid="uid://cf6k0sdn2jnol" path="res://icon.svg" id="2_ffgki"]
+[ext_resource type="Theme" uid="uid://unui6pba6fad" path="res://Resources/Fonts/pixelStyle.tres" id="3_6hpcq"]
+
+[node name="ItemDisplay" type="Control"]
+layout_mode = 3
+anchor_right = 0.371875
+anchor_bottom = 0.2
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2xvwu")
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+offset_right = 151.0
+offset_bottom = 72.0
+
+[node name="sprite" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_ffgki")
+expand_mode = 2
+
+[node name="amount" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_6hpcq")
+text = "-10000"

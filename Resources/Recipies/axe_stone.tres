@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="Recipe" load_steps=9 format=3 uid="uid://c3t1i6f8x0wrr"]
+
+[ext_resource type="Script" path="res://Scripts/Resources/ItemDrops.gd" id="1_y64gp"]
+[ext_resource type="Script" path="res://Scripts/Resources/Recepie.gd" id="2_2taox"]
+[ext_resource type="Resource" uid="uid://b6ke1m3ywkehq" path="res://Resources/Tools/axe_stone.tres" id="2_dsevx"]
+[ext_resource type="Resource" uid="uid://pbobc08r3bgc" path="res://Resources/ItemData/stone.tres" id="3_qjoya"]
+[ext_resource type="Resource" uid="uid://csli4ix7yha5k" path="res://Resources/ItemData/stick.tres" id="4_ktphm"]
+
+[sub_resource type="Resource" id="Resource_oui55"]
+script = ExtResource("1_y64gp")
+item = ExtResource("2_dsevx")
+maxCount = 1
+
+[sub_resource type="Resource" id="Resource_a55h0"]
+script = ExtResource("1_y64gp")
+item = ExtResource("3_qjoya")
+maxCount = 100
+
+[sub_resource type="Resource" id="Resource_cd72d"]
+script = ExtResource("1_y64gp")
+item = ExtResource("4_ktphm")
+maxCount = 10
+
+[resource]
+script = ExtResource("2_2taox")
+item = Array[ExtResource("1_y64gp")]([SubResource("Resource_oui55")])
+requirements = Array[ExtResource("1_y64gp")]([SubResource("Resource_a55h0"), SubResource("Resource_cd72d")])
