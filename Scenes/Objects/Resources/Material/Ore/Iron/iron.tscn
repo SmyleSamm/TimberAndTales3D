@@ -114,3 +114,5 @@ radius = 0.136581
 [node name="CSGSphere3D13" type="CSGSphere3D" parent="Ore"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05, -0.2, -1.2)
 radius = 0.136581
+
+[connection signal="destroyed" from="." to="." method="_on_destroyed"]
