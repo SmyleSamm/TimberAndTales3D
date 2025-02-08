@@ -9,6 +9,8 @@ const ATTACKDAMAGE = 10
 @onready var camera: Camera3D = $Head/Camera3D
 @onready var look: RayCast3D = $Head/RayCast3D
 @onready var hotbar: CanvasLayer = $Hotbar
+@onready var inventory: Control = $UI/Inventory
+
 
 var isUIOpen: bool = false
 var currentUI: Control
@@ -35,6 +37,9 @@ func handleKeyInputs(event: InputEvent) -> void:
 	if isUIOpen:
 		if event.is_action_pressed("closeUI"):
 			closeUI(currentUI)
+		if currentUI == inventory:
+			if event.is_action_pressed("inventory"):
+				closeUI(currentUI)
 		return
 	
 	if event.is_action_pressed("ESC"):
@@ -46,6 +51,8 @@ func handleKeyInputs(event: InputEvent) -> void:
 	if event.is_action_pressed("attack"):
 		attack()
 	
+	if event.is_action_pressed("inventory"):
+		openUI(inventory)
 	handleHotbar(event)
 
 func handleHotbar(event: InputEvent) -> void:
@@ -68,6 +75,7 @@ func handleHotbar(event: InputEvent) -> void:
 func _process(delta: float) -> void:
 	pass
 	
+# FIXME: Collision causes FPS drops
 func _physics_process(delta: float) -> void:
 	#Add running
 	var run: float = int(Input.is_action_pressed("move_fast")) * RUNNING
