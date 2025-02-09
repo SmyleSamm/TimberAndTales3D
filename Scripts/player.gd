@@ -52,6 +52,7 @@ func handleKeyInputs(event: InputEvent) -> void:
 		attack()
 	
 	if event.is_action_pressed("inventory"):
+		inventory.updateInventory()
 		openUI(inventory)
 	handleHotbar(event)
 
@@ -75,7 +76,6 @@ func handleHotbar(event: InputEvent) -> void:
 func _process(delta: float) -> void:
 	pass
 	
-# FIXME: Collision causes FPS drops
 func _physics_process(delta: float) -> void:
 	#Add running
 	var run: float = int(Input.is_action_pressed("move_fast")) * RUNNING

@@ -4,6 +4,8 @@ signal destroyed
 
 var health: int
 
+#TODO: refactor code to fit new export variables
+
 @export_subgroup("Properties")
 @export_range(0,1000, 1, "or_greater") var maxHealth: int
 @export_range(0,5,0.9) var strenght: int

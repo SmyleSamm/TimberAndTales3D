@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://e6pau3e4hnrl" path="res://Scenes/Objects/Resources/Trees/StandardTree/tree.tscn" id="4_3cy3f"]
 [ext_resource type="Script" path="res://Scripts/Counter.gd" id="5_fxr36"]
 [ext_resource type="Script" path="res://Scripts/Debug.gd" id="6_ea81n"]
-[ext_resource type="Theme" uid="uid://unui6pba6fad" path="res://Resources/Fonts/pixelStyle.tres" id="7_cxpeq"]
+[ext_resource type="Theme" uid="uid://cmfdi20b1ov7n" path="res://Resources/Fonts/pixelStyleSlot.tres" id="7_n61kb"]
 [ext_resource type="PackedScene" uid="uid://bd7t4yxnx7do1" path="res://Scenes/Objects/Resources/Material/Stone/stone.tscn" id="9_q4mj4"]
 [ext_resource type="PackedScene" uid="uid://iu036fe11crv" path="res://Scenes/Objects/craftingstation.tscn" id="10_rr77j"]
 [ext_resource type="PackedScene" uid="uid://dokb05pj6cmhv" path="res://Scenes/Objects/Resources/Material/Ore/Iron/iron.tscn" id="11_6rfyx"]
@@ -124,7 +124,7 @@ mouse_filter = 2
 
 [node name="FPS" type="Label" parent="Debug/Control/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("7_cxpeq")
+theme = ExtResource("7_n61kb")
 text = "100 Fps"
 horizontal_alignment = 2
 
