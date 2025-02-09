@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dutvxpn7372ba"]
+
+[ext_resource type="Script" path="res://Scenes/Objects/Resources/Properties/Resource.gd" id="1_flru0"]
+
+[node name="Minable" type="Node"]
+script = ExtResource("1_flru0")

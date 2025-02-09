@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cc7yx4s511p42"]
+[gd_scene load_steps=18 format=3 uid="uid://cc7yx4s511p42"]
 
 [ext_resource type="Script" path="res://Scripts/world.gd" id="1_1o5yq"]
 [ext_resource type="Texture2D" uid="uid://cf6k0sdn2jnol" path="res://icon.svg" id="2_ppw2o"]
@@ -7,7 +7,6 @@
 [ext_resource type="Script" path="res://Scripts/Counter.gd" id="5_fxr36"]
 [ext_resource type="Script" path="res://Scripts/Debug.gd" id="6_ea81n"]
 [ext_resource type="Theme" uid="uid://unui6pba6fad" path="res://Resources/Fonts/pixelStyle.tres" id="7_cxpeq"]
-[ext_resource type="PackedScene" uid="uid://cql651stfsgnk" path="res://Scenes/Objects/house.tscn" id="8_cky2a"]
 [ext_resource type="PackedScene" uid="uid://bd7t4yxnx7do1" path="res://Scenes/Objects/Resources/Material/Stone/stone.tscn" id="9_q4mj4"]
 [ext_resource type="PackedScene" uid="uid://iu036fe11crv" path="res://Scenes/Objects/craftingstation.tscn" id="10_rr77j"]
 [ext_resource type="PackedScene" uid="uid://dokb05pj6cmhv" path="res://Scenes/Objects/Resources/Material/Ore/Iron/iron.tscn" id="11_6rfyx"]
@@ -129,8 +128,18 @@ theme = ExtResource("7_cxpeq")
 text = "100 Fps"
 horizontal_alignment = 2
 
-[node name="House" parent="." instance=ExtResource("8_cky2a")]
+[node name="House" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -16.9994, 0.00100008, -20.933)
+script = null
 
 [node name="stone" parent="." instance=ExtResource("9_q4mj4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -0.634912, -6)

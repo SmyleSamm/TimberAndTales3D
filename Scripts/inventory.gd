@@ -16,7 +16,7 @@ func _ready() -> void:
 	
 	
 func checkHSize() -> void:
-	# TODO: Check via size how many can fit in it 
+	# TODO: Check via size of button and container how many can fit in it
 	if columns > 4:
 		printerr("There are to many columns! Max size is 4")
 		print("Resizing is necesarry!")
