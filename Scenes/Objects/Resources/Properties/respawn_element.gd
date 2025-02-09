@@ -1,0 +1,1 @@
+class_name RespawnElement extends StaticBody3D

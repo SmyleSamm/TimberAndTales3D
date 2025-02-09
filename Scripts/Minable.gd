@@ -3,11 +3,18 @@ class_name Minable extends StaticBody3D
 signal destroyed
 
 var health: int
-@export var maxHealth: int
-@export var strenght: int
+
+@export_subgroup("Properties")
+@export_range(0,1000, 1, "or_greater") var maxHealth: int
+@export_range(0,5,0.9) var strenght: int
+@export_subgroup("Minable")
 @export var requiresTool: bool
 @export var resourceType: ToolType
 @export var resources: Array[ItemDrops]
+@export_subgroup("Respawn")
+@export var canRespawn: bool
+@export var respawnElement: RespawnElement
+@export_range(0,200,0.9, "or_greater") var respawnTime: int
 
 func _ready() -> void:
 	health = maxHealth

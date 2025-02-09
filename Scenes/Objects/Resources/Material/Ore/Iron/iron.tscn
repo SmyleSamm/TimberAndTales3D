@@ -20,8 +20,6 @@ maxCount = 20
 
 [node name="Iron" type="StaticBody3D"]
 script = ExtResource("1_try84")
-maxHealth = 500
-strenght = 2
 requiresTool = true
 resourceType = ExtResource("2_4uvvg")
 resources = Array[ExtResource("2_txd3d")]([SubResource("Resource_2ptde"), SubResource("Resource_m6vd7")])

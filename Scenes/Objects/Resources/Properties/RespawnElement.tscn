@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dy8j1xyi8352k"]
+
+[ext_resource type="Script" path="res://Scenes/Objects/Resources/Properties/respawn_element.gd" id="1_grfun"]
+
+[node name="RespawnElement" type="StaticBody3D"]
+script = ExtResource("1_grfun")
