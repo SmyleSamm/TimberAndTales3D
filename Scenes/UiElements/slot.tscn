@@ -1,19 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://clwjk5lher1n5"]
 
 [ext_resource type="Script" path="res://Scripts/Slot.gd" id="1_21bsb"]
-[ext_resource type="Theme" uid="uid://unui6pba6fad" path="res://Resources/Fonts/pixelStyle.tres" id="2_phgto"]
+[ext_resource type="Resource" uid="uid://baqhdbi5qhl4c" path="res://Resources/ItemData/iron.tres" id="2_xn854"]
 
 [node name="Slot" type="Button"]
+custom_minimum_size = Vector2(32, 32)
 offset_right = 32.0
 offset_bottom = 32.0
 script = ExtResource("1_21bsb")
-
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 7.0
-offset_top = 22.0
-offset_right = 91.0
-offset_bottom = 54.0
-scale = Vector2(0.3, 0.3)
-theme = ExtResource("2_phgto")
-text = "999"
+item = ExtResource("2_xn854")

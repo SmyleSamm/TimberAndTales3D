@@ -102,9 +102,10 @@ func getRowOfSlot(slotID: int, slotHeight: int) -> int:
 	return row
 
 func updateInventory() -> void:
+	var len: int = columns * depth
+	for i in range(len):
+		updateSlot(i+1)
 	pass
-
-#FIXME: Slot only has a icon, thus nothing is displayed
 
 func updateSlot(slotID: int) -> void:
 	var slot: Slot = getSlot(slotID)
@@ -118,6 +119,7 @@ func fillInv() -> void:
 		print("Filling inv on index: ",i)
 		var item: Item = load("res://Resources/ItemData/wood.tres")
 		item.stackSize = randi_range(0, 999)
+		print(item.stackSize)
 		addItem(item, i)
 		updateSlot(i)
 	for i in range(10, 17):
@@ -125,3 +127,15 @@ func fillInv() -> void:
 		var item: Item = load("res://Resources/ItemData/wood.tres")
 		addItem(item, i)
 	pass
+
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("interact"):
+		var slot: Slot = getSlot(2)
+		slot.item.stackSize += 1
+		updateSlot(2)
+	if Input.is_action_just_pressed("inventory"):
+		var slot: Slot = getSlot(3)
+		slot.item.stackSize += 1
+		updateSlot(3)
+	if Input.is_action_just_pressed("ui_accept"):
+		updateInventory()

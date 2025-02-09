@@ -6,8 +6,8 @@
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_8rsrq")
-columns = 16
-depth = 1
+columns = 4
+depth = 8
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 0
