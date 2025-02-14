@@ -8,11 +8,13 @@ extends Control
 var slots: Array = []
 var items: Array = []
 
+#const slotsCount: int = _getTotalSlotCount()
+
 func _ready() -> void:
 	checkHSize()
 	gc.columns = columns
 	init()
-	#hide()
+	hide()
 	fillInv()
 
 func checkHSize() -> void:
@@ -44,16 +46,32 @@ func init() -> void:
 		slots.append(columSlots)
 
 #TODO: Check if inventory is big enough (out of bounds)
-func addItem(item: Item, slotID: int) -> void:
-	if slotID != -1:
-		if checkIfSlotIsEmpty(slotID):
-			setItem(slotID, item)
-		else:
-			printerr("Slot is already filled!")
-	else:
-		pass
-	pass
+func addItem(item: Item, stackSize: int) -> void:
+	var check: int = checkIfItemInInventory(item)
+	if check == -1:
+		var emptySlot: int = getEmptySlot()
+		setItem(emptySlot, item)
+		check = emptySlot
+	var slot: Slot = getSlot(check)
+	slot.changeSlotSize(stackSize)
 
+func checkIfItemInInventory(item: Item) -> int: #-1 = not in inv
+	var slotID: int = 1
+	for i in slots:
+		for n in i:
+			if n.item == item:
+				return slotID
+			slotID += 1
+	return -1
+
+func getEmptySlot() -> int: #-1 = no empty slot
+	var slotsCount: int = columns * depth
+	for i in range(slotsCount):
+		i += 1
+		if checkIfSlotIsEmpty(i):
+			return i
+	return -1
+	
 func setItem(slotID: int, item: Item) -> void:
 	var slotCoords: Array[int] = getSlotCoords(slotID)
 	var slot: Slot = slots[slotCoords[0] - 1][slotCoords[1] - 1]
@@ -62,7 +80,6 @@ func setItem(slotID: int, item: Item) -> void:
 
 func checkIfSlotIsEmpty(slotID: int) -> bool:
 	var slotCoords: Array[int] = getSlotCoords(slotID)
-	print(slotCoords)
 	var item: Item = getItemInSlot(slotCoords[0], slotCoords[1])
 	return item.name == "Hand"
 
@@ -109,33 +126,20 @@ func updateInventory() -> void:
 
 func updateSlot(slotID: int) -> void:
 	var slot: Slot = getSlot(slotID)
-	print(slot.item.stackSize)
 	slot.updateLabel()
-	pass
-
 
 func fillInv() -> void:
 	for i in range(1, 10):
-		print("Filling inv on index: ",i)
 		var item: Item = load("res://Resources/ItemData/wood.tres")
-		item.stackSize = randi_range(0, 999)
-		print(item.stackSize)
-		addItem(item, i)
+		#var stackSize = randi_range(0, 999)
+		addItem(item, 1)
 		updateSlot(i)
 	for i in range(10, 17):
-		print("Filling inv on index: ",i)
+		var item: Item = load("res://Resources/ItemData/stone.tres")
+		addItem(item, 1)
+	for i in range(1, 10):
 		var item: Item = load("res://Resources/ItemData/wood.tres")
-		addItem(item, i)
+		#var stackSize = randi_range(0, 999)
+		addItem(item, 1)
+		updateSlot(i)
 	pass
-
-func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("interact"):
-		var slot: Slot = getSlot(2)
-		slot.item.stackSize += 1
-		updateSlot(2)
-	if Input.is_action_just_pressed("inventory"):
-		var slot: Slot = getSlot(3)
-		slot.item.stackSize += 1
-		updateSlot(3)
-	if Input.is_action_just_pressed("ui_accept"):
-		updateInventory()

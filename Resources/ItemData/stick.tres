@@ -7,4 +7,4 @@
 script = ExtResource("1_tcvo2")
 name = "stick"
 icon = ExtResource("1_lt4ga")
-maxStackSize = 999999
+maxStackSize = 999
