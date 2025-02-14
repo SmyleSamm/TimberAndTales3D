@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://e6pau3e4hnrl"]
+[gd_scene load_steps=12 format=3 uid="uid://e6pau3e4hnrl"]
 
 [ext_resource type="Script" path="res://Scripts/tree.gd" id="1_7vrpj"]
 [ext_resource type="Script" path="res://Scripts/Resources/ItemDrops.gd" id="2_iuwd5"]
@@ -6,6 +6,9 @@
 [ext_resource type="Material" uid="uid://b0i38if3u3uka" path="res://Resources/Material/treeStump.tres" id="2_v0vbb"]
 [ext_resource type="Material" uid="uid://v5bv2j1jd5qx" path="res://Resources/Material/treeLeaves.tres" id="3_7are7"]
 [ext_resource type="Resource" uid="uid://cdm73wjuahi2v" path="res://Resources/ItemData/wood.tres" id="3_f0q1g"]
+[ext_resource type="Script" path="res://Scenes/Objects/Resources/Trees/StandardTree/tree.gd" id="5_lc18e"]
+[ext_resource type="PackedScene" uid="uid://bu8yf3e5q8njx" path="res://Scenes/Objects/Resources/Trees/StandardTree/tree_stump.tscn" id="7_0u8kr"]
+[ext_resource type="Script" path="res://Scenes/Objects/Resources/Properties/respawn_element.gd" id="8_88yes"]
 
 [sub_resource type="Resource" id="Resource_br3me"]
 script = ExtResource("2_iuwd5")
@@ -15,25 +18,37 @@ maxCount = 50
 [sub_resource type="SphereShape3D" id="SphereShape3D_b04fe"]
 radius = 0.379919
 
-[node name="Tree" type="StaticBody3D"]
+[node name="Tree" type="StaticBody3D" node_paths=PackedStringArray("respawnElement", "normalElement")]
 script = ExtResource("1_7vrpj")
 maxHealth = 50
 resourceType = ExtResource("2_r252k")
 resources = Array[ExtResource("2_iuwd5")]([SubResource("Resource_br3me")])
+canRespawn = true
+respawnElement = NodePath("RespawnMinableElement")
+normalElement = NodePath("NormalMinableElement")
+respawnTime = 3
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+[node name="NormalMinableElement" type="Node3D" parent="."]
+script = ExtResource("5_lc18e")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="NormalMinableElement"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 material_override = ExtResource("2_v0vbb")
 use_collision = true
 
-[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
+[node name="CSGSphere3D" type="CSGSphere3D" parent="NormalMinableElement"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 material_override = ExtResource("3_7are7")
 use_collision = true
 radius = 1.452
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NormalMinableElement"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.530876, 0)
 shape = SubResource("SphereShape3D_b04fe")
+
+[node name="RespawnMinableElement" type="Node3D" parent="."]
+script = ExtResource("8_88yes")
+
+[node name="tree_stump" parent="RespawnMinableElement" instance=ExtResource("7_0u8kr")]
 
 [connection signal="destroyed" from="." to="." method="_on_destroyed"]

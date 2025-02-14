@@ -11,7 +11,7 @@ var activeSlot: Slot
 func _ready() -> void:
 	for i in range(9):
 		var slot: Slot = Slot.new()
-		var tool: Tool = preload("res://Resources/Tools/hand.tres")
+		var tool: Tool = load("res://Resources/Tools/hand.tres")
 		slot.item = tool
 		gC.add_child(slot)
 	

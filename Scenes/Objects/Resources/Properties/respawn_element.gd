@@ -1,1 +1,1 @@
-class_name RespawnElement extends StaticBody3D
+class_name RespawnMinableElement extends Node3D

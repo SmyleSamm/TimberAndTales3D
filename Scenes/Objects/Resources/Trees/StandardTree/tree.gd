@@ -1,0 +1,1 @@
+class_name NormalMinableElement extends Node3D
