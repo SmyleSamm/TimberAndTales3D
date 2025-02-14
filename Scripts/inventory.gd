@@ -1,4 +1,4 @@
-extends Control
+class_name Inventory extends Control
 
 @export var columns: int
 @export var depth: int
@@ -15,7 +15,7 @@ func _ready() -> void:
 	gc.columns = columns
 	init()
 	hide()
-	fillInv()
+	#fillInv()
 
 func checkHSize() -> void:
 	# TODO: Check via size of button and container how many can fit in it
@@ -45,6 +45,38 @@ func init() -> void:
 			columSlots.append(slot)
 		slots.append(columSlots)
 
+func smartAddItem(item: Item, stackSize: int) -> void:
+	var check: int = smartInventoryItemInsert(item, stackSize)
+	if check == -1:
+		var emptySlot: int = getEmptySlot()
+		setItem(emptySlot, item)
+		smartAddItem(item, stackSize)
+		updateSlot(emptySlot)
+	elif check != 0:
+		smartAddItem(item, check)
+
+func smartInventoryItemInsert(item: Item, stackSize: int) -> int:
+	var currentStackSize: int = stackSize
+	for i in slots:
+		for n in i:
+			if n.item == item:
+				if n.slotSize < n.item.maxStackSize:
+					if n.slotSize + currentStackSize <= n.item.maxStackSize:
+						n.changeSlotSize(currentStackSize)
+						return 0
+					else:
+						var remainder: int = n.item.maxStackSize - n.slotSize
+						currentStackSize -= remainder
+						n.changeSlotSize(remainder)
+						var check: int = smartInventoryItemInsert(item, currentStackSize)
+						if check == -1:
+							var emptySlot: int = getEmptySlot()
+							setItem(emptySlot, item)
+							smartAddItem(item, currentStackSize)
+							updateSlot(emptySlot)
+						return 0
+	return -1
+
 #TODO: Check if inventory is big enough (out of bounds)
 func addItem(item: Item, stackSize: int) -> void:
 	var check: int = checkIfItemInInventory(item)
@@ -54,15 +86,21 @@ func addItem(item: Item, stackSize: int) -> void:
 		check = emptySlot
 	var slot: Slot = getSlot(check)
 	slot.changeSlotSize(stackSize)
-
+	print(slot.slotSize)
+	updateSlot(check)
+	
 func checkIfItemInInventory(item: Item) -> int: #-1 = not in inv
 	var slotID: int = 1
 	for i in slots:
 		for n in i:
 			if n.item == item:
-				return slotID
+				#TODO: if not allready maxStackSize, check how much can be added
+				if n.slotSize < n.item.maxStackSize:
+					return slotID
+				print("Stack is to big!")
 			slotID += 1
 	return -1
+
 
 func getEmptySlot() -> int: #-1 = no empty slot
 	var slotsCount: int = columns * depth
@@ -129,17 +167,27 @@ func updateSlot(slotID: int) -> void:
 	slot.updateLabel()
 
 func fillInv() -> void:
-	for i in range(1, 10):
-		var item: Item = load("res://Resources/ItemData/wood.tres")
+	var item: Item = load("res://Resources/ItemData/wood.tres")
+	var item1: Item = load("res://Resources/ItemData/stone.tres")
+	smartAddItem(item, 1999)
+	smartAddItem(item1, 2999)
+	smartAddItem(item, 2000)
+
+#func fillInv() -> void:
+	#for i in range(1, 10):
+		#var item: Item = load("res://Resources/ItemData/wood.tres")
 		#var stackSize = randi_range(0, 999)
-		addItem(item, 1)
-		updateSlot(i)
-	for i in range(10, 17):
-		var item: Item = load("res://Resources/ItemData/stone.tres")
-		addItem(item, 1)
-	for i in range(1, 10):
-		var item: Item = load("res://Resources/ItemData/wood.tres")
+		##addItem(item, stackSize)
+		#smartAddItem(item, stackSize)
+	#for i in range(10, 17):
+		#var item: Item = load("res://Resources/ItemData/stone.tres")
+		##addItem(item, 1)
 		#var stackSize = randi_range(0, 999)
-		addItem(item, 1)
-		updateSlot(i)
-	pass
+		#smartAddItem(item, stackSize)
+	#for i in range(1, 10):
+		#var item: Item = load("res://Resources/ItemData/wood.tres")
+		#var stackSize = randi_range(0, 999)
+		##addItem(item, 1)
+		#smartAddItem(item, stackSize)
+		#updateSlot(i)
+	#pass

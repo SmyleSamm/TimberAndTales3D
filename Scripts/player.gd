@@ -115,7 +115,7 @@ func attack() -> void:
 		target = target.get_parent()
 	
 	if target is Minable:
-		target.hit(hotbar.getAttack())
+		target.hit(hotbar.getAttack(), inventory)
 
 func interact() -> void:
 	if not look.is_colliding():

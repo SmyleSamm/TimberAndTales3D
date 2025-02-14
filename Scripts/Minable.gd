@@ -3,6 +3,7 @@ class_name Minable extends StaticBody3D
 signal destroyed
 
 var health: int
+var inventory
 
 #TODO: refactor code to fit new export variables
 
@@ -21,7 +22,8 @@ var health: int
 func _ready() -> void:
 	health = maxHealth
 	
-func hit(attack: Attack):
+func hit(attack: Attack, inv: Inventory):
+	inventory = inv
 	if _canAttack(attack):
 		_attack(attack)
 		_changeResources(attack)
@@ -72,7 +74,8 @@ func _changeResources(attack: Attack) -> void:
 			i.count = i.maxCount
 		var expected_count = round(i.maxCount * float(health) / float(maxHealth))
 		var reduction = i.count - expected_count
-		World.changeResources(i.item, reduction)
+		inventory.smartAddItem(i.item, reduction)
+		#World.changeResources(i.item, reduction)
 		i.count = expected_count
 		
 func get_resources() -> Array[Item]:
