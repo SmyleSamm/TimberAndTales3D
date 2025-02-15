@@ -113,10 +113,10 @@ func attack() -> void:
 	
 	if target is not Minable:
 		target = target.get_parent()
-	
 	if target is not Minable:
 		target = target.get_parent()
-	
+	if target is not Minable:
+		target = target.get_parent()
 	if target is Minable:
 		target.registerInteraction(hotbar.getAttack(), inventory)
 

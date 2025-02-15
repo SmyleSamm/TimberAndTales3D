@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://bd7t4yxnx7do1" path="res://Scenes/Objects/Resources/Material/Stone/stone.tscn" id="9_q4mj4"]
 [ext_resource type="PackedScene" uid="uid://iu036fe11crv" path="res://Scenes/Objects/craftingstation.tscn" id="10_rr77j"]
 [ext_resource type="PackedScene" uid="uid://dokb05pj6cmhv" path="res://Scenes/Objects/Resources/Material/Ore/Iron/iron.tscn" id="11_6rfyx"]
-[ext_resource type="PackedScene" uid="uid://dtp8cdy3urkv0" path="res://Scenes/Objects/Resources/Material/Stone/rock.tscn" id="12_2yk8j"]
 [ext_resource type="PackedScene" uid="uid://c6itjrq5dxh12" path="res://Scenes/Objects/craftingstation_broken.tscn" id="13_trhgf"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_b0xu3"]
@@ -31,6 +30,19 @@ albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qecr4"]
 albedo_color = Color(0.586248, 0.674024, 0.419304, 1)
+
+[sub_resource type="GDScript" id="GDScript_0kwdg"]
+script/source = "extends Minable
+
+func spawn_stone_broken() -> void:
+	var stone_broken = preload(\"res://Scenes/Objects/Resources/Material/Stone/stone_broken.tscn\")
+	var instance = stone_broken.instantiate()
+	instance.position = position
+	get_parent().add_child(instance)
+
+func _on_destroyed() -> void:
+	spawn_stone_broken()
+"
 
 [node name="World" type="Node3D" node_paths=PackedStringArray("counter")]
 script = ExtResource("1_1o5yq")
@@ -130,6 +142,7 @@ horizontal_alignment = 2
 
 [node name="stone" parent="." instance=ExtResource("9_q4mj4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -0.634912, -6)
+script = SubResource("GDScript_0kwdg")
 
 [node name="craftingstation" parent="." instance=ExtResource("10_rr77j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5493, -0.498899, -11.011)
@@ -137,11 +150,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5493, -0.498899, -11.011)
 [node name="Iron" parent="." instance=ExtResource("11_6rfyx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.45267, -0.630341, -6.12173)
 
-[node name="Rock" parent="." instance=ExtResource("12_2yk8j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -0.5, -8)
-
 [node name="craftingstation_broken" parent="." instance=ExtResource("13_trhgf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, -0.5, -15)
-
-[node name="Rock2" parent="." instance=ExtResource("12_2yk8j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -0.51044, -10.2929)

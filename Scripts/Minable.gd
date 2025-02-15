@@ -2,7 +2,6 @@ class_name Minable extends StaticBody3D
 
 signal destroyed
 
-#TODO: refactor code to fit new export variables
 @export_subgroup("Properties")
 @export_range(0,1000, 1, "or_greater") var maxHealth: int
 @export_range(0,5,0.9) var strength: int
@@ -19,7 +18,8 @@ signal destroyed
 var health: int
 var inventory: Inventory
 var attack: Attack
-
+var resourceCounts: Array[int] = []
+var isRespawning: bool
 
 func _ready() -> void:
 	hideRespawnObject()
@@ -41,28 +41,27 @@ func gettingHit() -> void:
 	checkHealthRequirements()
 
 func takeDamage() -> void:
-	print(health)
 	health -= attack.base_damage
 	if health <= 0:
 		health = 0
 
-#FIXME: Item count is not being calculated correctly
 func dropItems() -> void:
-	for i in resources:
-		if not i.count:
-			i.count = i.maxCount
-		var expected_count = round(i.maxCount * float(health) / float(maxHealth))
-		var reduction = i.count - expected_count
-		print("Count: ",i.count)
-		print("Reduction: ",reduction)
-		print("ExpectedCount: ",expected_count)
-		inventory.smartAddItem(i.item, reduction)
-		#World.changeResources(i.item, reduction)
-		i.count = expected_count
-	pass
+	for i in len(resources):
+		var expected_count: int = round(resources[i].maxCount * float(health) / float(maxHealth))
+		var reduction: int = resourceCounts[i] - expected_count
+		resourceCounts[i] = expected_count
+		inventory.smartAddItem(resources[i].item, reduction)
+
+func initializeResourceCount() -> void:
+	if len(resourceCounts) <= 0:
+		for i in range(len(resources)):
+			resourceCounts.append(resources[i].maxCount)
+	else:
+		for i in range(len(resources)):
+			resourceCounts[i] = resources[i].maxCount
 
 func checkHealthRequirements() -> void:
-	if health <= 0:
+	if health <= 0 && not isRespawning:
 		respawn()
 
 func checkToolRequirements() -> bool:
@@ -76,6 +75,7 @@ func checkBaseTypeRequirements() -> bool:
 		return checkWithToolRequirement()
 	return checkNoToolRequirement()
 
+#FIXME: Check no Tool requirement
 func checkNoToolRequirement() -> bool:
 	#var hand: ToolType = load("res://Resources/Tools/hand.tres")
 	#if attack.base_type == hand:
@@ -104,6 +104,7 @@ func checkRespawnRequirements() -> bool:
 	return true
 
 func showRespawnObject() -> void:
+	isRespawning = true
 	if respawnElement:
 		respawnElement.show()
 	if normalElement:
@@ -111,6 +112,8 @@ func showRespawnObject() -> void:
 
 func hideRespawnObject() -> void:
 	self.health = maxHealth
+	initializeResourceCount()
+	isRespawning = false
 	if respawnElement:
 		respawnElement.hide()
 	if normalElement:

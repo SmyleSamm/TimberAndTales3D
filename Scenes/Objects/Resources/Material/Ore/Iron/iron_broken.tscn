@@ -1,11 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cob13ppigox6l"]
+[gd_scene load_steps=3 format=3 uid="uid://cob13ppigox6l"]
 
-[ext_resource type="Script" path="res://Scenes/Objects/Resources/Material/Ore/Iron/iron_broken.gd" id="1_4ckuq"]
 [ext_resource type="Material" uid="uid://b6hbsglx7kxke" path="res://Resources/Material/stone.tres" id="2_j0lvb"]
 [ext_resource type="Material" uid="uid://c1wobt1t0tqfy" path="res://Resources/Material/iron.tres" id="3_0etiu"]
 
 [node name="IronBrocken" type="StaticBody3D"]
-script = ExtResource("1_4ckuq")
 
 [node name="Stone" type="CSGCombiner3D" parent="."]
 material_override = ExtResource("2_j0lvb")

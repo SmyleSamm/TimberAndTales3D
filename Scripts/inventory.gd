@@ -45,6 +45,7 @@ func init() -> void:
 			columSlots.append(slot)
 		slots.append(columSlots)
 
+#FIXME: Check if inventory is full or not (Out of bounds error!)
 func smartAddItem(item: Item, stackSize: int) -> void:
 	var check: int = smartInventoryItemInsert(item, stackSize)
 	if check == -1:
@@ -76,31 +77,6 @@ func smartInventoryItemInsert(item: Item, stackSize: int) -> int:
 							updateSlot(emptySlot)
 						return 0
 	return -1
-
-#TODO: Check if inventory is big enough (out of bounds)
-func addItem(item: Item, stackSize: int) -> void:
-	var check: int = checkIfItemInInventory(item)
-	if check == -1:
-		var emptySlot: int = getEmptySlot()
-		setItem(emptySlot, item)
-		check = emptySlot
-	var slot: Slot = getSlot(check)
-	slot.changeSlotSize(stackSize)
-	print(slot.slotSize)
-	updateSlot(check)
-	
-func checkIfItemInInventory(item: Item) -> int: #-1 = not in inv
-	var slotID: int = 1
-	for i in slots:
-		for n in i:
-			if n.item == item:
-				#TODO: if not allready maxStackSize, check how much can be added
-				if n.slotSize < n.item.maxStackSize:
-					return slotID
-				print("Stack is to big!")
-			slotID += 1
-	return -1
-
 
 func getEmptySlot() -> int: #-1 = no empty slot
 	var slotsCount: int = columns * depth

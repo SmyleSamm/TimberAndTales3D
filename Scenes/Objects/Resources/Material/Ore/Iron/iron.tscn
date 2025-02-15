@@ -1,116 +1,131 @@
-[gd_scene load_steps=10 format=3 uid="uid://dokb05pj6cmhv"]
+[gd_scene load_steps=13 format=3 uid="uid://dokb05pj6cmhv"]
 
+[ext_resource type="Script" path="res://Scripts/Minable.gd" id="1_7hsgi"]
 [ext_resource type="Material" uid="uid://b6hbsglx7kxke" path="res://Resources/Material/stone.tres" id="1_qmicv"]
-[ext_resource type="Script" path="res://Scripts/iron.gd" id="1_try84"]
 [ext_resource type="Resource" uid="uid://cfbanx6cyi31e" path="res://Resources/Types/stoneType.tres" id="2_4uvvg"]
 [ext_resource type="Script" path="res://Scripts/Resources/ItemDrops.gd" id="2_txd3d"]
 [ext_resource type="Resource" uid="uid://pbobc08r3bgc" path="res://Resources/ItemData/stone.tres" id="3_4rudx"]
 [ext_resource type="Resource" uid="uid://baqhdbi5qhl4c" path="res://Resources/ItemData/iron.tres" id="4_02x07"]
+[ext_resource type="Script" path="res://Scenes/Objects/Resources/Properties/respawn_element.gd" id="6_j7rl5"]
 [ext_resource type="Material" uid="uid://c1wobt1t0tqfy" path="res://Resources/Material/iron.tres" id="7_axb8y"]
+[ext_resource type="PackedScene" uid="uid://cob13ppigox6l" path="res://Scenes/Objects/Resources/Material/Ore/Iron/iron_broken.tscn" id="7_govvj"]
+[ext_resource type="Script" path="res://Scripts/NomalElement.gd" id="8_sjqet"]
 
-[sub_resource type="Resource" id="Resource_2ptde"]
+[sub_resource type="Resource" id="Resource_ibnw7"]
 script = ExtResource("2_txd3d")
 item = ExtResource("3_4rudx")
 maxCount = 100
 
-[sub_resource type="Resource" id="Resource_m6vd7"]
+[sub_resource type="Resource" id="Resource_ub2oa"]
 script = ExtResource("2_txd3d")
 item = ExtResource("4_02x07")
 maxCount = 20
 
-[node name="Iron" type="StaticBody3D"]
-script = ExtResource("1_try84")
+[node name="Iron" type="StaticBody3D" node_paths=PackedStringArray("respawnElement", "normalElement")]
+script = ExtResource("1_7hsgi")
+maxHealth = 500
+strength = 2
 requiresTool = true
 resourceType = ExtResource("2_4uvvg")
-resources = Array[ExtResource("2_txd3d")]([SubResource("Resource_2ptde"), SubResource("Resource_m6vd7")])
+resources = Array[ExtResource("2_txd3d")]([SubResource("Resource_ibnw7"), SubResource("Resource_ub2oa")])
+canRespawn = true
+respawnElement = NodePath("RespawnMinableElement")
+normalElement = NodePath("NormalMinableElement")
+respawnTime = 3
 
-[node name="Iron" type="CSGCombiner3D" parent="."]
+[node name="RespawnMinableElement" type="Node3D" parent="."]
+script = ExtResource("6_j7rl5")
+
+[node name="IronBrocken" parent="RespawnMinableElement" instance=ExtResource("7_govvj")]
+
+[node name="NormalMinableElement" type="Node3D" parent="."]
+script = ExtResource("8_sjqet")
+
+[node name="Iron" type="CSGCombiner3D" parent="NormalMinableElement"]
 material_override = ExtResource("1_qmicv")
 use_collision = true
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Iron"]
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="NormalMinableElement/Iron"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.311569, 0)
 material_override = ExtResource("1_qmicv")
 height = 0.623138
 
-[node name="CSGSphere3D" type="CSGSphere3D" parent="Iron"]
+[node name="CSGSphere3D" type="CSGSphere3D" parent="NormalMinableElement/Iron"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.607309, 0)
 material_override = ExtResource("1_qmicv")
 radius = 0.619172
 
-[node name="CSGSphere3D2" type="CSGSphere3D" parent="Iron"]
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="NormalMinableElement/Iron"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.387446, -0.0130635, 0)
 material_override = ExtResource("1_qmicv")
 radius = 0.549656
 
-[node name="CSGSphere3D3" type="CSGSphere3D" parent="Iron"]
+[node name="CSGSphere3D3" type="CSGSphere3D" parent="NormalMinableElement/Iron"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.128168, -0.462588)
 material_override = ExtResource("1_qmicv")
 radius = 0.413442
 
-[node name="CSGSphere3D4" type="CSGSphere3D" parent="Iron"]
+[node name="CSGSphere3D4" type="CSGSphere3D" parent="NormalMinableElement/Iron"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.277549, 0.22268, 0)
 material_override = ExtResource("1_qmicv")
 radius = 0.528489
 
-[node name="CSGSphere3D5" type="CSGSphere3D" parent="Iron"]
+[node name="CSGSphere3D5" type="CSGSphere3D" parent="NormalMinableElement/Iron"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0956498, 0.173871, 0.224598)
 radius = 0.550793
 
-[node name="Ore" type="CSGCombiner3D" parent="."]
+[node name="Ore" type="CSGCombiner3D" parent="NormalMinableElement"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.5)
 material_override = ExtResource("7_axb8y")
 
-[node name="CSGSphere3D" type="CSGSphere3D" parent="Ore"]
+[node name="CSGSphere3D" type="CSGSphere3D" parent="NormalMinableElement/Ore"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7, -0.2, -0.5)
 radius = 0.136581
 
-[node name="CSGSphere3D2" type="CSGSphere3D" parent="Ore"]
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="NormalMinableElement/Ore"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.3, -0.45)
 radius = 0.136581
 
-[node name="CSGSphere3D3" type="CSGSphere3D" parent="Ore"]
+[node name="CSGSphere3D3" type="CSGSphere3D" parent="NormalMinableElement/Ore"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 0.3, 0)
 radius = 0.136581
 
-[node name="CSGSphere3D4" type="CSGSphere3D" parent="Ore"]
+[node name="CSGSphere3D4" type="CSGSphere3D" parent="NormalMinableElement/Ore"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45, 0, -0.2)
 radius = 0.136581
 
-[node name="CSGSphere3D5" type="CSGSphere3D" parent="Ore"]
+[node name="CSGSphere3D5" type="CSGSphere3D" parent="NormalMinableElement/Ore"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 0.4, -0.3)
 radius = 0.136581
 
-[node name="CSGSphere3D6" type="CSGSphere3D" parent="Ore"]
+[node name="CSGSphere3D6" type="CSGSphere3D" parent="NormalMinableElement/Ore"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35, -0.15, 0.05)
 radius = 0.136581
 
-[node name="CSGSphere3D7" type="CSGSphere3D" parent="Ore"]
+[node name="CSGSphere3D7" type="CSGSphere3D" parent="NormalMinableElement/Ore"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 0, -0.2)
 radius = 0.136581
 
-[node name="CSGSphere3D8" type="CSGSphere3D" parent="Ore"]
+[node name="CSGSphere3D8" type="CSGSphere3D" parent="NormalMinableElement/Ore"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7, -0.2, -0.5)
 radius = 0.136581
 
-[node name="CSGSphere3D9" type="CSGSphere3D" parent="Ore"]
+[node name="CSGSphere3D9" type="CSGSphere3D" parent="NormalMinableElement/Ore"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05, 0.6, -0.8)
 radius = 0.136581
 
-[node name="CSGSphere3D10" type="CSGSphere3D" parent="Ore"]
+[node name="CSGSphere3D10" type="CSGSphere3D" parent="NormalMinableElement/Ore"]
 transform = Transform3D(0.996195, 0.0871557, 0, -0.0871557, 0.996195, 0, 0, 0, 1, 0.7, -0.2, -0.6)
 radius = 0.136581
 
-[node name="CSGSphere3D11" type="CSGSphere3D" parent="Ore"]
+[node name="CSGSphere3D11" type="CSGSphere3D" parent="NormalMinableElement/Ore"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0.15, -0.95)
 radius = 0.136581
 
-[node name="CSGSphere3D12" type="CSGSphere3D" parent="Ore"]
+[node name="CSGSphere3D12" type="CSGSphere3D" parent="NormalMinableElement/Ore"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35, -0.2, -0.85)
 radius = 0.136581
 
-[node name="CSGSphere3D13" type="CSGSphere3D" parent="Ore"]
+[node name="CSGSphere3D13" type="CSGSphere3D" parent="NormalMinableElement/Ore"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05, -0.2, -1.2)
 radius = 0.136581
-
-[connection signal="destroyed" from="." to="." method="_on_destroyed"]
