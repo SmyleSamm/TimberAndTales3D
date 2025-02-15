@@ -75,13 +75,10 @@ func checkBaseTypeRequirements() -> bool:
 		return checkWithToolRequirement()
 	return checkNoToolRequirement()
 
-#FIXME: Check no Tool requirement
 func checkNoToolRequirement() -> bool:
-	#var hand: ToolType = load("res://Resources/Tools/hand.tres")
-	#if attack.base_type == hand:
-		#return true
-	#return attack.base_type == resourceType
-	return true
+	if not attack.base_type:
+		return true
+	return attack.base_type == resourceType
 	
 func checkWithToolRequirement() -> bool:
 	return attack.base_type == resourceType
