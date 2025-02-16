@@ -16,8 +16,7 @@ func hasEnoughResources(modifier: int) -> bool:
 		var currentModifier: int = recipie.currentModifier + modifier
 		for n in getInv():
 			if i.item == n[0]:
-				print(i.item.name, " ", i.maxCount, " ", i.maxCount * modifier, " ", modifier, " ", n[1])
-				canCraft = i.maxCount * modifier <= n[1]
+				canCraft = i.maxCount * currentModifier <= n[1]
 		if not canCraft:
 			return false
 	return true

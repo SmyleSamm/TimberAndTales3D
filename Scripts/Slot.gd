@@ -5,7 +5,21 @@ class_name Slot extends Button
 @onready var counter: Label
 var slotSize: int = 0
 
+var heldDown: bool = false
+var holdingTexture: TextureRect
+var startCords: Vector2
+
+signal slot_hovered(slot: Slot)
+signal slot_dropped(slot: Slot)
+var inventory: Inventory
+
+
+#TODO: Items in slots can be moved
+
 func _ready() -> void:
+	button_down.connect(_on_button_down)
+	button_up.connect(_on_button_up)
+	
 	if item:
 		icon = item.icon
 		updateLabel()
@@ -51,3 +65,44 @@ func getCounterLabel() -> Label:
 	label.add_theme_constant_override("outline_size", 20)
 	label.add_theme_color_override("font_color", Color.WHITE_SMOKE)
 	return label
+
+
+func _process(delta: float) -> void:
+	pass
+	if heldDown:
+		holdingTexture.position = get_viewport().get_mouse_position() - startCords
+
+func connectSignalsAfterInit(inv: Inventory) -> void:
+	self.inventory = inv
+	connect("slot_dropped", inventory._on_slot_dropped)
+
+func _on_button_down() -> void:
+	if item and inventory:
+		holdingTexture = TextureRect.new()
+		holdingTexture.texture = icon
+		#holdingTexture.top_level = true
+		holdingTexture.z_index = 100
+		add_child(holdingTexture)
+		hideSlot()
+		heldDown = true
+		startCords = position + 2* size - size / 4
+		inventory.start_drag(item, self)
+	else:
+		printerr("No Item or inventory")
+
+func _on_button_up() -> void:
+	heldDown = false
+	holdingTexture.queue_free()
+	if inventory:
+		inventory.stop_drag()
+	else:
+		printerr("No inventory")
+
+func hideSlot() -> void:
+	counter.text = ""
+	icon = load("res://Resources/Tools/hand.tres").icon
+
+func changeCurrentSlot(slot: Slot) -> void:
+	#print("Changing slot from ", currentSlot, " to ",slot.name)
+	self.currentSlot = slot
+	print(self.name, "is recieving!")

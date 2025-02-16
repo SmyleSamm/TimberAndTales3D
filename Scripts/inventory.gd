@@ -8,6 +8,10 @@ class_name Inventory extends Control
 var slots: Array = []
 var items: Array = []
 
+
+var draggedItem: Item
+var originalSlot: Slot
+var hoveredSlot: Slot
 #const slotsCount: int = _getTotalSlotCount()
 
 func _ready() -> void:
@@ -40,8 +44,10 @@ func init() -> void:
 			var slot: Slot = Slot.new()
 			var tool: Tool = preload("res://Resources/Tools/hand.tres")
 			slot.item = tool
+			slot.connectSignalsAfterInit(self)
 			slot.updateLabel()
 			gc.add_child(slot)
+			slot.add_to_group("inventorySlots")
 			columSlots.append(slot)
 		slots.append(columSlots)
 
@@ -96,7 +102,9 @@ func setItem(slotID: int, item: Item) -> void:
 func checkIfSlotIsEmpty(slotID: int) -> bool:
 	var slotCoords: Array[int] = getSlotCoords(slotID)
 	var item: Item = getItemInSlotRaw(slotCoords[0], slotCoords[1])
-	return item.name == "Hand"
+	if item:
+		return item.name == "Hand"
+	return true
 
 func getItemCountInSlot(slotID: int) -> int:
 	var slot: Slot = getSlot(slotID)
@@ -181,3 +189,47 @@ func fillInv() -> void:
 		#smartAddItem(item, stackSize)
 		#updateSlot(i)
 	#pass
+
+
+func _process(delta: float) -> void:
+	if draggedItem:
+		var mousePos = get_viewport().get_mouse_position()
+		var newSlot = getSlotAtPosition(mousePos)
+		if newSlot:
+			hoveredSlot = newSlot
+			
+func getSlotAtPosition(pos: Vector2) -> Slot:
+	for slot in get_tree().get_nodes_in_group("inventorySlots"):
+		if slot.get_global_rect().has_point(pos):
+			return slot
+	return
+
+
+func start_drag(item: Item, slot: Slot) -> void:
+	draggedItem = item
+	originalSlot = slot
+	slot.item = null
+
+func stop_drag() -> void:
+	print("Dropped on: ", hoveredSlot.name)
+	if hoveredSlot and hoveredSlot != originalSlot:
+		hoveredSlot.item = draggedItem
+		hoveredSlot.icon = draggedItem.icon
+		hoveredSlot.slotSize = originalSlot.slotSize
+		originalSlot.item = load("res://Resources/Tools/hand.tres")
+		originalSlot.icon = load("res://Resources/Tools/hand.tres").icon
+		originalSlot.slotSize = 0
+	else:
+		originalSlot.item = draggedItem
+		originalSlot.icon = draggedItem.icon
+	
+	draggedItem = null
+	originalSlot = null
+	updateInventory()
+	
+func _on_slot_hovered(slot: Slot) -> void:
+	print(slot.name)
+	hoveredSlot = slot
+
+func _on_slot_dropped(slot: Slot) -> void:
+	print("Item dropped on slot: ",slot.name)

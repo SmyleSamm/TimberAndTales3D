@@ -41,6 +41,10 @@ folder_colors={
 "res://addons/": "red"
 }
 
+[global_group]
+
+inventorySlots=""
+
 [input]
 
 move_up={

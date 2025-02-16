@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://0wl8lb6hgc1o"]
+
+[ext_resource type="Script" path="res://Scripts/Slot.gd" id="1_h4y0x"]
+[ext_resource type="Resource" uid="uid://baqhdbi5qhl4c" path="res://Resources/ItemData/iron.tres" id="2_jvq87"]
+[ext_resource type="Resource" uid="uid://cpv4b1ncjdkf7" path="res://Resources/ItemData/plank.tres" id="3_8xyvc"]
+[ext_resource type="Resource" uid="uid://saiysckyeetu" path="res://Resources/Tools/hand.tres" id="4_5gsro"]
+
+[node name="Test" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+offset_left = 22.0
+offset_top = 19.0
+offset_right = 62.0
+offset_bottom = 59.0
+mouse_filter = 2
+
+[node name="Slot" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+script = ExtResource("1_h4y0x")
+item = ExtResource("2_jvq87")
+
+[node name="Slot2" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+script = ExtResource("1_h4y0x")
+item = ExtResource("3_8xyvc")
+
+[node name="Slot3" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+script = ExtResource("1_h4y0x")
+item = ExtResource("4_5gsro")

@@ -1,13 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://clwjk5lher1n5"]
+[gd_scene load_steps=2 format=3 uid="uid://clwjk5lher1n5"]
 
 [ext_resource type="Script" path="res://Scripts/Slot.gd" id="1_21bsb"]
-[ext_resource type="Resource" uid="uid://baqhdbi5qhl4c" path="res://Resources/ItemData/iron.tres" id="2_xn854"]
 
-[node name="Slot" type="Button"]
+[node name="Slot" type="Button" groups=["inventorySlots"]]
 custom_minimum_size = Vector2(32, 32)
 offset_right = 32.0
 offset_bottom = 32.0
 script = ExtResource("1_21bsb")
-item = ExtResource("2_xn854")
 
+[connection signal="button_down" from="." to="." method="_on_button_down"]
+[connection signal="button_up" from="." to="." method="_on_button_up"]
 [connection signal="pressed" from="." to="." method="_on_pressed"]
