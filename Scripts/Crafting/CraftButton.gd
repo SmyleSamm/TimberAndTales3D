@@ -7,19 +7,17 @@ func init(ui: Control, recipie: Recipe) -> void:
 	self.ui = ui
 	self.recipie = recipie
 
-func getInv() -> Array[Item]:
-	return World.getResources()
+func getInv() -> Array[Array]:
+	return World.getPlayerResources()
 
 func hasEnoughResources(modifier: int) -> bool:
-	if not getInv():
-		return false
-	var canCraft: bool = false
 	for i in recipie.requirements:
-		canCraft = false
-		modifier = recipie.currentModifier + modifier
+		var canCraft: bool = false
+		var currentModifier: int = recipie.currentModifier + modifier
 		for n in getInv():
-			if i.item.name == n.name:
-				canCraft = i.maxCount*modifier <= n.stackSize
+			if i.item == n[0]:
+				print(i.item.name, " ", i.maxCount, " ", i.maxCount * modifier, " ", modifier, " ", n[1])
+				canCraft = i.maxCount * modifier <= n[1]
 		if not canCraft:
 			return false
 	return true

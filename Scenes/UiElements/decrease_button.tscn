@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://d0b3pxi78n4w8"]
 
 [ext_resource type="Theme" uid="uid://unui6pba6fad" path="res://Resources/Fonts/pixelStyle.tres" id="1_dhsrb"]
-[ext_resource type="Script" path="res://Scripts/decrease_button.gd" id="2_ki8fb"]
+[ext_resource type="Script" path="res://Scripts/Crafting/decrease_button.gd" id="2_ki8fb"]
 
 [node name="DecreaseButton" type="Button"]
 custom_minimum_size = Vector2(30, 31)

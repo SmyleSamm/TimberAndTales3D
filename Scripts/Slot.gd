@@ -27,6 +27,11 @@ func updateLabel() -> void:
 	if slotSize > 1:
 		counter.show()
 		counter.text = labelText
+	elif slotSize <= 0:
+		var tool: Tool = preload("res://Resources/Tools/hand.tres")
+		item = tool
+		icon = item.icon
+		counter.hide()
 	else:
 		counter.hide()
 

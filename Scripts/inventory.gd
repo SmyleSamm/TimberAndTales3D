@@ -46,6 +46,7 @@ func init() -> void:
 		slots.append(columSlots)
 
 #FIXME: Check if inventory is full or not (Out of bounds error!)
+#FIXME: Remove item if count <= 0
 func smartAddItem(item: Item, stackSize: int) -> void:
 	var check: int = smartInventoryItemInsert(item, stackSize)
 	if check == -1:
@@ -94,10 +95,23 @@ func setItem(slotID: int, item: Item) -> void:
 
 func checkIfSlotIsEmpty(slotID: int) -> bool:
 	var slotCoords: Array[int] = getSlotCoords(slotID)
-	var item: Item = getItemInSlot(slotCoords[0], slotCoords[1])
+	var item: Item = getItemInSlotRaw(slotCoords[0], slotCoords[1])
 	return item.name == "Hand"
 
-func getItemInSlot(row: int, height: int) -> Item:
+func getItemCountInSlot(slotID: int) -> int:
+	var slot: Slot = getSlot(slotID)
+	if slot.item.name != "Hand":
+		return slot.slotSize
+	return 0
+
+func getItemInSlot(slotID: int) -> Item:
+	var slot: Slot = getSlot(slotID)
+	if slot.item.name != "Hand":
+		return slot.item
+	else:
+		return 
+
+func getItemInSlotRaw(row: int, height: int) -> Item:
 	var slot: Slot = getSlotRaw(row, height)
 	return slot.item
 

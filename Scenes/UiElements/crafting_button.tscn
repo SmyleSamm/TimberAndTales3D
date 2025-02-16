@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cebf46t8ec3vt"]
 
 [ext_resource type="Theme" uid="uid://unui6pba6fad" path="res://Resources/Fonts/pixelStyle.tres" id="1_56uqu"]
-[ext_resource type="Script" path="res://Scripts/CraftingButton.gd" id="1_g0h0d"]
+[ext_resource type="Script" path="res://Scripts/Crafting/CraftingButton.gd" id="1_g0h0d"]
 
 [node name="CraftingButton" type="Button"]
 custom_minimum_size = Vector2(60, 31)

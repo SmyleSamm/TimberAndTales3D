@@ -11,18 +11,14 @@ func interact() -> void:
 
 func _reduceResources() -> void:
 	for i in resources:
-		World.changeResources(i.item, -i.maxCount)
+		World.changePlayerResource(i.item, -i.maxCount)
+
+#FIXME: Potentially only works for single stack operations 
+#(if e.g. 1000 wood is need but player only has 999(full Stack) 
+#-> returns maybe true)
 
 func _canRepair() -> bool:
-	var canCraft: bool = true
-	var items: Array[Item] = World.getResources()
 	for i in resources:
-		var resource: Item = i.item
-		if resource in items:
-			for n in items:
-				if resource == n:
-					if i.maxCount > n.stackSize:
-						return false
-		else:
+		if not World.checkIfPlayerHasEnoughItems(i.item, i.maxCount):
 			return false
-	return canCraft
+	return true

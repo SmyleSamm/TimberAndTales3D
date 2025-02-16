@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://3s30hg2r1pym"]
 
 [ext_resource type="Theme" uid="uid://unui6pba6fad" path="res://Resources/Fonts/pixelStyle.tres" id="1_7ior4"]
-[ext_resource type="Script" path="res://Scripts/increase_button.gd" id="2_rou1r"]
+[ext_resource type="Script" path="res://Scripts/Crafting/increase_button.gd" id="2_rou1r"]
 
 [node name="IncreaseButton" type="Button"]
 custom_minimum_size = Vector2(30, 31)
