@@ -212,13 +212,20 @@ func start_drag(item: Item, slot: Slot) -> void:
 
 func stop_drag() -> void:
 	print("Dropped on: ", hoveredSlot.name)
+	print(checkIfTool(-1, hoveredSlot))
+	print(hoveredSlot.item)
 	if hoveredSlot and hoveredSlot != originalSlot:
+		var item: Item = hoveredSlot.item
+		var itemIcon: Texture2D = hoveredSlot.icon
+		var slotSize: int  = hoveredSlot.slotSize
+		
 		hoveredSlot.item = draggedItem
 		hoveredSlot.icon = draggedItem.icon
 		hoveredSlot.slotSize = originalSlot.slotSize
-		originalSlot.item = load("res://Resources/Tools/hand.tres")
-		originalSlot.icon = load("res://Resources/Tools/hand.tres").icon
-		originalSlot.slotSize = 0
+		
+		originalSlot.item = item
+		originalSlot.icon = itemIcon
+		originalSlot.slotSize = slotSize
 	else:
 		originalSlot.item = draggedItem
 		originalSlot.icon = draggedItem.icon
@@ -233,3 +240,26 @@ func _on_slot_hovered(slot: Slot) -> void:
 
 func _on_slot_dropped(slot: Slot) -> void:
 	print("Item dropped on slot: ",slot.name)
+
+
+func checkIfTool(slotID: int, s: Slot) -> bool:
+	var slot: Slot
+	if slotID == -1:
+		print(s.item)
+		slot = s
+	else:
+		slot = getSlot(slotID)
+	
+	if slot:
+		print(slot.item)
+		if slot.item == Item:
+			print("Is item")
+			if slot.item == Tool:
+				print("Is tool")
+			else:
+				print("Is item but not tool")
+		else:
+			print("Is not Item")
+	else:
+		print("No slot!")
+	return true
