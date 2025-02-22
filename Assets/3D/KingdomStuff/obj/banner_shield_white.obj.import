@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c0epxqq2qsrjq"
+path="res://.godot/imported/banner_shield_white.obj-9ac19f5c6f62216d4338aa9e2fe1b4af.mesh"
+
+[deps]
+
+files=["res://.godot/imported/banner_shield_white.obj-9ac19f5c6f62216d4338aa9e2fe1b4af.mesh"]
+
+source_file="res://Assets/3D/KingdomStuff/obj/banner_shield_white.obj"
+dest_files=["res://.godot/imported/banner_shield_white.obj-9ac19f5c6f62216d4338aa9e2fe1b4af.mesh", "res://.godot/imported/banner_shield_white.obj-9ac19f5c6f62216d4338aa9e2fe1b4af.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

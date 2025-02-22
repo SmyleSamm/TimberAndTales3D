@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://d053iepyl6aef"
+path="res://.godot/imported/keg_decorated.obj-c56d8013dba23cbede68e28bfab82dcf.mesh"
+
+[deps]
+
+files=["res://.godot/imported/keg_decorated.obj-c56d8013dba23cbede68e28bfab82dcf.mesh"]
+
+source_file="res://Assets/3D/KingdomStuff/obj/keg_decorated.obj"
+dest_files=["res://.godot/imported/keg_decorated.obj-c56d8013dba23cbede68e28bfab82dcf.mesh", "res://.godot/imported/keg_decorated.obj-c56d8013dba23cbede68e28bfab82dcf.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

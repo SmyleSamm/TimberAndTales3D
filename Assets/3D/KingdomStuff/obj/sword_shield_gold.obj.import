@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://5ii4ufpvbup5"
+path="res://.godot/imported/sword_shield_gold.obj-08e220378f297ef5137f01e27d12ba72.mesh"
+
+[deps]
+
+files=["res://.godot/imported/sword_shield_gold.obj-08e220378f297ef5137f01e27d12ba72.mesh"]
+
+source_file="res://Assets/3D/KingdomStuff/obj/sword_shield_gold.obj"
+dest_files=["res://.godot/imported/sword_shield_gold.obj-08e220378f297ef5137f01e27d12ba72.mesh", "res://.godot/imported/sword_shield_gold.obj-08e220378f297ef5137f01e27d12ba72.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

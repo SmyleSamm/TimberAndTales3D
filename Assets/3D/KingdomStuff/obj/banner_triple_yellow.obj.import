@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dhn5e7uo4trrl"
+path="res://.godot/imported/banner_triple_yellow.obj-4464c18468a00d6493aab415647073b8.mesh"
+
+[deps]
+
+files=["res://.godot/imported/banner_triple_yellow.obj-4464c18468a00d6493aab415647073b8.mesh"]
+
+source_file="res://Assets/3D/KingdomStuff/obj/banner_triple_yellow.obj"
+dest_files=["res://.godot/imported/banner_triple_yellow.obj-4464c18468a00d6493aab415647073b8.mesh", "res://.godot/imported/banner_triple_yellow.obj-4464c18468a00d6493aab415647073b8.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

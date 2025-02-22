@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bhdvs5brcxq5c"
+path="res://.godot/imported/floor_tile_big_grate.obj-9ebc825b7c1eac782f0bea627df95752.mesh"
+
+[deps]
+
+files=["res://.godot/imported/floor_tile_big_grate.obj-9ebc825b7c1eac782f0bea627df95752.mesh"]
+
+source_file="res://Assets/3D/KingdomStuff/obj/floor_tile_big_grate.obj"
+dest_files=["res://.godot/imported/floor_tile_big_grate.obj-9ebc825b7c1eac782f0bea627df95752.mesh", "res://.godot/imported/floor_tile_big_grate.obj-9ebc825b7c1eac782f0bea627df95752.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

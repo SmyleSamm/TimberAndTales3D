@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dclx5127a6qrq"
+path="res://.godot/imported/wall_archedwindow_open.obj-799dd35a6b12c43347567e1d769f0eda.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wall_archedwindow_open.obj-799dd35a6b12c43347567e1d769f0eda.mesh"]
+
+source_file="res://Assets/3D/KingdomStuff/obj/wall_archedwindow_open.obj"
+dest_files=["res://.godot/imported/wall_archedwindow_open.obj-799dd35a6b12c43347567e1d769f0eda.mesh", "res://.godot/imported/wall_archedwindow_open.obj-799dd35a6b12c43347567e1d769f0eda.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

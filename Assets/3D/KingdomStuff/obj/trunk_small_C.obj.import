@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://d3ooeuqiblfqa"
+path="res://.godot/imported/trunk_small_C.obj-6ea2037a0bd9491bd03fe45bb5f989b7.mesh"
+
+[deps]
+
+files=["res://.godot/imported/trunk_small_C.obj-6ea2037a0bd9491bd03fe45bb5f989b7.mesh"]
+
+source_file="res://Assets/3D/KingdomStuff/obj/trunk_small_C.obj"
+dest_files=["res://.godot/imported/trunk_small_C.obj-6ea2037a0bd9491bd03fe45bb5f989b7.mesh", "res://.godot/imported/trunk_small_C.obj-6ea2037a0bd9491bd03fe45bb5f989b7.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

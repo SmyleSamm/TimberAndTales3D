@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bwx5e1pl1r5b3"
+path="res://.godot/imported/trunk_small_B.obj-bad6381b86fd4f6e85628e4489cb4e35.mesh"
+
+[deps]
+
+files=["res://.godot/imported/trunk_small_B.obj-bad6381b86fd4f6e85628e4489cb4e35.mesh"]
+
+source_file="res://Assets/3D/KingdomStuff/obj/trunk_small_B.obj"
+dest_files=["res://.godot/imported/trunk_small_B.obj-bad6381b86fd4f6e85628e4489cb4e35.mesh", "res://.godot/imported/trunk_small_B.obj-bad6381b86fd4f6e85628e4489cb4e35.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

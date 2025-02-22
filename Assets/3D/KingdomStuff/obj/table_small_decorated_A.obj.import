@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dibmi862ofqbd"
+path="res://.godot/imported/table_small_decorated_A.obj-eba30b35eec116580e48b6dd6cb04dba.mesh"
+
+[deps]
+
+files=["res://.godot/imported/table_small_decorated_A.obj-eba30b35eec116580e48b6dd6cb04dba.mesh"]
+
+source_file="res://Assets/3D/KingdomStuff/obj/table_small_decorated_A.obj"
+dest_files=["res://.godot/imported/table_small_decorated_A.obj-eba30b35eec116580e48b6dd6cb04dba.mesh", "res://.godot/imported/table_small_decorated_A.obj-eba30b35eec116580e48b6dd6cb04dba.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

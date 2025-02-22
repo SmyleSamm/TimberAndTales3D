@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dl0y6hjyxwoq7"]
+
+[ext_resource type="PackedScene" uid="uid://b15mm5t7jtpy6" path="res://staircase.tscn" id="1_reniv"]
+[ext_resource type="PackedScene" uid="uid://dp7b5vx5tqxqt" path="res://castle_building.tscn" id="2_qdbj6"]
+
+[node name="castle" type="StaticBody3D"]
+
+[node name="Staircase" parent="." instance=ExtResource("1_reniv")]
+
+[node name="CastleBuilding" parent="." instance=ExtResource("2_qdbj6")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 16, 60.5)

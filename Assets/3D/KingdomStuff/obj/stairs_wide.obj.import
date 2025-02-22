@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bk3j518tua2ok"
+path="res://.godot/imported/stairs_wide.obj-51c9f926ab05c44b62a0dbd09a5c59e7.mesh"
+
+[deps]
+
+files=["res://.godot/imported/stairs_wide.obj-51c9f926ab05c44b62a0dbd09a5c59e7.mesh"]
+
+source_file="res://Assets/3D/KingdomStuff/obj/stairs_wide.obj"
+dest_files=["res://.godot/imported/stairs_wide.obj-51c9f926ab05c44b62a0dbd09a5c59e7.mesh", "res://.godot/imported/stairs_wide.obj-51c9f926ab05c44b62a0dbd09a5c59e7.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

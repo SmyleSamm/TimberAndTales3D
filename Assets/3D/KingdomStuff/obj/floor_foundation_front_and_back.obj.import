@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cc1ddtk2cxbsg"
+path="res://.godot/imported/floor_foundation_front_and_back.obj-c946a4eef1e602118bc5a81166e7c79b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/floor_foundation_front_and_back.obj-c946a4eef1e602118bc5a81166e7c79b.mesh"]
+
+source_file="res://Assets/3D/KingdomStuff/obj/floor_foundation_front_and_back.obj"
+dest_files=["res://.godot/imported/floor_foundation_front_and_back.obj-c946a4eef1e602118bc5a81166e7c79b.mesh", "res://.godot/imported/floor_foundation_front_and_back.obj-c946a4eef1e602118bc5a81166e7c79b.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

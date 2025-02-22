@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bdsghqlkaopy4"
+path="res://.godot/imported/wall_corner.obj-6603fc66c4cd801844b693a4354b7108.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wall_corner.obj-6603fc66c4cd801844b693a4354b7108.mesh"]
+
+source_file="res://Assets/3D/KingdomStuff/obj/wall_corner.obj"
+dest_files=["res://.godot/imported/wall_corner.obj-6603fc66c4cd801844b693a4354b7108.mesh", "res://.godot/imported/wall_corner.obj-6603fc66c4cd801844b693a4354b7108.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

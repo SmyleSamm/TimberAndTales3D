@@ -6,7 +6,7 @@
 
 [sub_resource type="Resource" id="Resource_5f2mc"]
 script = ExtResource("1_4aap5")
-base_damage = 10
+base_damage = 1
 base_lvl = 1
 
 [resource]

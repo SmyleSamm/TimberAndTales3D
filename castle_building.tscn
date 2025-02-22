@@ -1,0 +1,1660 @@
+[gd_scene load_steps=9 format=3 uid="uid://dp7b5vx5tqxqt"]
+
+[ext_resource type="ArrayMesh" uid="uid://rutohgrabppa" path="res://Assets/3D/KingdomStuff/obj/wall_endcap.obj" id="1_5wxw0"]
+[ext_resource type="ArrayMesh" uid="uid://c4ydwukl1yubw" path="res://Assets/3D/KingdomStuff/obj/wall_cracked.obj" id="2_763yp"]
+[ext_resource type="ArrayMesh" uid="uid://ct84dk0fif77v" path="res://Assets/3D/KingdomStuff/obj/wall.obj" id="3_7ifhn"]
+[ext_resource type="ArrayMesh" uid="uid://c6b648subuhbk" path="res://Assets/3D/KingdomStuff/obj/wall_corner_small.obj" id="4_83te4"]
+[ext_resource type="ArrayMesh" uid="uid://b6wrtxbnmifk2" path="res://Assets/3D/KingdomStuff/obj/wall_Tsplit.obj" id="5_bgkj0"]
+[ext_resource type="ArrayMesh" uid="uid://26oo2gb50hb1" path="res://Assets/3D/KingdomStuff/obj/wall_crossing.obj" id="6_eadhv"]
+[ext_resource type="ArrayMesh" uid="uid://212f4a6lkuly" path="res://Assets/3D/KingdomStuff/obj/floor_tile_large.obj" id="7_jplvs"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_bdihm"]
+points = PackedVector3Array(-2, -0.1, -2, -2, -0.1, 2, -2, 0.05, -2, 2, -0.1, -2, -2, 0.05, 2, 2, -0.1, 2, 2, 0.05, -2, 2, 0.05, 2)
+
+[node name="CastleBuilding" type="StaticBody3D"]
+
+[node name="WallEndcap" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, 0)
+mesh = ExtResource("1_5wxw0")
+
+[node name="WallEndcap2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 8.5, 0, 0)
+mesh = ExtResource("1_5wxw0")
+
+[node name="WallCracked" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 0, 0)
+mesh = ExtResource("2_763yp")
+
+[node name="Wall2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 0)
+mesh = ExtResource("3_7ifhn")
+
+[node name="WallCracked3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.5, 0, 0)
+mesh = ExtResource("2_763yp")
+
+[node name="Wall3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5, 0, 0)
+mesh = ExtResource("3_7ifhn")
+
+[node name="Wall4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.5, 0, 0)
+mesh = ExtResource("3_7ifhn")
+
+[node name="WallCracked4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.5, 0, 0)
+mesh = ExtResource("2_763yp")
+
+[node name="WallCornerSmall" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -25.5, 0, 0)
+mesh = ExtResource("4_83te4")
+
+[node name="WallCornerSmall2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 25.5, 0, 0)
+mesh = ExtResource("4_83te4")
+
+[node name="WallEndcap3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 8.5, 0, -8)
+mesh = ExtResource("1_5wxw0")
+
+[node name="WallEndcap4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, -8)
+mesh = ExtResource("1_5wxw0")
+
+[node name="WallTsplit" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -14.5, 0, 0)
+mesh = ExtResource("5_bgkj0")
+
+[node name="WallTsplit2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 14.5, 0, 0)
+mesh = ExtResource("5_bgkj0")
+
+[node name="WallCracked2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14.5, 0, -4)
+mesh = ExtResource("2_763yp")
+
+[node name="WallCrossing" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.5, 0, -8)
+mesh = ExtResource("6_eadhv")
+
+[node name="Wall" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, -8)
+mesh = ExtResource("3_7ifhn")
+
+[node name="Wall5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 0, -8)
+mesh = ExtResource("3_7ifhn")
+
+[node name="WallCrossing2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.5, 0, -8)
+mesh = ExtResource("6_eadhv")
+
+[node name="Wall6" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -14.5, 0, -4)
+mesh = ExtResource("3_7ifhn")
+
+[node name="Tiles" type="StaticBody3D" parent="."]
+
+[node name="Tiles" type="StaticBody3D" parent="Tiles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -35.5)
+
+[node name="9x9Tiles3" type="StaticBody3D" parent="Tiles/Tiles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 26)
+
+[node name="Tile" type="StaticBody3D" parent="Tiles/Tiles/9x9Tiles3"]
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles/9x9Tiles3/Tile"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../../../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles/9x9Tiles3/Tile"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile2" type="StaticBody3D" parent="Tiles/Tiles/9x9Tiles3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles/9x9Tiles3/Tile2"]
+mesh = ExtResource("7_jplvs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles/9x9Tiles3/Tile2"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile3" type="StaticBody3D" parent="Tiles/Tiles/9x9Tiles3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles/9x9Tiles3/Tile3"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles/9x9Tiles3/Tile3"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile4" type="StaticBody3D" parent="Tiles/Tiles/9x9Tiles3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles/9x9Tiles3/Tile4"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../../../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles/9x9Tiles3/Tile4"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile5" type="StaticBody3D" parent="Tiles/Tiles/9x9Tiles3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles/9x9Tiles3/Tile5"]
+mesh = ExtResource("7_jplvs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles/9x9Tiles3/Tile5"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile6" type="StaticBody3D" parent="Tiles/Tiles/9x9Tiles3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 4)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles/9x9Tiles3/Tile6"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles/9x9Tiles3/Tile6"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile7" type="StaticBody3D" parent="Tiles/Tiles/9x9Tiles3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles/9x9Tiles3/Tile7"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../../../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles/9x9Tiles3/Tile7"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile8" type="StaticBody3D" parent="Tiles/Tiles/9x9Tiles3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 8)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles/9x9Tiles3/Tile8"]
+mesh = ExtResource("7_jplvs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles/9x9Tiles3/Tile8"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile9" type="StaticBody3D" parent="Tiles/Tiles/9x9Tiles3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 8)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles/9x9Tiles3/Tile9"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles/9x9Tiles3/Tile9"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="9x9Tiles6" type="StaticBody3D" parent="Tiles/Tiles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 26)
+
+[node name="Tile" type="StaticBody3D" parent="Tiles/Tiles/9x9Tiles6"]
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles/9x9Tiles6/Tile"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../../../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles/9x9Tiles6/Tile"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile2" type="StaticBody3D" parent="Tiles/Tiles/9x9Tiles6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles/9x9Tiles6/Tile2"]
+mesh = ExtResource("7_jplvs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles/9x9Tiles6/Tile2"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile3" type="StaticBody3D" parent="Tiles/Tiles/9x9Tiles6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles/9x9Tiles6/Tile3"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles/9x9Tiles6/Tile3"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile4" type="StaticBody3D" parent="Tiles/Tiles/9x9Tiles6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles/9x9Tiles6/Tile4"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../../../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles/9x9Tiles6/Tile4"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile5" type="StaticBody3D" parent="Tiles/Tiles/9x9Tiles6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles/9x9Tiles6/Tile5"]
+mesh = ExtResource("7_jplvs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles/9x9Tiles6/Tile5"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile6" type="StaticBody3D" parent="Tiles/Tiles/9x9Tiles6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 4)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles/9x9Tiles6/Tile6"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles/9x9Tiles6/Tile6"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile7" type="StaticBody3D" parent="Tiles/Tiles/9x9Tiles6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles/9x9Tiles6/Tile7"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../../../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles/9x9Tiles6/Tile7"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile8" type="StaticBody3D" parent="Tiles/Tiles/9x9Tiles6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 8)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles/9x9Tiles6/Tile8"]
+mesh = ExtResource("7_jplvs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles/9x9Tiles6/Tile8"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile9" type="StaticBody3D" parent="Tiles/Tiles/9x9Tiles6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 8)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles/9x9Tiles6/Tile9"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles/9x9Tiles6/Tile9"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="9x9Tiles9" type="StaticBody3D" parent="Tiles/Tiles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 26)
+
+[node name="Tile" type="StaticBody3D" parent="Tiles/Tiles/9x9Tiles9"]
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles/9x9Tiles9/Tile"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../../../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles/9x9Tiles9/Tile"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile2" type="StaticBody3D" parent="Tiles/Tiles/9x9Tiles9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles/9x9Tiles9/Tile2"]
+mesh = ExtResource("7_jplvs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles/9x9Tiles9/Tile2"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile3" type="StaticBody3D" parent="Tiles/Tiles/9x9Tiles9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles/9x9Tiles9/Tile3"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles/9x9Tiles9/Tile3"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile4" type="StaticBody3D" parent="Tiles/Tiles/9x9Tiles9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles/9x9Tiles9/Tile4"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../../../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles/9x9Tiles9/Tile4"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile5" type="StaticBody3D" parent="Tiles/Tiles/9x9Tiles9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles/9x9Tiles9/Tile5"]
+mesh = ExtResource("7_jplvs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles/9x9Tiles9/Tile5"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile6" type="StaticBody3D" parent="Tiles/Tiles/9x9Tiles9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 4)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles/9x9Tiles9/Tile6"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles/9x9Tiles9/Tile6"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile7" type="StaticBody3D" parent="Tiles/Tiles/9x9Tiles9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles/9x9Tiles9/Tile7"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../../../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles/9x9Tiles9/Tile7"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile8" type="StaticBody3D" parent="Tiles/Tiles/9x9Tiles9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 8)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles/9x9Tiles9/Tile8"]
+mesh = ExtResource("7_jplvs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles/9x9Tiles9/Tile8"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile9" type="StaticBody3D" parent="Tiles/Tiles/9x9Tiles9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 8)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles/9x9Tiles9/Tile9"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles/9x9Tiles9/Tile9"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="9x9Tiles7" type="StaticBody3D" parent="Tiles/Tiles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 26)
+
+[node name="Tile" type="StaticBody3D" parent="Tiles/Tiles/9x9Tiles7"]
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles/9x9Tiles7/Tile"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../../../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles/9x9Tiles7/Tile"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile2" type="StaticBody3D" parent="Tiles/Tiles/9x9Tiles7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles/9x9Tiles7/Tile2"]
+mesh = ExtResource("7_jplvs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles/9x9Tiles7/Tile2"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile3" type="StaticBody3D" parent="Tiles/Tiles/9x9Tiles7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles/9x9Tiles7/Tile3"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles/9x9Tiles7/Tile3"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile4" type="StaticBody3D" parent="Tiles/Tiles/9x9Tiles7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles/9x9Tiles7/Tile4"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../../../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles/9x9Tiles7/Tile4"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile5" type="StaticBody3D" parent="Tiles/Tiles/9x9Tiles7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles/9x9Tiles7/Tile5"]
+mesh = ExtResource("7_jplvs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles/9x9Tiles7/Tile5"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile6" type="StaticBody3D" parent="Tiles/Tiles/9x9Tiles7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 4)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles/9x9Tiles7/Tile6"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles/9x9Tiles7/Tile6"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile7" type="StaticBody3D" parent="Tiles/Tiles/9x9Tiles7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles/9x9Tiles7/Tile7"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../../../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles/9x9Tiles7/Tile7"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile8" type="StaticBody3D" parent="Tiles/Tiles/9x9Tiles7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 8)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles/9x9Tiles7/Tile8"]
+mesh = ExtResource("7_jplvs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles/9x9Tiles7/Tile8"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile9" type="StaticBody3D" parent="Tiles/Tiles/9x9Tiles7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 8)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles/9x9Tiles7/Tile9"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../..")
+
+[node name="Tile" type="StaticBody3D" parent="Tiles/Tiles"]
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles/Tile"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 34)
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles/Tile"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 34)
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile2" type="StaticBody3D" parent="Tiles/Tiles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles/Tile2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 34)
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles/Tile2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 34)
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile3" type="StaticBody3D" parent="Tiles/Tiles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles/Tile3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 34)
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles/Tile3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 34)
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tiles2" type="StaticBody3D" parent="Tiles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -47.5)
+
+[node name="9x9Tiles3" type="StaticBody3D" parent="Tiles/Tiles2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 26)
+
+[node name="Tile" type="StaticBody3D" parent="Tiles/Tiles2/9x9Tiles3"]
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles2/9x9Tiles3/Tile"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../../../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles2/9x9Tiles3/Tile"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile2" type="StaticBody3D" parent="Tiles/Tiles2/9x9Tiles3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles2/9x9Tiles3/Tile2"]
+mesh = ExtResource("7_jplvs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles2/9x9Tiles3/Tile2"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile3" type="StaticBody3D" parent="Tiles/Tiles2/9x9Tiles3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles2/9x9Tiles3/Tile3"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles2/9x9Tiles3/Tile3"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile4" type="StaticBody3D" parent="Tiles/Tiles2/9x9Tiles3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles2/9x9Tiles3/Tile4"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../../../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles2/9x9Tiles3/Tile4"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile5" type="StaticBody3D" parent="Tiles/Tiles2/9x9Tiles3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles2/9x9Tiles3/Tile5"]
+mesh = ExtResource("7_jplvs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles2/9x9Tiles3/Tile5"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile6" type="StaticBody3D" parent="Tiles/Tiles2/9x9Tiles3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 4)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles2/9x9Tiles3/Tile6"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles2/9x9Tiles3/Tile6"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile7" type="StaticBody3D" parent="Tiles/Tiles2/9x9Tiles3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles2/9x9Tiles3/Tile7"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../../../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles2/9x9Tiles3/Tile7"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile8" type="StaticBody3D" parent="Tiles/Tiles2/9x9Tiles3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 8)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles2/9x9Tiles3/Tile8"]
+mesh = ExtResource("7_jplvs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles2/9x9Tiles3/Tile8"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile9" type="StaticBody3D" parent="Tiles/Tiles2/9x9Tiles3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 8)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles2/9x9Tiles3/Tile9"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles2/9x9Tiles3/Tile9"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="9x9Tiles6" type="StaticBody3D" parent="Tiles/Tiles2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 26)
+
+[node name="Tile" type="StaticBody3D" parent="Tiles/Tiles2/9x9Tiles6"]
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles2/9x9Tiles6/Tile"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../../../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles2/9x9Tiles6/Tile"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile2" type="StaticBody3D" parent="Tiles/Tiles2/9x9Tiles6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles2/9x9Tiles6/Tile2"]
+mesh = ExtResource("7_jplvs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles2/9x9Tiles6/Tile2"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile3" type="StaticBody3D" parent="Tiles/Tiles2/9x9Tiles6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles2/9x9Tiles6/Tile3"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles2/9x9Tiles6/Tile3"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile4" type="StaticBody3D" parent="Tiles/Tiles2/9x9Tiles6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles2/9x9Tiles6/Tile4"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../../../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles2/9x9Tiles6/Tile4"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile5" type="StaticBody3D" parent="Tiles/Tiles2/9x9Tiles6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles2/9x9Tiles6/Tile5"]
+mesh = ExtResource("7_jplvs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles2/9x9Tiles6/Tile5"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile6" type="StaticBody3D" parent="Tiles/Tiles2/9x9Tiles6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 4)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles2/9x9Tiles6/Tile6"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles2/9x9Tiles6/Tile6"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile7" type="StaticBody3D" parent="Tiles/Tiles2/9x9Tiles6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles2/9x9Tiles6/Tile7"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../../../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles2/9x9Tiles6/Tile7"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile8" type="StaticBody3D" parent="Tiles/Tiles2/9x9Tiles6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 8)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles2/9x9Tiles6/Tile8"]
+mesh = ExtResource("7_jplvs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles2/9x9Tiles6/Tile8"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile9" type="StaticBody3D" parent="Tiles/Tiles2/9x9Tiles6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 8)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles2/9x9Tiles6/Tile9"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles2/9x9Tiles6/Tile9"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="9x9Tiles9" type="StaticBody3D" parent="Tiles/Tiles2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 26)
+
+[node name="Tile" type="StaticBody3D" parent="Tiles/Tiles2/9x9Tiles9"]
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles2/9x9Tiles9/Tile"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../../../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles2/9x9Tiles9/Tile"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile2" type="StaticBody3D" parent="Tiles/Tiles2/9x9Tiles9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles2/9x9Tiles9/Tile2"]
+mesh = ExtResource("7_jplvs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles2/9x9Tiles9/Tile2"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile3" type="StaticBody3D" parent="Tiles/Tiles2/9x9Tiles9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles2/9x9Tiles9/Tile3"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles2/9x9Tiles9/Tile3"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile4" type="StaticBody3D" parent="Tiles/Tiles2/9x9Tiles9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles2/9x9Tiles9/Tile4"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../../../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles2/9x9Tiles9/Tile4"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile5" type="StaticBody3D" parent="Tiles/Tiles2/9x9Tiles9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles2/9x9Tiles9/Tile5"]
+mesh = ExtResource("7_jplvs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles2/9x9Tiles9/Tile5"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile6" type="StaticBody3D" parent="Tiles/Tiles2/9x9Tiles9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 4)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles2/9x9Tiles9/Tile6"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles2/9x9Tiles9/Tile6"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile7" type="StaticBody3D" parent="Tiles/Tiles2/9x9Tiles9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles2/9x9Tiles9/Tile7"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../../../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles2/9x9Tiles9/Tile7"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile8" type="StaticBody3D" parent="Tiles/Tiles2/9x9Tiles9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 8)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles2/9x9Tiles9/Tile8"]
+mesh = ExtResource("7_jplvs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles2/9x9Tiles9/Tile8"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile9" type="StaticBody3D" parent="Tiles/Tiles2/9x9Tiles9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 8)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles2/9x9Tiles9/Tile9"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles2/9x9Tiles9/Tile9"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="9x9Tiles7" type="StaticBody3D" parent="Tiles/Tiles2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 26)
+
+[node name="Tile" type="StaticBody3D" parent="Tiles/Tiles2/9x9Tiles7"]
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles2/9x9Tiles7/Tile"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../../../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles2/9x9Tiles7/Tile"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile2" type="StaticBody3D" parent="Tiles/Tiles2/9x9Tiles7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles2/9x9Tiles7/Tile2"]
+mesh = ExtResource("7_jplvs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles2/9x9Tiles7/Tile2"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile3" type="StaticBody3D" parent="Tiles/Tiles2/9x9Tiles7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles2/9x9Tiles7/Tile3"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles2/9x9Tiles7/Tile3"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile4" type="StaticBody3D" parent="Tiles/Tiles2/9x9Tiles7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles2/9x9Tiles7/Tile4"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../../../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles2/9x9Tiles7/Tile4"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile5" type="StaticBody3D" parent="Tiles/Tiles2/9x9Tiles7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles2/9x9Tiles7/Tile5"]
+mesh = ExtResource("7_jplvs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles2/9x9Tiles7/Tile5"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile6" type="StaticBody3D" parent="Tiles/Tiles2/9x9Tiles7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 4)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles2/9x9Tiles7/Tile6"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles2/9x9Tiles7/Tile6"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile7" type="StaticBody3D" parent="Tiles/Tiles2/9x9Tiles7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles2/9x9Tiles7/Tile7"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../../../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles2/9x9Tiles7/Tile7"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile8" type="StaticBody3D" parent="Tiles/Tiles2/9x9Tiles7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 8)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles2/9x9Tiles7/Tile8"]
+mesh = ExtResource("7_jplvs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles2/9x9Tiles7/Tile8"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile9" type="StaticBody3D" parent="Tiles/Tiles2/9x9Tiles7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 8)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles2/9x9Tiles7/Tile9"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../..")
+
+[node name="Tile" type="StaticBody3D" parent="Tiles/Tiles2"]
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles2/Tile"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 34)
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles2/Tile"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 34)
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile2" type="StaticBody3D" parent="Tiles/Tiles2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles2/Tile2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 34)
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles2/Tile2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 34)
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile3" type="StaticBody3D" parent="Tiles/Tiles2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles2/Tile3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 34)
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles2/Tile3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 34)
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tiles3" type="StaticBody3D" parent="Tiles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -59.5)
+
+[node name="9x9Tiles3" type="StaticBody3D" parent="Tiles/Tiles3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 26)
+
+[node name="Tile" type="StaticBody3D" parent="Tiles/Tiles3/9x9Tiles3"]
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles3/9x9Tiles3/Tile"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../../../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles3/9x9Tiles3/Tile"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile2" type="StaticBody3D" parent="Tiles/Tiles3/9x9Tiles3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles3/9x9Tiles3/Tile2"]
+mesh = ExtResource("7_jplvs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles3/9x9Tiles3/Tile2"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile3" type="StaticBody3D" parent="Tiles/Tiles3/9x9Tiles3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles3/9x9Tiles3/Tile3"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles3/9x9Tiles3/Tile3"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile4" type="StaticBody3D" parent="Tiles/Tiles3/9x9Tiles3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles3/9x9Tiles3/Tile4"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../../../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles3/9x9Tiles3/Tile4"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile5" type="StaticBody3D" parent="Tiles/Tiles3/9x9Tiles3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles3/9x9Tiles3/Tile5"]
+mesh = ExtResource("7_jplvs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles3/9x9Tiles3/Tile5"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile6" type="StaticBody3D" parent="Tiles/Tiles3/9x9Tiles3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 4)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles3/9x9Tiles3/Tile6"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles3/9x9Tiles3/Tile6"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile7" type="StaticBody3D" parent="Tiles/Tiles3/9x9Tiles3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles3/9x9Tiles3/Tile7"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../../../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles3/9x9Tiles3/Tile7"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile8" type="StaticBody3D" parent="Tiles/Tiles3/9x9Tiles3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 8)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles3/9x9Tiles3/Tile8"]
+mesh = ExtResource("7_jplvs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles3/9x9Tiles3/Tile8"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile9" type="StaticBody3D" parent="Tiles/Tiles3/9x9Tiles3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 8)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles3/9x9Tiles3/Tile9"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles3/9x9Tiles3/Tile9"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="9x9Tiles6" type="StaticBody3D" parent="Tiles/Tiles3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 26)
+
+[node name="Tile" type="StaticBody3D" parent="Tiles/Tiles3/9x9Tiles6"]
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles3/9x9Tiles6/Tile"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../../../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles3/9x9Tiles6/Tile"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile2" type="StaticBody3D" parent="Tiles/Tiles3/9x9Tiles6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles3/9x9Tiles6/Tile2"]
+mesh = ExtResource("7_jplvs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles3/9x9Tiles6/Tile2"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile3" type="StaticBody3D" parent="Tiles/Tiles3/9x9Tiles6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles3/9x9Tiles6/Tile3"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles3/9x9Tiles6/Tile3"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile4" type="StaticBody3D" parent="Tiles/Tiles3/9x9Tiles6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles3/9x9Tiles6/Tile4"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../../../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles3/9x9Tiles6/Tile4"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile5" type="StaticBody3D" parent="Tiles/Tiles3/9x9Tiles6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles3/9x9Tiles6/Tile5"]
+mesh = ExtResource("7_jplvs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles3/9x9Tiles6/Tile5"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile6" type="StaticBody3D" parent="Tiles/Tiles3/9x9Tiles6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 4)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles3/9x9Tiles6/Tile6"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles3/9x9Tiles6/Tile6"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile7" type="StaticBody3D" parent="Tiles/Tiles3/9x9Tiles6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles3/9x9Tiles6/Tile7"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../../../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles3/9x9Tiles6/Tile7"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile8" type="StaticBody3D" parent="Tiles/Tiles3/9x9Tiles6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 8)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles3/9x9Tiles6/Tile8"]
+mesh = ExtResource("7_jplvs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles3/9x9Tiles6/Tile8"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile9" type="StaticBody3D" parent="Tiles/Tiles3/9x9Tiles6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 8)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles3/9x9Tiles6/Tile9"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles3/9x9Tiles6/Tile9"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="9x9Tiles9" type="StaticBody3D" parent="Tiles/Tiles3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 26)
+
+[node name="Tile" type="StaticBody3D" parent="Tiles/Tiles3/9x9Tiles9"]
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles3/9x9Tiles9/Tile"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../../../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles3/9x9Tiles9/Tile"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile2" type="StaticBody3D" parent="Tiles/Tiles3/9x9Tiles9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles3/9x9Tiles9/Tile2"]
+mesh = ExtResource("7_jplvs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles3/9x9Tiles9/Tile2"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile3" type="StaticBody3D" parent="Tiles/Tiles3/9x9Tiles9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles3/9x9Tiles9/Tile3"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles3/9x9Tiles9/Tile3"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile4" type="StaticBody3D" parent="Tiles/Tiles3/9x9Tiles9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles3/9x9Tiles9/Tile4"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../../../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles3/9x9Tiles9/Tile4"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile5" type="StaticBody3D" parent="Tiles/Tiles3/9x9Tiles9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles3/9x9Tiles9/Tile5"]
+mesh = ExtResource("7_jplvs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles3/9x9Tiles9/Tile5"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile6" type="StaticBody3D" parent="Tiles/Tiles3/9x9Tiles9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 4)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles3/9x9Tiles9/Tile6"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles3/9x9Tiles9/Tile6"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile7" type="StaticBody3D" parent="Tiles/Tiles3/9x9Tiles9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles3/9x9Tiles9/Tile7"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../../../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles3/9x9Tiles9/Tile7"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile8" type="StaticBody3D" parent="Tiles/Tiles3/9x9Tiles9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 8)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles3/9x9Tiles9/Tile8"]
+mesh = ExtResource("7_jplvs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles3/9x9Tiles9/Tile8"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile9" type="StaticBody3D" parent="Tiles/Tiles3/9x9Tiles9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 8)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles3/9x9Tiles9/Tile9"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles3/9x9Tiles9/Tile9"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="9x9Tiles7" type="StaticBody3D" parent="Tiles/Tiles3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 26)
+
+[node name="Tile" type="StaticBody3D" parent="Tiles/Tiles3/9x9Tiles7"]
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles3/9x9Tiles7/Tile"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../../../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles3/9x9Tiles7/Tile"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile2" type="StaticBody3D" parent="Tiles/Tiles3/9x9Tiles7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles3/9x9Tiles7/Tile2"]
+mesh = ExtResource("7_jplvs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles3/9x9Tiles7/Tile2"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile3" type="StaticBody3D" parent="Tiles/Tiles3/9x9Tiles7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles3/9x9Tiles7/Tile3"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles3/9x9Tiles7/Tile3"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile4" type="StaticBody3D" parent="Tiles/Tiles3/9x9Tiles7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles3/9x9Tiles7/Tile4"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../../../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles3/9x9Tiles7/Tile4"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile5" type="StaticBody3D" parent="Tiles/Tiles3/9x9Tiles7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles3/9x9Tiles7/Tile5"]
+mesh = ExtResource("7_jplvs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles3/9x9Tiles7/Tile5"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile6" type="StaticBody3D" parent="Tiles/Tiles3/9x9Tiles7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 4)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles3/9x9Tiles7/Tile6"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles3/9x9Tiles7/Tile6"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile7" type="StaticBody3D" parent="Tiles/Tiles3/9x9Tiles7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles3/9x9Tiles7/Tile7"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../../../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles3/9x9Tiles7/Tile7"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile8" type="StaticBody3D" parent="Tiles/Tiles3/9x9Tiles7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 8)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles3/9x9Tiles7/Tile8"]
+mesh = ExtResource("7_jplvs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles3/9x9Tiles7/Tile8"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile9" type="StaticBody3D" parent="Tiles/Tiles3/9x9Tiles7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 8)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles3/9x9Tiles7/Tile9"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../..")
+
+[node name="Tile" type="StaticBody3D" parent="Tiles/Tiles3"]
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles3/Tile"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 34)
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles3/Tile"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 34)
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile2" type="StaticBody3D" parent="Tiles/Tiles3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles3/Tile2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 34)
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles3/Tile2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 34)
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile3" type="StaticBody3D" parent="Tiles/Tiles3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles3/Tile3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 34)
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles3/Tile3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 34)
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tiles4" type="StaticBody3D" parent="Tiles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -71.5)
+
+[node name="9x9Tiles3" type="StaticBody3D" parent="Tiles/Tiles4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 26)
+
+[node name="Tile" type="StaticBody3D" parent="Tiles/Tiles4/9x9Tiles3"]
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles4/9x9Tiles3/Tile"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../../../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles4/9x9Tiles3/Tile"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile2" type="StaticBody3D" parent="Tiles/Tiles4/9x9Tiles3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles4/9x9Tiles3/Tile2"]
+mesh = ExtResource("7_jplvs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles4/9x9Tiles3/Tile2"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile3" type="StaticBody3D" parent="Tiles/Tiles4/9x9Tiles3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles4/9x9Tiles3/Tile3"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles4/9x9Tiles3/Tile3"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile4" type="StaticBody3D" parent="Tiles/Tiles4/9x9Tiles3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles4/9x9Tiles3/Tile4"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../../../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles4/9x9Tiles3/Tile4"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile5" type="StaticBody3D" parent="Tiles/Tiles4/9x9Tiles3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles4/9x9Tiles3/Tile5"]
+mesh = ExtResource("7_jplvs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles4/9x9Tiles3/Tile5"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile6" type="StaticBody3D" parent="Tiles/Tiles4/9x9Tiles3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 4)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles4/9x9Tiles3/Tile6"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles4/9x9Tiles3/Tile6"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile7" type="StaticBody3D" parent="Tiles/Tiles4/9x9Tiles3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles4/9x9Tiles3/Tile7"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../../../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles4/9x9Tiles3/Tile7"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile8" type="StaticBody3D" parent="Tiles/Tiles4/9x9Tiles3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 8)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles4/9x9Tiles3/Tile8"]
+mesh = ExtResource("7_jplvs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles4/9x9Tiles3/Tile8"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile9" type="StaticBody3D" parent="Tiles/Tiles4/9x9Tiles3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 8)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles4/9x9Tiles3/Tile9"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles4/9x9Tiles3/Tile9"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="9x9Tiles6" type="StaticBody3D" parent="Tiles/Tiles4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 26)
+
+[node name="Tile" type="StaticBody3D" parent="Tiles/Tiles4/9x9Tiles6"]
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles4/9x9Tiles6/Tile"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../../../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles4/9x9Tiles6/Tile"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile2" type="StaticBody3D" parent="Tiles/Tiles4/9x9Tiles6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles4/9x9Tiles6/Tile2"]
+mesh = ExtResource("7_jplvs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles4/9x9Tiles6/Tile2"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile3" type="StaticBody3D" parent="Tiles/Tiles4/9x9Tiles6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles4/9x9Tiles6/Tile3"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles4/9x9Tiles6/Tile3"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile4" type="StaticBody3D" parent="Tiles/Tiles4/9x9Tiles6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles4/9x9Tiles6/Tile4"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../../../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles4/9x9Tiles6/Tile4"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile5" type="StaticBody3D" parent="Tiles/Tiles4/9x9Tiles6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles4/9x9Tiles6/Tile5"]
+mesh = ExtResource("7_jplvs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles4/9x9Tiles6/Tile5"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile6" type="StaticBody3D" parent="Tiles/Tiles4/9x9Tiles6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 4)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles4/9x9Tiles6/Tile6"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles4/9x9Tiles6/Tile6"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile7" type="StaticBody3D" parent="Tiles/Tiles4/9x9Tiles6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles4/9x9Tiles6/Tile7"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../../../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles4/9x9Tiles6/Tile7"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile8" type="StaticBody3D" parent="Tiles/Tiles4/9x9Tiles6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 8)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles4/9x9Tiles6/Tile8"]
+mesh = ExtResource("7_jplvs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles4/9x9Tiles6/Tile8"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile9" type="StaticBody3D" parent="Tiles/Tiles4/9x9Tiles6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 8)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles4/9x9Tiles6/Tile9"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles4/9x9Tiles6/Tile9"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="9x9Tiles9" type="StaticBody3D" parent="Tiles/Tiles4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 26)
+
+[node name="Tile" type="StaticBody3D" parent="Tiles/Tiles4/9x9Tiles9"]
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles4/9x9Tiles9/Tile"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../../../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles4/9x9Tiles9/Tile"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile2" type="StaticBody3D" parent="Tiles/Tiles4/9x9Tiles9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles4/9x9Tiles9/Tile2"]
+mesh = ExtResource("7_jplvs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles4/9x9Tiles9/Tile2"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile3" type="StaticBody3D" parent="Tiles/Tiles4/9x9Tiles9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles4/9x9Tiles9/Tile3"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles4/9x9Tiles9/Tile3"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile4" type="StaticBody3D" parent="Tiles/Tiles4/9x9Tiles9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles4/9x9Tiles9/Tile4"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../../../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles4/9x9Tiles9/Tile4"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile5" type="StaticBody3D" parent="Tiles/Tiles4/9x9Tiles9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles4/9x9Tiles9/Tile5"]
+mesh = ExtResource("7_jplvs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles4/9x9Tiles9/Tile5"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile6" type="StaticBody3D" parent="Tiles/Tiles4/9x9Tiles9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 4)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles4/9x9Tiles9/Tile6"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles4/9x9Tiles9/Tile6"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile7" type="StaticBody3D" parent="Tiles/Tiles4/9x9Tiles9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles4/9x9Tiles9/Tile7"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../../../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles4/9x9Tiles9/Tile7"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile8" type="StaticBody3D" parent="Tiles/Tiles4/9x9Tiles9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 8)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles4/9x9Tiles9/Tile8"]
+mesh = ExtResource("7_jplvs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles4/9x9Tiles9/Tile8"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile9" type="StaticBody3D" parent="Tiles/Tiles4/9x9Tiles9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 8)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles4/9x9Tiles9/Tile9"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles4/9x9Tiles9/Tile9"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="9x9Tiles7" type="StaticBody3D" parent="Tiles/Tiles4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 26)
+
+[node name="Tile" type="StaticBody3D" parent="Tiles/Tiles4/9x9Tiles7"]
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles4/9x9Tiles7/Tile"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../../../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles4/9x9Tiles7/Tile"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile2" type="StaticBody3D" parent="Tiles/Tiles4/9x9Tiles7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles4/9x9Tiles7/Tile2"]
+mesh = ExtResource("7_jplvs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles4/9x9Tiles7/Tile2"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile3" type="StaticBody3D" parent="Tiles/Tiles4/9x9Tiles7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles4/9x9Tiles7/Tile3"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles4/9x9Tiles7/Tile3"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile4" type="StaticBody3D" parent="Tiles/Tiles4/9x9Tiles7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles4/9x9Tiles7/Tile4"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../../../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles4/9x9Tiles7/Tile4"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile5" type="StaticBody3D" parent="Tiles/Tiles4/9x9Tiles7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles4/9x9Tiles7/Tile5"]
+mesh = ExtResource("7_jplvs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles4/9x9Tiles7/Tile5"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile6" type="StaticBody3D" parent="Tiles/Tiles4/9x9Tiles7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 4)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles4/9x9Tiles7/Tile6"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles4/9x9Tiles7/Tile6"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile7" type="StaticBody3D" parent="Tiles/Tiles4/9x9Tiles7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles4/9x9Tiles7/Tile7"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../../../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles4/9x9Tiles7/Tile7"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile8" type="StaticBody3D" parent="Tiles/Tiles4/9x9Tiles7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 8)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles4/9x9Tiles7/Tile8"]
+mesh = ExtResource("7_jplvs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles4/9x9Tiles7/Tile8"]
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile9" type="StaticBody3D" parent="Tiles/Tiles4/9x9Tiles7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 8)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles4/9x9Tiles7/Tile9"]
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../..")
+
+[node name="Tile" type="StaticBody3D" parent="Tiles/Tiles4"]
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles4/Tile"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 34)
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles4/Tile"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 34)
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile2" type="StaticBody3D" parent="Tiles/Tiles4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles4/Tile2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 34)
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles4/Tile2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 34)
+shape = SubResource("ConvexPolygonShape3D_bdihm")
+
+[node name="Tile3" type="StaticBody3D" parent="Tiles/Tiles4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="Tiles/Tiles4/Tile3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 34)
+mesh = ExtResource("7_jplvs")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tiles4/Tile3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 34)
+shape = SubResource("ConvexPolygonShape3D_bdihm")

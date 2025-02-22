@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b3bb7m3wg5d8p"
+path="res://.godot/imported/floor_tile_extralarge_grates.obj-1a519a9b8ebd552edcb882a0c866ddfc.mesh"
+
+[deps]
+
+files=["res://.godot/imported/floor_tile_extralarge_grates.obj-1a519a9b8ebd552edcb882a0c866ddfc.mesh"]
+
+source_file="res://Assets/3D/KingdomStuff/obj/floor_tile_extralarge_grates.obj"
+dest_files=["res://.godot/imported/floor_tile_extralarge_grates.obj-1a519a9b8ebd552edcb882a0c866ddfc.mesh", "res://.godot/imported/floor_tile_extralarge_grates.obj-1a519a9b8ebd552edcb882a0c866ddfc.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

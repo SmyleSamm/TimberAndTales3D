@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dlxxkggw7135j"
+path="res://.godot/imported/floor_tile_big_spikes.obj-0baee70625bc573bb7d8418fd7354558.mesh"
+
+[deps]
+
+files=["res://.godot/imported/floor_tile_big_spikes.obj-0baee70625bc573bb7d8418fd7354558.mesh"]
+
+source_file="res://Assets/3D/KingdomStuff/obj/floor_tile_big_spikes.obj"
+dest_files=["res://.godot/imported/floor_tile_big_spikes.obj-0baee70625bc573bb7d8418fd7354558.mesh", "res://.godot/imported/floor_tile_big_spikes.obj-0baee70625bc573bb7d8418fd7354558.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

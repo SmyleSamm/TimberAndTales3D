@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cfq8bqcjp6l6q"
+path="res://.godot/imported/table_long_decorated_A.obj-e7fdc208915d52ad7b14ae98b9348ccf.mesh"
+
+[deps]
+
+files=["res://.godot/imported/table_long_decorated_A.obj-e7fdc208915d52ad7b14ae98b9348ccf.mesh"]
+
+source_file="res://Assets/3D/KingdomStuff/obj/table_long_decorated_A.obj"
+dest_files=["res://.godot/imported/table_long_decorated_A.obj-e7fdc208915d52ad7b14ae98b9348ccf.mesh", "res://.godot/imported/table_long_decorated_A.obj-e7fdc208915d52ad7b14ae98b9348ccf.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

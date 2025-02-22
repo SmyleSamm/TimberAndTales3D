@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c3s70tyuhodmj"
+path="res://.godot/imported/wall_archedwindow_gated_scaffold.obj-4d0331b2147cded1a43b4404fca463e6.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wall_archedwindow_gated_scaffold.obj-4d0331b2147cded1a43b4404fca463e6.mesh"]
+
+source_file="res://Assets/3D/KingdomStuff/obj/wall_archedwindow_gated_scaffold.obj"
+dest_files=["res://.godot/imported/wall_archedwindow_gated_scaffold.obj-4d0331b2147cded1a43b4404fca463e6.mesh", "res://.godot/imported/wall_archedwindow_gated_scaffold.obj-4d0331b2147cded1a43b4404fca463e6.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

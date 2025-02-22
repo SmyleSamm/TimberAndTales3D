@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://kyjq54actprd"
+path="res://.godot/imported/plate_stack.obj-a0df5abc6ef58d15c4242c9b8d0c75ad.mesh"
+
+[deps]
+
+files=["res://.godot/imported/plate_stack.obj-a0df5abc6ef58d15c4242c9b8d0c75ad.mesh"]
+
+source_file="res://Assets/3D/KingdomStuff/obj/plate_stack.obj"
+dest_files=["res://.godot/imported/plate_stack.obj-a0df5abc6ef58d15c4242c9b8d0c75ad.mesh", "res://.godot/imported/plate_stack.obj-a0df5abc6ef58d15c4242c9b8d0c75ad.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

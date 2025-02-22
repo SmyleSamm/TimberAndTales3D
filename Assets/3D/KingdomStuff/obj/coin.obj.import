@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://0is7sr4brf1b"
+path="res://.godot/imported/coin.obj-950e34b71dcfd330d81aedba010075ce.mesh"
+
+[deps]
+
+files=["res://.godot/imported/coin.obj-950e34b71dcfd330d81aedba010075ce.mesh"]
+
+source_file="res://Assets/3D/KingdomStuff/obj/coin.obj"
+dest_files=["res://.godot/imported/coin.obj-950e34b71dcfd330d81aedba010075ce.mesh", "res://.godot/imported/coin.obj-950e34b71dcfd330d81aedba010075ce.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

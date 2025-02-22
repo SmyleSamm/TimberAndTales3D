@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://80qykudvws6n"
+path="res://.godot/imported/coin_stack_small.obj-7d93090c8fd6882fa9809e3942ae938e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/coin_stack_small.obj-7d93090c8fd6882fa9809e3942ae938e.mesh"]
+
+source_file="res://Assets/3D/KingdomStuff/obj/coin_stack_small.obj"
+dest_files=["res://.godot/imported/coin_stack_small.obj-7d93090c8fd6882fa9809e3942ae938e.mesh", "res://.godot/imported/coin_stack_small.obj-7d93090c8fd6882fa9809e3942ae938e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
