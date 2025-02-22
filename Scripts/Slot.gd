@@ -13,12 +13,14 @@ signal slot_hovered(slot: Slot)
 signal slot_dropped(slot: Slot)
 var inventory: Inventory
 
-
+var leftClick: bool 
+var currentItemUI: SelectItemUI
 #TODO: Items in slots can be moved
 
 func _ready() -> void:
 	button_down.connect(_on_button_down)
 	button_up.connect(_on_button_up)
+	button_mask = MOUSE_BUTTON_MASK_LEFT | MOUSE_BUTTON_MASK_RIGHT
 	
 	if item:
 		icon = item.icon
@@ -68,15 +70,30 @@ func getCounterLabel() -> Label:
 
 
 func _process(delta: float) -> void:
-	pass
 	if heldDown:
 		holdingTexture.position = get_viewport().get_mouse_position() - startCords
 
 func connectSignalsAfterInit(inv: Inventory) -> void:
 	self.inventory = inv
 	connect("slot_dropped", inventory._on_slot_dropped)
-
+	
 func _on_button_down() -> void:
+	inventory._free_item_ui()
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+		leftClick = true
+		dragItem()
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT):
+		leftClick = false
+		
+		currentItemUI = SelectItemUI.new()
+		currentItemUI.position = get_local_mouse_position() + Vector2(20, 0)
+		currentItemUI.ready.emit()
+		currentItemUI.z_index = 101
+		add_child(currentItemUI)
+		currentItemUI.equip.connect(_equip)
+		currentItemUI.split.connect(_split)
+		
+func dragItem() -> void:
 	if item and inventory:
 		holdingTexture = TextureRect.new()
 		holdingTexture.texture = icon
@@ -90,13 +107,28 @@ func _on_button_down() -> void:
 	else:
 		printerr("No Item or inventory")
 
-func _on_button_up() -> void:
+func stopDragItem() -> void:
 	heldDown = false
 	holdingTexture.queue_free()
 	if inventory:
 		inventory.stop_drag()
 	else:
 		printerr("No inventory")
+	
+func _on_button_up() -> void:
+	if leftClick:
+		stopDragItem()
+	else:
+		print("Left released")
+
+func _equip() -> void:
+	inventory._free_item_ui()
+	inventory._equip_item(self)
+	print("Equiping")
+
+func _split() -> void:
+	inventory._free_item_ui()
+	print("Splitting")
 
 func hideSlot() -> void:
 	counter.text = ""

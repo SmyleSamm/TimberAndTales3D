@@ -14,25 +14,10 @@
 [ext_resource type="PackedScene" uid="uid://iu036fe11crv" path="res://Scenes/Objects/craftingstation.tscn" id="10_rr77j"]
 [ext_resource type="PackedScene" uid="uid://dokb05pj6cmhv" path="res://Scenes/Objects/Resources/Material/Ore/Iron/iron.tscn" id="11_6rfyx"]
 [ext_resource type="PackedScene" uid="uid://c6itjrq5dxh12" path="res://Scenes/Objects/craftingstation_broken.tscn" id="13_trhgf"]
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_b0xu3"]
-sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-
-[sub_resource type="Sky" id="Sky_kywv4"]
-sky_material = SubResource("ProceduralSkyMaterial_b0xu3")
-
-[sub_resource type="Environment" id="Environment_lcmvs"]
-background_mode = 2
-sky = SubResource("Sky_kywv4")
-tonemap_mode = 2
-glow_enabled = true
+[ext_resource type="PackedScene" uid="uid://dl0y6hjyxwoq7" path="res://castle.tscn" id="15_ibc8m"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rf72a"]
 albedo_color = Color(0, 0, 0, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qecr4"]
-albedo_color = Color(0.586248, 0.674024, 0.419304, 1)
 
 [sub_resource type="Resource" id="Resource_1ti4r"]
 script = ExtResource("5_k3j03")
@@ -62,15 +47,21 @@ func _on_destroyed() -> void:
 	spawn_stone_broken()
 "
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_b0xu3"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_kywv4"]
+sky_material = SubResource("ProceduralSkyMaterial_b0xu3")
+
+[sub_resource type="Environment" id="Environment_lcmvs"]
+background_mode = 2
+sky = SubResource("Sky_kywv4")
+tonemap_mode = 2
+glow_enabled = true
+
 [node name="World" type="Node3D"]
 script = ExtResource("1_1o5yq")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
-shadow_enabled = true
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_lcmvs")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
@@ -81,24 +72,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.89233, -0.4995, -12.3439)
 material_override = SubResource("StandardMaterial3D_rf72a")
 use_collision = true
 size = Vector3(50.7847, 0.001, 57.6877)
-
-[node name="CSGBox3D3" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.3114, 0, -7)
-material_override = SubResource("StandardMaterial3D_qecr4")
-use_collision = true
-size = Vector3(3, 1, 3)
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.6557, 0.5, -1)
-material_override = SubResource("StandardMaterial3D_qecr4")
-use_collision = true
-size = Vector3(3, 2, 3)
-
-[node name="CSGBox3D4" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.96711, 1, 5)
-material_override = SubResource("StandardMaterial3D_qecr4")
-use_collision = true
-size = Vector3(3, 3, 3)
 
 [node name="Player" parent="." instance=ExtResource("3_qhss1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.61343, 0, -0.88264)
@@ -162,3 +135,33 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.45267, -0.630341, -6.12173)
 
 [node name="craftingstation_broken" parent="." instance=ExtResource("13_trhgf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, -0.5, -15)
+
+[node name="WorldObjects" type="Node3D" parent="."]
+
+[node name="Enviroment" type="Node3D" parent="WorldObjects"]
+
+[node name="Terrain" type="Node3D" parent="WorldObjects/Enviroment"]
+
+[node name="Resources" type="Node3D" parent="WorldObjects/Enviroment"]
+
+[node name="Stones" type="Node3D" parent="WorldObjects/Enviroment/Resources"]
+
+[node name="Sones" type="Node3D" parent="WorldObjects/Enviroment/Resources/Stones"]
+
+[node name="Irons" type="Node3D" parent="WorldObjects/Enviroment/Resources/Stones"]
+
+[node name="Trees" type="Node3D" parent="WorldObjects/Enviroment/Resources"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldObjects/Enviroment"]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="WorldObjects/Enviroment"]
+environment = SubResource("Environment_lcmvs")
+
+[node name="Buildings" type="Node3D" parent="WorldObjects/Enviroment"]
+
+[node name="castle" parent="WorldObjects/Enviroment/Buildings" instance=ExtResource("15_ibc8m")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 16.5, -0.5, -1.5)
+
+[node name="Enteties" type="Node3D" parent="WorldObjects"]

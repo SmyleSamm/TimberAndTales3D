@@ -3,6 +3,8 @@ class_name Inventory extends Control
 @export var columns: int
 @export var depth: int
 
+@export var maxColumns: int
+
 @onready var gc: GridContainer = $ScrollContainer/GridContainer
 
 var slots: Array = []
@@ -22,18 +24,17 @@ func _ready() -> void:
 	#fillInv()
 
 func checkHSize() -> void:
-	# TODO: Check via size of button and container how many can fit in it
-	if columns > 4:
-		printerr("There are to many columns! Max size is 4")
+	if columns > maxColumns:
+		printerr("There are to many columns! Max size is ",maxColumns)
 		print("Resizing is necesarry!")
 	else:
 		return
 	var temp: int = columns
 	var removed: int = 0
-	while temp > 4:
+	while temp > maxColumns:
 		temp -= 1
 		removed += 1
-	var extraDepth: int = int(int(removed/4)*depth)
+	var extraDepth: int = int(int(removed/maxColumns)*depth)
 	columns -= removed
 	depth += extraDepth
 
@@ -57,6 +58,7 @@ func smartAddItem(item: Item, stackSize: int) -> void:
 	var check: int = smartInventoryItemInsert(item, stackSize)
 	if check == -1:
 		var emptySlot: int = getEmptySlot()
+		print(emptySlot)
 		setItem(emptySlot, item)
 		smartAddItem(item, stackSize)
 		updateSlot(emptySlot)
@@ -212,7 +214,6 @@ func start_drag(item: Item, slot: Slot) -> void:
 
 func stop_drag() -> void:
 	print("Dropped on: ", hoveredSlot.name)
-	print(checkIfTool(-1, hoveredSlot))
 	print(hoveredSlot.item)
 	if hoveredSlot and hoveredSlot != originalSlot:
 		var item: Item = hoveredSlot.item
@@ -233,6 +234,7 @@ func stop_drag() -> void:
 	draggedItem = null
 	originalSlot = null
 	updateInventory()
+	print(checkIfTool(-1, hoveredSlot))
 	
 func _on_slot_hovered(slot: Slot) -> void:
 	print(slot.name)
@@ -241,25 +243,24 @@ func _on_slot_hovered(slot: Slot) -> void:
 func _on_slot_dropped(slot: Slot) -> void:
 	print("Item dropped on slot: ",slot.name)
 
+func _free_item_ui() -> void:
+	for i in slots:
+		for n in i:
+			if n.currentItemUI:
+				n.currentItemUI.queue_free()
+				n.currentItemUI = null
+
+func _equip_item(slot: Slot) -> void:
+	print(slot)
 
 func checkIfTool(slotID: int, s: Slot) -> bool:
 	var slot: Slot
 	if slotID == -1:
-		print(s.item)
 		slot = s
 	else:
 		slot = getSlot(slotID)
 	
 	if slot:
-		print(slot.item)
-		if slot.item == Item:
-			print("Is item")
-			if slot.item == Tool:
-				print("Is tool")
-			else:
-				print("Is item but not tool")
-		else:
-			print("Is not Item")
-	else:
-		print("No slot!")
-	return true
+		if slot.item is Item:
+			return slot.item is Tool
+	return false

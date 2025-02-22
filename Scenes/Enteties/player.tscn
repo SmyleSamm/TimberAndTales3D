@@ -1,11 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://bha6k8g1hp2ws"]
+[gd_scene load_steps=8 format=3 uid="uid://bha6k8g1hp2ws"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_cjsjp"]
 [ext_resource type="Texture2D" uid="uid://c0e4evlnadxi3" path="res://Assets/2D/Items/Food/Ham.png" id="2_6rmsp"]
-[ext_resource type="PackedScene" uid="uid://bmt7hxdvjdw5n" path="res://Scenes/UiElements/item.tscn" id="2_ks54d"]
 [ext_resource type="Script" path="res://Scripts/hand.gd" id="2_q4syh"]
-[ext_resource type="Script" path="res://Scripts/hotbar.gd" id="3_bxy0k"]
 [ext_resource type="PackedScene" uid="uid://dnihwnwmrxxvm" path="res://Scenes/UiElements/inventory.tscn" id="6_q4kur"]
+[ext_resource type="PackedScene" uid="uid://bbysjvf0ewaqh" path="res://hotbar.tscn" id="7_t2rnf"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_8smjs"]
 
@@ -46,24 +45,12 @@ transform = Transform3D(-0.258819, 0, 0.965926, 0.440863, 0.889767, 0.118129, -0
 texture_filter = 0
 texture = ExtResource("2_6rmsp")
 
-[node name="Hotbar" type="CanvasLayer" parent="."]
-script = ExtResource("3_bxy0k")
-
-[node name="GridContainer" type="GridContainer" parent="Hotbar"]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -20.0
-offset_top = -40.0
-offset_right = 20.0
-grow_horizontal = 2
-grow_vertical = 0
-columns = 9
-
-[node name="Item" parent="Hotbar" instance=ExtResource("2_ks54d")]
-
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="Inventory" parent="UI" instance=ExtResource("6_q4kur")]
+maxColumns = 4
+
+[node name="Hotbar" parent="UI" instance=ExtResource("7_t2rnf")]
+columns = 9
+depth = 1
+maxColumns = 9

@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbysjvf0ewaqh"]
+
+[ext_resource type="Script" path="res://hotbar.gd" id="1_pq5vh"]
+[ext_resource type="PackedScene" uid="uid://bmt7hxdvjdw5n" path="res://Scenes/UiElements/item.tscn" id="2_ykx1c"]
+
+[node name="Hotbar" type="Control"]
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+script = ExtResource("1_pq5vh")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+clip_contents = false
+custom_minimum_size = Vector2(400, 40)
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -400.0
+offset_top = -60.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="GridContainer" type="GridContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Tool" parent="." instance=ExtResource("2_ykx1c")]
+layout_mode = 1
+offset_left = -633.0
+offset_right = -633.0

@@ -3,15 +3,17 @@
 [ext_resource type="Script" path="res://Scripts/craftingstation_broken.gd" id="1_l1l0s"]
 [ext_resource type="Script" path="res://Scripts/Resources/ItemDrops.gd" id="2_cgao5"]
 [ext_resource type="Resource" uid="uid://cdm73wjuahi2v" path="res://Resources/ItemData/wood.tres" id="3_8l4os"]
-[ext_resource type="Texture2D" uid="uid://bbarkkej37ui" path="res://Assets/3D/KingdomStuff/Textures/dungeon_texture.png" id="4_04ukk"]
 
 [sub_resource type="Resource" id="Resource_aneyl"]
 script = ExtResource("2_cgao5")
 item = ExtResource("3_8l4os")
-maxCount = 100
+maxCount = 10
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_21knf"]
+load_path = "res://.godot/imported/dungeon_texture.png-d448e04542d34388ffba7f6461429d5a.s3tc.ctex"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8hni2"]
-albedo_texture = ExtResource("4_04ukk")
+albedo_texture = SubResource("CompressedTexture2D_21knf")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ku6si"]
 resource_name = "texture"

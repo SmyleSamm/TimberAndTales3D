@@ -8,8 +8,9 @@ const ATTACKDAMAGE = 10
 @onready var head: Node3D = $Head
 @onready var camera: Camera3D = $Head/Camera3D
 @onready var look: RayCast3D = $Head/RayCast3D
-@onready var hotbar: CanvasLayer = $Hotbar
 @onready var inventory: Control = $UI/Inventory
+@onready var hotbar: Hotbar = $UI/Hotbar
+@onready var hand: Node3D = $Head/Hand
 
 
 var isUIOpen: bool = false
@@ -17,6 +18,13 @@ var currentUI: Control
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	hotbar.visible = true
+	#hotbar debug tools
+	var pickaxe: Tool = load("res://Resources/Tools/pickaxe_stone.tres")
+	var axe: Tool = load("res://Resources/Tools/axe_stone.tres")
+	#hotbar.smartAddItem(pickaxe, 1)
+	#hotbar.smartAddItem(axe, 1)
+	hotbar.activateSlot(1)
 	
 func _input(event: InputEvent) -> void:
 	handleMouseInputs(event)
