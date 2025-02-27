@@ -134,6 +134,10 @@ func interact() -> void:
 	
 	var target = look.get_collider()
 	
+	if target is not Crafting and target is not Repairable:
+		target = target.get_parent()
+	if target is not Crafting and target is not Repairable:
+		target = target.get_parent()
 	if target is Crafting:
 		var ui: Control = target.getUI()
 		if not ui:

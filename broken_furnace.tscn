@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://ckl8kc3mtijgs"]
+
+[ext_resource type="Script" path="res://Scripts/Crafting/Repair.gd" id="1_yl303"]
+[ext_resource type="Script" path="res://Scripts/Resources/ItemDrops.gd" id="2_5iuj4"]
+[ext_resource type="Resource" uid="uid://pbobc08r3bgc" path="res://Resources/ItemData/stone.tres" id="3_e2gcp"]
+[ext_resource type="PackedScene" uid="uid://qjdu3rvy253w" path="res://furnace.tscn" id="4_baw6d"]
+
+[sub_resource type="Resource" id="Resource_aq1nc"]
+script = ExtResource("2_5iuj4")
+item = ExtResource("3_e2gcp")
+maxCount = 200
+
+[node name="brokenFurnace" type="StaticBody3D"]
+script = ExtResource("1_yl303")
+resources = Array[ExtResource("2_5iuj4")]([SubResource("Resource_aq1nc")])
+repair = ExtResource("4_baw6d")
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+size = Vector3(2, 2, 2)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1, 0)
+height = 4.0

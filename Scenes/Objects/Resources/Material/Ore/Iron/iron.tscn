@@ -5,7 +5,7 @@
 [ext_resource type="Resource" uid="uid://cfbanx6cyi31e" path="res://Resources/Types/stoneType.tres" id="2_4uvvg"]
 [ext_resource type="Script" path="res://Scripts/Resources/ItemDrops.gd" id="2_txd3d"]
 [ext_resource type="Resource" uid="uid://pbobc08r3bgc" path="res://Resources/ItemData/stone.tres" id="3_4rudx"]
-[ext_resource type="Resource" uid="uid://baqhdbi5qhl4c" path="res://Resources/ItemData/iron.tres" id="4_02x07"]
+[ext_resource type="Resource" uid="uid://baqhdbi5qhl4c" path="res://Resources/ItemData/raw_iron.tres" id="4_02x07"]
 [ext_resource type="Script" path="res://Scenes/Objects/Resources/Properties/respawn_element.gd" id="6_j7rl5"]
 [ext_resource type="Material" uid="uid://c1wobt1t0tqfy" path="res://Resources/Material/iron.tres" id="7_axb8y"]
 [ext_resource type="PackedScene" uid="uid://cob13ppigox6l" path="res://Scenes/Objects/Resources/Material/Ore/Iron/iron_broken.tscn" id="7_govvj"]

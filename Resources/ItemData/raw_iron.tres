@@ -5,6 +5,6 @@
 
 [resource]
 script = ExtResource("2_0vrec")
-name = "Iron"
+name = "Raw_Iron"
 icon = ExtResource("1_nijf2")
 maxStackSize = 999

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://0wl8lb6hgc1o"]
 
 [ext_resource type="Script" path="res://Scripts/Slot.gd" id="1_h4y0x"]
-[ext_resource type="Resource" uid="uid://baqhdbi5qhl4c" path="res://Resources/ItemData/iron.tres" id="2_jvq87"]
+[ext_resource type="Resource" uid="uid://baqhdbi5qhl4c" path="res://Resources/ItemData/raw_iron.tres" id="2_jvq87"]
 [ext_resource type="Resource" uid="uid://cpv4b1ncjdkf7" path="res://Resources/ItemData/plank.tres" id="3_8xyvc"]
 [ext_resource type="Resource" uid="uid://saiysckyeetu" path="res://Resources/Tools/hand.tres" id="4_5gsro"]
 

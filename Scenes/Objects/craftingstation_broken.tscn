@@ -1,13 +1,14 @@
-[gd_scene load_steps=11 format=4 uid="uid://c6itjrq5dxh12"]
+[gd_scene load_steps=12 format=4 uid="uid://c6itjrq5dxh12"]
 
-[ext_resource type="Script" path="res://Scripts/craftingstation_broken.gd" id="1_l1l0s"]
+[ext_resource type="Script" path="res://Scripts/Crafting/Repair.gd" id="1_yges6"]
 [ext_resource type="Script" path="res://Scripts/Resources/ItemDrops.gd" id="2_cgao5"]
 [ext_resource type="Resource" uid="uid://cdm73wjuahi2v" path="res://Resources/ItemData/wood.tres" id="3_8l4os"]
+[ext_resource type="PackedScene" uid="uid://iu036fe11crv" path="res://Scenes/Objects/craftingstation.tscn" id="4_wnkt3"]
 
-[sub_resource type="Resource" id="Resource_aneyl"]
+[sub_resource type="Resource" id="Resource_bv2cl"]
 script = ExtResource("2_cgao5")
 item = ExtResource("3_8l4os")
-maxCount = 10
+maxCount = 100
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_21knf"]
 load_path = "res://.godot/imported/dungeon_texture.png-d448e04542d34388ffba7f6461429d5a.s3tc.ctex"
@@ -55,8 +56,9 @@ shadow_mesh = SubResource("ArrayMesh_ctnhr")
 points = PackedVector3Array(1.22564, 0.046686, -0.320014, 1.13984, -1.87219e-05, -0.240146, 1.14029, -1.87219e-05, -0.501859, 1.14229, 0.0671372, -0.508039, 0.966905, 0.777316, -0.803744, 0.937488, 0.94844, -0.781637, 1.02106, 0.261281, 0.462034, 1.04647, -1.87219e-05, 0.438502, 1.09705, -0.00173091, -0.121293, 0.899825, -1.87219e-05, -0.875055, 0.874865, -1.87219e-05, -0.900014, 0.921442, 0.949771, -0.813014, 0.909853, 0.969937, -0.786391, 0.678973, 0.515446, 0.755125, 0.487761, 0.272315, 1.07484, 0.522749, -1.87219e-05, 1.05962, 0.976488, -0.00182603, -0.15576, 0.0378107, -1.87219e-05, 1.44566, -0.600008, -1.87219e-05, -0.900014, -0.378042, 0.558155, -0.947793, 0.504698, 0.718435, -0.960629, 0.498458, 0.895837, -0.956826, 0.486869, 0.915908, -0.930203, -0.800135, 0.799955, -0.775219, -1.02812, 0.82326, 0.898223, -0.603351, 0.857503, 1.04298, 0.330869, 0.633302, 1.04489, 0.358726, 0.611899, 1.04988, 0.0398164, 0.0753177, 1.45849, -0.900198, -1.87219e-05, -0.600031, -0.887718, -1.87219e-05, -0.887654, -0.109498, -1.87219e-05, 1.46372, -0.875015, -1.87219e-05, 0.899887, -0.900198, -1.87219e-05, 0.874928, -0.775175, 0.799955, -0.800178, -1.05085, 0.796625, 0.893706, -1.0357, 0.801572, 0.925321, -0.610929, 0.835816, 1.06985, -0.109053, 0.135339, 1.46776, 0.327749, 0.604575, 1.06533, -1.02166, 0.625406, 0.926272)
 
 [node name="craftingstation_broken" type="StaticBody3D"]
-script = ExtResource("1_l1l0s")
-resources = Array[ExtResource("2_cgao5")]([SubResource("Resource_aneyl")])
+script = ExtResource("1_yges6")
+resources = Array[ExtResource("2_cgao5")]([SubResource("Resource_bv2cl")])
+repair = ExtResource("4_wnkt3")
 
 [node name="table_medium_broken" type="MeshInstance3D" parent="."]
 material_override = SubResource("StandardMaterial3D_8hni2")
@@ -65,5 +67,3 @@ skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("ConvexPolygonShape3D_1iqtt")
-
-[connection signal="repaired" from="." to="." method="_on_repaired"]

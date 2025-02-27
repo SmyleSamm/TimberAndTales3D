@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://bphfko7gcb0fo"]
+
+[ext_resource type="Script" path="res://Scripts/Resources/Item.gd" id="1_3wr8j"]
+[ext_resource type="Texture2D" uid="uid://cxpic2fdom258" path="res://Assets/2D/Items/Ore & Gem/iron_ingot.png" id="1_o1kny"]
+
+[resource]
+script = ExtResource("1_3wr8j")
+name = "Iron_Ingot"
+icon = ExtResource("1_o1kny")
+maxStackSize = 999

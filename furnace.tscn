@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://qjdu3rvy253w"]
+
+[ext_resource type="Script" path="res://Scripts/Crafting/Crafting.gd" id="1_fdtom"]
+[ext_resource type="PackedScene" uid="uid://dyobdvrwhp8qj" path="res://Scenes/UiElements/simple_crafting_ui.tscn" id="2_vpufw"]
+[ext_resource type="Script" path="res://Scripts/Resources/Recepie.gd" id="3_nonlu"]
+[ext_resource type="Resource" uid="uid://brotpae74kfm" path="res://Resources/Recipies/iron.tres" id="4_b3xrg"]
+
+[node name="furnace" type="StaticBody3D" node_paths=PackedStringArray("ui")]
+script = ExtResource("1_fdtom")
+ui = NodePath("SimpleCraftingUI")
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+size = Vector3(2, 2, 2)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1.5, -0.5)
+
+[node name="SimpleCraftingUI" parent="." instance=ExtResource("2_vpufw")]
+top_level = true
+recipies = Array[ExtResource("3_nonlu")]([ExtResource("4_b3xrg")])

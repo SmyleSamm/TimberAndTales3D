@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Recipe" load_steps=7 format=3 uid="uid://brotpae74kfm"]
+
+[ext_resource type="Script" path="res://Scripts/Resources/ItemDrops.gd" id="1_xeqxr"]
+[ext_resource type="Script" path="res://Scripts/Resources/Recepie.gd" id="2_cf7so"]
+[ext_resource type="Resource" uid="uid://bphfko7gcb0fo" path="res://Resources/ItemData/iron_ingot.tres" id="2_g7424"]
+[ext_resource type="Resource" uid="uid://baqhdbi5qhl4c" path="res://Resources/ItemData/raw_iron.tres" id="3_otef3"]
+
+[sub_resource type="Resource" id="Resource_dfukk"]
+script = ExtResource("1_xeqxr")
+item = ExtResource("2_g7424")
+maxCount = 1
+
+[sub_resource type="Resource" id="Resource_21x40"]
+script = ExtResource("1_xeqxr")
+item = ExtResource("3_otef3")
+maxCount = 10
+
+[resource]
+script = ExtResource("2_cf7so")
+item = Array[ExtResource("1_xeqxr")]([SubResource("Resource_dfukk")])
+requirements = Array[ExtResource("1_xeqxr")]([SubResource("Resource_21x40")])

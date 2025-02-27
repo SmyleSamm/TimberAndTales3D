@@ -1,7 +1,7 @@
-[gd_scene load_steps=15 format=4 uid="uid://iu036fe11crv"]
+[gd_scene load_steps=17 format=4 uid="uid://iu036fe11crv"]
 
 [ext_resource type="Script" path="res://Scripts/Craftingstation.gd" id="1_iqvl8"]
-[ext_resource type="Texture2D" uid="uid://bbarkkej37ui" path="res://Assets/3D/KingdomStuff/Textures/dungeon_texture.png" id="2_0vvs2"]
+[ext_resource type="Texture2D" uid="uid://d0ip4wodibjfn" path="res://Assets/3D/KingdomStuff/Textures/dungeon_texture.png" id="2_0vvs2"]
 [ext_resource type="PackedScene" uid="uid://dyobdvrwhp8qj" path="res://Scenes/UiElements/simple_crafting_ui.tscn" id="3_o38jp"]
 [ext_resource type="Script" path="res://Scripts/Resources/Recepie.gd" id="4_613xd"]
 [ext_resource type="Resource" uid="uid://b7klrwntaktl1" path="res://Resources/Recipies/Planks.tres" id="5_yny63"]
@@ -11,9 +11,15 @@
 [ext_resource type="Resource" uid="uid://ci825adbis0va" path="res://Resources/Recipies/axe_wood.tres" id="9_otpyv"]
 [ext_resource type="Resource" uid="uid://c3t1i6f8x0wrr" path="res://Resources/Recipies/axe_stone.tres" id="10_6738w"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ffprd"]
+albedo_texture = ExtResource("2_0vvs2")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_givr5"]
+load_path = "res://.godot/imported/dungeon_texture.png-f528ab211f74202051a16ea174984d5e.s3tc.ctex"
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aayxb"]
 resource_name = "texture"
-albedo_texture = ExtResource("2_0vvs2")
+albedo_texture = SubResource("CompressedTexture2D_givr5")
 roughness = 0.45
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_bcn1l"]
@@ -56,6 +62,7 @@ script = ExtResource("1_iqvl8")
 ui = NodePath("SimpleCraftingUI")
 
 [node name="table_medium" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_ffprd")
 mesh = SubResource("ArrayMesh_fcpwk")
 skeleton = NodePath("")
 

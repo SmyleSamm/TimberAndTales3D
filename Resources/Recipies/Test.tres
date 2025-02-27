@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/Resources/ItemDrops.gd" id="1_c8pd6"]
 [ext_resource type="Script" path="res://Scripts/Resources/Recepie.gd" id="2_26ddg"]
-[ext_resource type="Resource" uid="uid://baqhdbi5qhl4c" path="res://Resources/ItemData/iron.tres" id="2_pab3b"]
+[ext_resource type="Resource" uid="uid://baqhdbi5qhl4c" path="res://Resources/ItemData/raw_iron.tres" id="2_pab3b"]
 [ext_resource type="Resource" uid="uid://cpv4b1ncjdkf7" path="res://Resources/ItemData/plank.tres" id="3_fcy1b"]
 [ext_resource type="Resource" uid="uid://pbobc08r3bgc" path="res://Resources/ItemData/stone.tres" id="4_gl1g5"]
 [ext_resource type="Resource" uid="uid://cdm73wjuahi2v" path="res://Resources/ItemData/wood.tres" id="5_dkkr7"]
