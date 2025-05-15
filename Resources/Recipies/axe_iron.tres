@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="Recipe" load_steps=9 format=3 uid="uid://cqeqva410kqme"]
+
+[ext_resource type="Script" path="res://Scripts/Resources/ItemDrops.gd" id="1_cicuj"]
+[ext_resource type="Script" path="res://Scripts/Resources/Recepie.gd" id="2_2osgu"]
+[ext_resource type="Resource" uid="uid://ds01aro7n1x7r" path="res://Resources/Tools/axe_iron.tres" id="2_erj4q"]
+[ext_resource type="Resource" uid="uid://bphfko7gcb0fo" path="res://Resources/ItemData/iron_ingot.tres" id="3_rcyln"]
+[ext_resource type="Resource" uid="uid://csli4ix7yha5k" path="res://Resources/ItemData/stick.tres" id="4_rd1r6"]
+
+[sub_resource type="Resource" id="Resource_r7o1b"]
+script = ExtResource("1_cicuj")
+item = ExtResource("2_erj4q")
+maxCount = 1
+
+[sub_resource type="Resource" id="Resource_e53aj"]
+script = ExtResource("1_cicuj")
+item = ExtResource("3_rcyln")
+maxCount = 100
+
+[sub_resource type="Resource" id="Resource_bjs5u"]
+script = ExtResource("1_cicuj")
+item = ExtResource("4_rd1r6")
+maxCount = 10
+
+[resource]
+script = ExtResource("2_2osgu")
+item = Array[ExtResource("1_cicuj")]([SubResource("Resource_r7o1b")])
+requirements = Array[ExtResource("1_cicuj")]([SubResource("Resource_e53aj"), SubResource("Resource_bjs5u")])

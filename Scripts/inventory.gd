@@ -58,7 +58,7 @@ func smartAddItem(item: Item, stackSize: int) -> void:
 	var check: int = smartInventoryItemInsert(item, stackSize)
 	if check == -1:
 		var emptySlot: int = getEmptySlot()
-		print(emptySlot)
+		#print(emptySlot)
 		setItem(emptySlot, item)
 		smartAddItem(item, stackSize)
 		updateSlot(emptySlot)
@@ -100,6 +100,14 @@ func setItem(slotID: int, item: Item) -> void:
 	var slot: Slot = slots[slotCoords[0] - 1][slotCoords[1] - 1]
 	slot.item = item
 	slot.icon = item.icon
+
+func setStack(slotID: int, item: Item, stackSize: int) -> void:
+	var slotCoords: Array[int] = getSlotCoords(slotID)
+	var slot: Slot = slots[slotCoords[0] - 1][slotCoords[1] - 1]
+	slot.item = item
+	slot.icon = item.icon
+	slot.slotSize = stackSize
+	updateSlot(slotID)
 
 func checkIfSlotIsEmpty(slotID: int) -> bool:
 	var slotCoords: Array[int] = getSlotCoords(slotID)
@@ -213,8 +221,8 @@ func start_drag(item: Item, slot: Slot) -> void:
 	slot.item = null
 
 func stop_drag() -> void:
-	print("Dropped on: ", hoveredSlot.name)
-	print(hoveredSlot.item)
+	#print("Dropped on: ", hoveredSlot.name)
+	#print(hoveredSlot.item)
 	if hoveredSlot and hoveredSlot != originalSlot:
 		var item: Item = hoveredSlot.item
 		var itemIcon: Texture2D = hoveredSlot.icon

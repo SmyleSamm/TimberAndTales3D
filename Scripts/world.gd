@@ -1,7 +1,9 @@
 extends Node3D
 
+var lastNPC: NPC
+
 func get_current_world() -> Node3D:
-	return get_tree().root.get_child(1)
+	return get_tree().root.get_child(2)
 
 func get_current_debug() -> CanvasLayer:
 	for i in get_current_world().get_children():
@@ -11,24 +13,38 @@ func get_current_debug() -> CanvasLayer:
 	return null
 
 func hideAllUI() -> void:
-	get_current_debug().hide()
+	if get_current_debug():
+		get_current_debug().hide()
 
 func showAllUI() -> void:
-	get_current_debug().show()
+	if get_current_debug():
+		get_current_debug().show()
 
-
+#func checkIfPlayerHasEnoughItems(item: Item, count: int) -> bool:
+	#var hasEnough: bool = false
+	#var items: Array[Array] = getPlayerResources()
+	#for i in items:
+		#var playerItem: Item = i[0]
+		#var playerCount: int = i[1]
+		#if playerItem == item:
+			#if playerCount >= count:
+				#hasEnough = true
+	#if not hasEnough:
+		#return false
+	#return true
+	
 func checkIfPlayerHasEnoughItems(item: Item, count: int) -> bool:
-	var hasEnough: bool = false
+	return getPlayerResourceCount(item) >= count
+
+func getPlayerResourceCount(item: Item) -> int:
+	var count: int = 0
 	var items: Array[Array] = getPlayerResources()
 	for i in items:
 		var playerItem: Item = i[0]
 		var playerCount: int = i[1]
 		if playerItem == item:
-			if playerCount >= count:
-				hasEnough = true
-	if not hasEnough:
-		return false
-	return true
+			return playerCount
+	return count
 
 func changePlayerResource(item: Item, count: int) -> void:
 	var inventory: Inventory = getCurrentInventory()
@@ -56,3 +72,17 @@ func getCurrentPlayer() -> Player:
 		if i.name == "Player":
 			return i
 	return
+
+func checkLastNPCQuests(args: Array[String]) -> void:
+	print("Going")
+	print(args)
+	#lastNPC.checkIfQuestCompleted(args)
+
+func getItem(name: String) -> Item:
+	var file = FileAccess.file_exists("res://Resources/ItemData/"+name+".tres")
+	if file:
+		return load("res://Resources/ItemData/"+name+".tres")
+	file = FileAccess.file_exists("res://Resources/Tools/"+name+".tres")
+	if file:
+		return load("res://Resources/Tools/"+name+".tres")
+	return 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://iu036fe11crv"]
+[gd_scene load_steps=19 format=4 uid="uid://iu036fe11crv"]
 
 [ext_resource type="Script" path="res://Scripts/Craftingstation.gd" id="1_iqvl8"]
 [ext_resource type="Texture2D" uid="uid://d0ip4wodibjfn" path="res://Assets/3D/KingdomStuff/Textures/dungeon_texture.png" id="2_0vvs2"]
@@ -10,6 +10,8 @@
 [ext_resource type="Resource" uid="uid://bhcrlgh0i3o5g" path="res://Resources/Recipies/pickaxe_stone.tres" id="8_p77te"]
 [ext_resource type="Resource" uid="uid://ci825adbis0va" path="res://Resources/Recipies/axe_wood.tres" id="9_otpyv"]
 [ext_resource type="Resource" uid="uid://c3t1i6f8x0wrr" path="res://Resources/Recipies/axe_stone.tres" id="10_6738w"]
+[ext_resource type="Resource" uid="uid://dft3xhlrxktay" path="res://Resources/Recipies/pickaxe_iron.tres" id="11_8mgj1"]
+[ext_resource type="Resource" uid="uid://cqeqva410kqme" path="res://Resources/Recipies/axe_iron.tres" id="12_uaroo"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ffprd"]
 albedo_texture = ExtResource("2_0vvs2")
@@ -71,4 +73,4 @@ shape = SubResource("ConvexPolygonShape3D_urd65")
 
 [node name="SimpleCraftingUI" parent="." instance=ExtResource("3_o38jp")]
 top_level = true
-recipies = Array[ExtResource("4_613xd")]([ExtResource("5_yny63"), ExtResource("6_cs8gl"), ExtResource("7_c155b"), ExtResource("8_p77te"), ExtResource("9_otpyv"), ExtResource("10_6738w")])
+recipies = Array[ExtResource("4_613xd")]([ExtResource("5_yny63"), ExtResource("6_cs8gl"), ExtResource("7_c155b"), ExtResource("9_otpyv"), ExtResource("8_p77te"), ExtResource("10_6738w"), ExtResource("11_8mgj1"), ExtResource("12_uaroo")])

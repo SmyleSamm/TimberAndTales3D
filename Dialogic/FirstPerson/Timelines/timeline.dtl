@@ -1,0 +1,19 @@
+if {FirstPerson.CompletedTimelines.Timeline1} == true:
+	jump 2Timeline/
+character (Normal): Hello!\
+My name is {name}! What is your name?
+[text_input text="What is your name?" var="PlayerName" placeholder="Name" default="Player"]
+character: Nice to meet you {PlayerName}!\
+We are stranded and I need your help to go back to the island.\
+Will you help me?
+- Yes
+	set {response} = true
+- No
+	set {response} = false
+if {response} == true:
+	character (Happy): Thank you!\
+Walk to the trees over there and break them.
+else:
+	character (Sad): Oh... ok... Good luck... You will need it
+set {FirstPerson.CompletedTimelines.Timeline1} = true
+jump 2Timeline/

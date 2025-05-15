@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Tool" load_steps=6 format=3 uid="uid://ds01aro7n1x7r"]
+
+[ext_resource type="Resource" uid="uid://bbipk6jthal6p" path="res://Resources/Types/woodType.tres" id="1_auscq"]
+[ext_resource type="Script" path="res://Scripts/Tool.gd" id="1_mkyir"]
+[ext_resource type="Script" path="res://Scripts/Resources/Attack.gd" id="2_ua5r8"]
+[ext_resource type="Texture2D" uid="uid://b24scaobbgpo1" path="res://Assets/2D/Items/Food/Fish Steak.png" id="3_6ypl5"]
+
+[sub_resource type="Resource" id="Resource_lb4yb"]
+script = ExtResource("2_ua5r8")
+base_damage = 100
+base_lvl = 3
+base_type = ExtResource("1_auscq")
+
+[resource]
+script = ExtResource("1_mkyir")
+attack = SubResource("Resource_lb4yb")
+name = "Iron axe"
+icon = ExtResource("3_6ypl5")
+maxStackSize = 1

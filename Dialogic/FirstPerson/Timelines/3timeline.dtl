@@ -1,0 +1,8 @@
+do World.checkLastNPCQuests("plank")
+set {FirstPerson.Quests.AAAA} = true
+set {FirstPerson.Quests.AAAB} = 10
+if {FirstPerson.Quests.AAAC} >= {FirstPerson.Quests.AAAB}:
+	set {FirstPerson.Quests.AAAA} = false
+	character (Normal): Great!
+character (Normal): Repair the crafting table with 10 wood (press 'E' to interact)
+character (Normal): If you have repaired it, brin me 10 Planks

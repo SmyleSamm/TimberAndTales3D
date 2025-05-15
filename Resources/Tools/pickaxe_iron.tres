@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Tool" load_steps=6 format=3 uid="uid://d1bpfetniwd6x"]
+
+[ext_resource type="Resource" uid="uid://cfbanx6cyi31e" path="res://Resources/Types/stoneType.tres" id="1_vh5u2"]
+[ext_resource type="Script" path="res://Scripts/Tool.gd" id="1_wnj5l"]
+[ext_resource type="Script" path="res://Scripts/Resources/Attack.gd" id="2_8ue7a"]
+[ext_resource type="Texture2D" uid="uid://dckogppsck61l" path="res://Assets/2D/Items/Weapon & Tool/iron_pickaxe.png" id="3_3cxtx"]
+
+[sub_resource type="Resource" id="Resource_71j71"]
+script = ExtResource("2_8ue7a")
+base_damage = 100
+base_lvl = 3
+base_type = ExtResource("1_vh5u2")
+
+[resource]
+script = ExtResource("1_wnj5l")
+attack = SubResource("Resource_71j71")
+name = "Iron pickaxe"
+icon = ExtResource("3_3cxtx")
+maxStackSize = 1

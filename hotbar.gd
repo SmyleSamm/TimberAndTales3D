@@ -17,6 +17,7 @@ func activateSlot(slotID: int) -> void:
 	var slot: Slot = getSlot(slotID)
 	activeSlotID = slotID
 	activeSlot = slot
+	slot.grab_focus()
 	if slot.item is Tool:
 		item.switchTool(slot.item)
 		hand.switchTool(slot.item)

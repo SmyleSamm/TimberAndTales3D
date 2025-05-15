@@ -53,9 +53,10 @@ func _getItemList(res: ItemDrops, mod: int) -> HBoxContainer:
 	var hBox: HBoxContainer = HBoxContainer.new()
 	
 	var sprite: TextureRect = TextureRect.new()
-	sprite.texture = res.item.icon
-	var name: String = res.item.name
-	var count: int = res.maxCount * mod
+	if res.item:
+		sprite.texture = res.item.icon
+		var name: String = res.item.name
+		var count: int = res.maxCount * mod
 	
 	var text: Label = Label.new()
 	text.text = _getLabelText(res, mod)
@@ -66,9 +67,14 @@ func _getItemList(res: ItemDrops, mod: int) -> HBoxContainer:
 	return hBox
 
 func _getLabelText(res: ItemDrops, mod: int) -> String:
-	var name: String = res.item.name
-	var count: int = res.maxCount * mod
-	return name + ": " + str(count)
+	#FIXME: idk why, but res.item is <null> 
+	if res.item:
+		print("res.item is not null")
+		var name: String = res.item.name
+		var count: int = res.maxCount * mod
+		return name + ": " + str(count)
+	print("res.item is null")
+	return ""
 
 func _getCraftingButtons(recipie: Recipe) -> HBoxContainer:
 	var hBox: HBoxContainer = HBoxContainer.new()

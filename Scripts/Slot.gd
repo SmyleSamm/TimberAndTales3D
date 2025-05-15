@@ -15,7 +15,6 @@ var inventory: Inventory
 
 var leftClick: bool 
 var currentItemUI: SelectItemUI
-#TODO: Items in slots can be moved
 
 func _ready() -> void:
 	button_down.connect(_on_button_down)

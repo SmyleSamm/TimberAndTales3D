@@ -14,9 +14,9 @@
 [ext_resource type="PackedScene" uid="uid://iu036fe11crv" path="res://Scenes/Objects/craftingstation.tscn" id="10_rr77j"]
 [ext_resource type="PackedScene" uid="uid://dokb05pj6cmhv" path="res://Scenes/Objects/Resources/Material/Ore/Iron/iron.tscn" id="11_6rfyx"]
 [ext_resource type="PackedScene" uid="uid://c6itjrq5dxh12" path="res://Scenes/Objects/craftingstation_broken.tscn" id="13_trhgf"]
-[ext_resource type="PackedScene" uid="uid://dl0y6hjyxwoq7" path="res://castle.tscn" id="15_ibc8m"]
 [ext_resource type="PackedScene" uid="uid://ckl8kc3mtijgs" path="res://broken_furnace.tscn" id="16_bx62t"]
 [ext_resource type="PackedScene" uid="uid://qjdu3rvy253w" path="res://furnace.tscn" id="17_2pwnw"]
+[ext_resource type="PackedScene" uid="uid://ci4wm0q84cvnd" path="res://npc.tscn" id="18_1kgqq"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rf72a"]
 albedo_color = Color(0, 0, 0, 1)
@@ -76,7 +76,7 @@ use_collision = true
 size = Vector3(50.7847, 0.001, 57.6877)
 
 [node name="Player" parent="." instance=ExtResource("3_qhss1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.61343, 0, -0.88264)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.88657, 0, 7.11736)
 
 [node name="Tree" parent="." instance=ExtResource("4_3cy3f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, -0.496357, 10)
@@ -89,7 +89,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, -0.496357, -2)
 resources = Array[ExtResource("5_k3j03")]([SubResource("Resource_1ti4r"), SubResource("Resource_3twbl"), SubResource("Resource_17ox6")])
 
 [node name="Tree4" parent="." instance=ExtResource("4_3cy3f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.2504, -0.496357, -27.68)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.2504, -0.496357, 6.32)
 
 [node name="Tree5" parent="." instance=ExtResource("4_3cy3f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.30111, -0.496357, -11.1953)
@@ -125,6 +125,22 @@ theme = ExtResource("7_n61kb")
 text = "100 Fps"
 horizontal_alignment = 2
 
+[node name="Label" type="Label" parent="Debug"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -11.5
+offset_right = 5.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+text = "+"
+
 [node name="stone" parent="." instance=ExtResource("9_q4mj4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -0.634912, -6)
 script = SubResource("GDScript_0kwdg")
@@ -137,6 +153,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.45267, -0.630341, -6.12173)
 
 [node name="craftingstation_broken" parent="." instance=ExtResource("13_trhgf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, -0.5, -15)
+labelOffset = Vector3(0, 2, 0)
+labelRotation = Vector3(20, 20, 20)
 
 [node name="WorldObjects" type="Node3D" parent="."]
 
@@ -163,13 +181,14 @@ environment = SubResource("Environment_lcmvs")
 
 [node name="Buildings" type="Node3D" parent="WorldObjects/Enviroment"]
 
-[node name="castle" parent="WorldObjects/Enviroment/Buildings" instance=ExtResource("15_ibc8m")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 16.5, -0.5, -1.5)
-
 [node name="Enteties" type="Node3D" parent="WorldObjects"]
 
 [node name="brokenFurnace" parent="." instance=ExtResource("16_bx62t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.06322, -0.499, -11.0455)
+labelOffset = Vector3(0, 3, 0)
 
 [node name="furnace" parent="." instance=ExtResource("17_2pwnw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, -0.5, -11)
+
+[node name="StaticBody3D" parent="." instance=ExtResource("18_1kgqq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, -0.5, 3.5)

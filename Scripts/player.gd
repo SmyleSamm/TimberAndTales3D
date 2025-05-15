@@ -12,36 +12,37 @@ const ATTACKDAMAGE = 10
 @onready var hotbar: Hotbar = $UI/Hotbar
 @onready var hand: Node3D = $Head/Hand
 
-
 var isUIOpen: bool = false
 var currentUI: Control
+var dialogue: bool = false
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	hotbar.visible = true
 	#hotbar debug tools
-	var pickaxe: Tool = load("res://Resources/Tools/pickaxe_stone.tres")
-	var axe: Tool = load("res://Resources/Tools/axe_stone.tres")
+	#var pickaxe: Tool = load("res://Resources/Tools/pickaxe_stone.tres")
+	#var axe: Tool = load("res://Resources/Tools/axe_stone.tres")
 	#hotbar.smartAddItem(pickaxe, 1)
 	#hotbar.smartAddItem(axe, 1)
 	hotbar.activateSlot(1)
 	
 func _input(event: InputEvent) -> void:
+	if isUIOpen or dialogue:
+		handleUIINputs(event)
+		return
+	
 	handleMouseInputs(event)
 	handleKeyInputs(event)
 	
 func handleMouseInputs(event: InputEvent) -> void:
-	if isUIOpen:
-		return
-	
 	if event is InputEventMouseMotion:
 		head.rotate_y(-event.relative.x * SENSITIVITY)
 		camera.rotate_x(-event.relative.y * SENSITIVITY)
 		camera.rotation.x = clamp(camera.rotation.x, -1, 1)
 		look.rotation.x = camera.rotation.x
 		look.rotation.y = camera.rotation.y
-		
-func handleKeyInputs(event: InputEvent) -> void:
+
+func handleUIINputs(event: InputEvent) -> void:
 	if isUIOpen:
 		if event.is_action_pressed("closeUI"):
 			closeUI(currentUI)
@@ -49,7 +50,8 @@ func handleKeyInputs(event: InputEvent) -> void:
 			if event.is_action_pressed("inventory"):
 				closeUI(currentUI)
 		return
-	
+
+func handleKeyInputs(event: InputEvent) -> void:
 	if event.is_action_pressed("ESC"):
 		quit()
 		
@@ -59,12 +61,24 @@ func handleKeyInputs(event: InputEvent) -> void:
 	if event.is_action_pressed("attack"):
 		attack()
 	
+	if event.is_action_pressed("save"):
+		SaveGame.saveGame()
+	
+	if event.is_action_pressed("load"):
+		SaveGame.loadGame()
+	
+	if event.is_action_pressed("delete"):
+		SaveGame.deleteGameFile()
+	
 	if event.is_action_pressed("inventory"):
 		inventory.updateInventory()
 		openUI(inventory)
 	handleHotbar(event)
 
 func handleHotbar(event: InputEvent) -> void:
+	if isUIOpen or dialogue:
+		return
+	
 	if event.is_action_pressed("slot"):
 		var slotID: int = event.keycode - KEY_0
 		hotbar.activateSlot(slotID)
@@ -72,19 +86,20 @@ func handleHotbar(event: InputEvent) -> void:
 	if event.is_action("switchSlot") and event.is_pressed():
 		var up: bool = bool(event.button_index - MOUSE_BUTTON_WHEEL_DOWN)
 		var nextSlotID: int = int(up) * 2 - 1
-		var nextSlot: int = hotbar.getSlotID() + nextSlotID
+		var nextSlot: int = hotbar.activeSlotID + nextSlotID
 		
 		if nextSlot <= 0:
-			nextSlot = hotbar.getSlotsCount()
-		elif nextSlot > hotbar.getSlotsCount():
+			nextSlot = hotbar.columns
+		elif nextSlot > hotbar.columns:
 			nextSlot = 1
 			
 		hotbar.activateSlot(nextSlot)
 
-func _process(delta: float) -> void:
-	pass
-	
 func _physics_process(delta: float) -> void:
+	#Disables Physiks when UI is open
+	if isUIOpen or dialogue:
+		return
+	
 	#Add running
 	var run: float = int(Input.is_action_pressed("move_fast")) * RUNNING
 	run = 1 + run
@@ -134,9 +149,9 @@ func interact() -> void:
 	
 	var target = look.get_collider()
 	
-	if target is not Crafting and target is not Repairable:
+	if target is not Crafting and target is not Repairable and target is not NPC:
 		target = target.get_parent()
-	if target is not Crafting and target is not Repairable:
+	if target is not Crafting and target is not Repairable and target is not NPC:
 		target = target.get_parent()
 	if target is Crafting:
 		var ui: Control = target.getUI()
@@ -147,7 +162,10 @@ func interact() -> void:
 		
 	if target is Repairable:
 		target.interact()
-		
+	
+	if target is NPC:
+		target.talkToPlayer()
+
 func openUI(ui: Control) -> void:
 	isUIOpen = true
 	currentUI = ui
@@ -160,3 +178,10 @@ func closeUI(ui: Control) -> void:
 	World.showAllUI()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	ui.hide()
+
+func setDialogue(state: bool) -> void:
+	dialogue = state
+	if state:
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	else:
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)

@@ -19,7 +19,8 @@ func spawn_tree_stump() -> void:
 	get_parent().add_child(instance)
 
 func _on_destroyed() -> void:
-	spawn_tree_stump()"
+	spawn_tree_stump()
+"
 
 [sub_resource type="Resource" id="Resource_br3me"]
 script = ExtResource("2_iuwd5")

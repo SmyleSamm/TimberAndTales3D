@@ -1,0 +1,18 @@
+do World.checkLastNPCQuests("wood")
+set {FirstPerson.Quests.AAAA} = true
+set {FirstPerson.Quests.AAAB} = 10
+if {FirstPerson.CompletedTimelines.Timeline2} == true:
+	jump 3timeline/
+elif {FirstPerson.Quests.AAAC} >= {FirstPerson.Quests.AAAB}:
+	set {FirstPerson.CompletedTimelines.Timeline2} = true
+	character (Normal): Great! \
+Now we can repair the crafting table
+	jump 3timeline/
+if {response} == true:
+	character (Happy): Use left click to attack\
+Open your inventory with "i"
+	character (Happy): Come to me again if you have gathered 10 Wood
+else:
+	character (Sad): You can repair the crafting station with 10 wood. \
+The boat on the beach can be repaired with 10 Planks.\
+Now get away!
