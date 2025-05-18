@@ -11,6 +11,7 @@ const ATTACKDAMAGE = 10
 @onready var inventory: Control = $UI/Inventory
 @onready var hotbar: Hotbar = $UI/Hotbar
 @onready var hand: Node3D = $Head/Hand
+@onready var esc: Control = $UI/esc_menu
 
 var isUIOpen: bool = false
 var currentUI: Control
@@ -53,7 +54,8 @@ func handleUIINputs(event: InputEvent) -> void:
 
 func handleKeyInputs(event: InputEvent) -> void:
 	if event.is_action_pressed("ESC"):
-		quit()
+		#quit()
+		esc.interact()
 		
 	if event.is_action_pressed("interact"):
 		interact()
