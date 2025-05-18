@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://cpk3wdhqy76bs"]
+[gd_scene load_steps=4 format=3 uid="uid://cpk3wdhqy76bs"]
 
+[ext_resource type="Theme" uid="uid://unui6pba6fad" path="res://Resources/Fonts/pixelStyle.tres" id="1_1bpnd"]
 [ext_resource type="Script" path="res://switchUI.gd" id="1_767rx"]
+[ext_resource type="Script" path="res://save_load_button.gd" id="3_nfa64"]
 
 [node name="esc_menu" type="Control"]
 layout_mode = 3
@@ -9,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="main_menu" type="Control" parent="."]
 layout_mode = 1
@@ -19,6 +22,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="main_menu"]
+custom_minimum_size = Vector2(300, 200)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -32,34 +36,46 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Button" type="Button" parent="main_menu/VBoxContainer" node_paths=PackedStringArray("currentUI")]
+[node name="SwitchUIButton" type="Button" parent="main_menu/VBoxContainer" node_paths=PackedStringArray("currentUI")]
 layout_mode = 2
-text = "BACK"
+size_flags_vertical = 3
+theme = ExtResource("1_1bpnd")
+text = "Back"
 script = ExtResource("1_767rx")
 currentUI = NodePath("../..")
 
-[node name="Button2" type="Button" parent="main_menu/VBoxContainer"]
+[node name="SaveLoadButton" type="Button" parent="main_menu/VBoxContainer"]
 layout_mode = 2
-text = "TEST TEXT"
+size_flags_vertical = 3
+theme = ExtResource("1_1bpnd")
+text = "Save"
+script = ExtResource("3_nfa64")
 
-[node name="Button3" type="Button" parent="main_menu/VBoxContainer"]
+[node name="SaveLoadButton2" type="Button" parent="main_menu/VBoxContainer"]
 layout_mode = 2
-text = "TEST TEXT"
+size_flags_vertical = 3
+theme = ExtResource("1_1bpnd")
+text = "Load"
+script = ExtResource("3_nfa64")
+mode = "load"
 
-[node name="Button5" type="Button" parent="main_menu/VBoxContainer" node_paths=PackedStringArray("nextUI", "currentUI")]
+[node name="SwitchUIButton2" type="Button" parent="main_menu/VBoxContainer" node_paths=PackedStringArray("nextUI", "currentUI")]
 layout_mode = 2
-text = "OPTIONS"
+size_flags_vertical = 3
+theme = ExtResource("1_1bpnd")
+text = "Options"
 script = ExtResource("1_767rx")
 nextUI = NodePath("../../../options")
 currentUI = NodePath("../..")
 
-[node name="Button4" type="Button" parent="main_menu/VBoxContainer"]
+[node name="SwitchUIButton3" type="Button" parent="main_menu/VBoxContainer"]
 layout_mode = 2
-text = "QUIT"
+size_flags_vertical = 3
+theme = ExtResource("1_1bpnd")
+text = "Quit"
 script = ExtResource("1_767rx")
 
 [node name="options" type="Control" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -68,6 +84,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="options"]
+custom_minimum_size = Vector2(300, 200)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -83,11 +100,15 @@ grow_vertical = 2
 
 [node name="Label" type="Label" parent="options/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 6
 text = "TEST TEXT"
+horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="options/VBoxContainer" node_paths=PackedStringArray("currentUI", "previousUI")]
+[node name="SwitchUIButton" type="Button" parent="options/VBoxContainer" node_paths=PackedStringArray("currentUI", "previousUI")]
 layout_mode = 2
-text = "GO BACK"
+size_flags_vertical = 3
+theme = ExtResource("1_1bpnd")
+text = "Back"
 script = ExtResource("1_767rx")
 currentUI = NodePath("../..")
 previousUI = NodePath("../../../main_menu")

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0y6lhf5cbdfv"]
+
+[ext_resource type="Script" path="res://switchUI.gd" id="1_sujxj"]
+
+[node name="switchUIButton" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+script = ExtResource("1_sujxj")
