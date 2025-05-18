@@ -17,6 +17,7 @@ func activateSlot(slotID: int) -> void:
 	var slot: Slot = getSlot(slotID)
 	activeSlotID = slotID
 	activeSlot = slot
+	#TODO: if grab_focus -> jump(space) will function as a click -> might cause problems
 	slot.grab_focus()
 	if slot.item is Tool:
 		item.switchTool(slot.item)

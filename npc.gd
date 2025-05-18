@@ -9,9 +9,9 @@ func _ready() -> void:
 
 func talkToPlayer() -> void:
 	print("Talked to")
-	SaveGame.saveGame()
-	#World.lastNPC = self
-	#Dialogic.start("timeline")
+	#SaveGame.saveGame()
+	World.lastNPC = self
+	Dialogic.start("timeline")
 
 func checkIfQuestCompleted(args: String) -> void:
 	print(args)
