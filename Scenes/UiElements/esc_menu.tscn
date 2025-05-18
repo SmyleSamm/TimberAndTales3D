@@ -1,0 +1,74 @@
+[gd_scene load_steps=7 format=3 uid="uid://dog3vvx1421mx"]
+
+[ext_resource type="Theme" uid="uid://unui6pba6fad" path="res://Resources/Fonts/pixelStyle.tres" id="1_4iu6e"]
+[ext_resource type="Script" path="res://Scenes/UiElements/esc_menu.gd" id="1_qoico"]
+[ext_resource type="Script" path="res://saveButton.gd" id="2_m7k00"]
+[ext_resource type="PackedScene" uid="uid://hytbyqyhm32e" path="res://changeUIButton.tscn" id="2_rgeqw"]
+[ext_resource type="PackedScene" uid="uid://7pnh8l875iw5" path="res://quitButton.tscn" id="4_l83lb"]
+[ext_resource type="PackedScene" uid="uid://chjtixv6typa8" path="res://options_menu.tscn" id="5_xoyh2"]
+
+[node name="ESCMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_qoico")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(300, 200)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 170.0
+offset_top = 80.0
+offset_right = 470.0
+offset_bottom = 280.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ChangeUI" parent="VBoxContainer" node_paths=PackedStringArray("currentScene") instance=ExtResource("2_rgeqw")]
+layout_mode = 2
+text = "Back to game"
+currentScene = NodePath("../..")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_4iu6e")
+text = "Load Player"
+
+[node name="Button2" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_4iu6e")
+text = "Load World"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("1_4iu6e")
+theme_override_font_sizes/font_size = 16
+text = "Save Player"
+script = ExtResource("2_m7k00")
+
+[node name="Button2" type="Button" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("1_4iu6e")
+text = "Save World"
+
+[node name="ChangeUI2" parent="VBoxContainer" node_paths=PackedStringArray("currentScene") instance=ExtResource("2_rgeqw")]
+layout_mode = 2
+text = "Options"
+changeScene = ExtResource("5_xoyh2")
+currentScene = NodePath("../..")
+
+[node name="Quit" parent="VBoxContainer" instance=ExtResource("4_l83lb")]
+layout_mode = 2

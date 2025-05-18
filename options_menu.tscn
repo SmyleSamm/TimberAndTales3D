@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://chjtixv6typa8"]
+
+[ext_resource type="Theme" uid="uid://unui6pba6fad" path="res://Resources/Fonts/pixelStyle.tres" id="1_6rn4w"]
+[ext_resource type="Script" path="res://Scenes/UiElements/esc_menu.gd" id="1_lf2xn"]
+[ext_resource type="Script" path="res://change_ui_button.gd" id="2_7lxvy"]
+[ext_resource type="PackedScene" uid="uid://dog3vvx1421mx" path="res://Scenes/UiElements/esc_menu.tscn" id="3_wlqp7"]
+
+[node name="options_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lf2xn")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_6rn4w")
+text = "Work in progress!"
+
+[node name="ChangeUIButton" type="Button" parent="VBoxContainer" node_paths=PackedStringArray("currentScene")]
+layout_mode = 2
+theme = ExtResource("1_6rn4w")
+text = "Go back!"
+script = ExtResource("2_7lxvy")
+changeScene = ExtResource("3_wlqp7")
+currentScene = NodePath("../..")
