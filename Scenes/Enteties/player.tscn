@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://bha6k8g1hp2ws"]
+[gd_scene load_steps=8 format=3 uid="uid://bha6k8g1hp2ws"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_cjsjp"]
 [ext_resource type="Texture2D" uid="uid://c0e4evlnadxi3" path="res://Assets/2D/Items/Food/Ham.png" id="2_6rmsp"]
 [ext_resource type="Script" path="res://Scripts/hand.gd" id="2_q4syh"]
-[ext_resource type="PackedScene" uid="uid://dog3vvx1421mx" path="res://Scenes/UiElements/esc_menu.tscn" id="6_iyqmh"]
 [ext_resource type="PackedScene" uid="uid://dnihwnwmrxxvm" path="res://Scenes/UiElements/inventory.tscn" id="6_q4kur"]
 [ext_resource type="PackedScene" uid="uid://bbysjvf0ewaqh" path="res://hotbar.tscn" id="7_t2rnf"]
 
@@ -55,5 +54,3 @@ maxColumns = 4
 columns = 9
 depth = 1
 maxColumns = 9
-
-[node name="ESCMenu" parent="UI" instance=ExtResource("6_iyqmh")]

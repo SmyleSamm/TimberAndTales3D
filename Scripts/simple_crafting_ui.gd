@@ -69,7 +69,7 @@ func _getItemList(res: ItemDrops, mod: int) -> HBoxContainer:
 func _getLabelText(res: ItemDrops, mod: int) -> String:
 	#FIXME: idk why, but res.item is <null> 
 	if res.item:
-		#print("res.item is not null")
+		print("res.item is not null")
 		var name: String = res.item.name
 		var count: int = res.maxCount * mod
 		return name + ": " + str(count)

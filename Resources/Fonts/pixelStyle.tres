@@ -3,6 +3,5 @@
 [ext_resource type="FontFile" uid="uid://dtnklu3br6a36" path="res://Assets/fonts/PixelOperator8.ttf" id="1_4usqr"]
 
 [resource]
-default_font = ExtResource("1_4usqr")
 Label/font_sizes/font_size = 32
 Label/fonts/font = ExtResource("1_4usqr")

@@ -11,16 +11,10 @@ const ATTACKDAMAGE = 10
 @onready var inventory: Control = $UI/Inventory
 @onready var hotbar: Hotbar = $UI/Hotbar
 @onready var hand: Node3D = $Head/Hand
-@onready var esc: Control = $UI/ESCMenu
 
 var isUIOpen: bool = false
 var currentUI: Control
 var dialogue: bool = false
-
-#FIXME: items in hotbar are infinit
-#FIXME: if 999{item1} and 1{item1} => only the 1{item1} is being seen 
-#		-> cant craft even though has enough resources
-
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -59,7 +53,7 @@ func handleUIINputs(event: InputEvent) -> void:
 
 func handleKeyInputs(event: InputEvent) -> void:
 	if event.is_action_pressed("ESC"):
-		openUI(esc)
+		quit()
 		
 	if event.is_action_pressed("interact"):
 		interact()
@@ -130,6 +124,9 @@ func _physics_process(delta: float) -> void:
 		velocity.z = 0
 
 	move_and_slide()
+
+func quit() -> void:
+	get_tree().quit()
 
 func attack() -> void:	
 	if not look.is_colliding():
