@@ -29,6 +29,7 @@ shape = SubResource("ConvexPolygonShape3D_gftg3")
 
 [node name="Camera3D" type="Camera3D" parent="Head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+current = true
 
 [node name="RayCast3D" type="RayCast3D" parent="Head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
@@ -59,3 +60,6 @@ maxColumns = 9
 
 [node name="esc_menu" parent="UI" instance=ExtResource("6_6vy0h")]
 script = ExtResource("7_wjogo")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 3.5)

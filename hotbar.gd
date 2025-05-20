@@ -47,3 +47,7 @@ func _process(delta: float) -> void:
 	#if time_passed >= INTERVAL:
 		#time_passed -= INTERVAL
 		#activeSlot.item.showObject()
+
+func decreaseCurrentSlot(amount: int) -> void:
+	if activeSlot.slotSize - amount >= 0:
+		activeSlot.changeSlotSize(-amount)

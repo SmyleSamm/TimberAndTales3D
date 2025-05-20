@@ -12,6 +12,7 @@ const ATTACKDAMAGE = 10
 @onready var hotbar: Hotbar = $UI/Hotbar
 @onready var hand: Node3D = $Head/Hand
 @onready var esc: Control = $UI/esc_menu
+@onready var cam: Camera3D = $Camera3D
 
 var isUIOpen: bool = false
 var currentUI: Control
@@ -35,13 +36,24 @@ func _input(event: InputEvent) -> void:
 	handleMouseInputs(event)
 	handleKeyInputs(event)
 	
+
+#TODO: change camera so up/down movement is possible in 3rd person view
 func handleMouseInputs(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		head.rotate_y(-event.relative.x * SENSITIVITY)
+		
 		camera.rotate_x(-event.relative.y * SENSITIVITY)
 		camera.rotation.x = clamp(camera.rotation.x, -1, 1)
+		
 		look.rotation.x = camera.rotation.x
 		look.rotation.y = camera.rotation.y
+		
+		var camera_distance: float = 5.0
+		var camera_height: float = 2.0
+		
+		var backward: Vector3 = head.global_transform.basis.z.normalized()
+		cam.global_transform.origin = head.global_transform.origin + backward * camera_distance + Vector3.UP * camera_height
+		cam.look_at(head.global_transform.origin + Vector3.UP * camera_height, Vector3.UP)
 
 func handleUIINputs(event: InputEvent) -> void:
 	if isUIOpen:
@@ -63,6 +75,9 @@ func handleKeyInputs(event: InputEvent) -> void:
 	if event.is_action_pressed("attack"):
 		attack()
 	
+	if event.is_action_pressed("place"):
+		handlePlace()
+	
 	if event.is_action_pressed("save"):
 		SaveGame.saveGame()
 	
@@ -72,10 +87,19 @@ func handleKeyInputs(event: InputEvent) -> void:
 	if event.is_action_pressed("delete"):
 		SaveGame.deleteGameFile()
 	
+	if event.is_action_pressed("changeCamera"):
+		cam.current = !cam.current
+	
 	if event.is_action_pressed("inventory"):
 		inventory.updateInventory()
 		openUI(inventory)
 	handleHotbar(event)
+
+func handlePlace() -> void:
+	var item: Item = hotbar.activeSlot.item
+	if item is PlaceObject:
+		item.placeObject()
+		hotbar.decreaseCurrentSlot(1)
 
 func handleHotbar(event: InputEvent) -> void:
 	if isUIOpen or dialogue:

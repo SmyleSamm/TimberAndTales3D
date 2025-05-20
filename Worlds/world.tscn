@@ -65,9 +65,6 @@ glow_enabled = true
 [node name="World" type="Node3D"]
 script = ExtResource("1_1o5yq")
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(2.98023e-08, 0, 1, 0, 1, 0, -1, 0, 2.98023e-08, -1.5, 1, 7)
-
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
 texture = ExtResource("2_ppw2o")

@@ -69,3 +69,7 @@ func showObject() -> void:
 func hideObject() -> void:
 	isHolding = false
 	obj.queue_free()
+
+func placeObject() -> void:
+	isHolding = false
+	
