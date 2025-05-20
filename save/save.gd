@@ -195,7 +195,7 @@ static func loadInventory(data: Dictionary) -> bool:
 	loadItemsIntoInventory(inv, slotsInv)
 	
 	print("Ilegale item add")
-	inv.smartAddItem(load("res://Resources/testObject.tres"), 1)
+	#inv.smartAddItem(load("res://Resources/testObject.tres"), 1)
 	
 	return true
 

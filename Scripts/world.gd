@@ -85,4 +85,7 @@ func getItem(name: String) -> Item:
 	file = FileAccess.file_exists("res://Resources/Tools/"+name+".tres")
 	if file:
 		return load("res://Resources/Tools/"+name+".tres")
+	file = FileAccess.file_exists("res://Resources/Objects/"+name+".tres")
+	if file:
+		return load("res://Resources/Objects/"+name+".tres")
 	return 

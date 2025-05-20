@@ -23,11 +23,9 @@ func activateSlot(slotID: int) -> void:
 	activeSlot = slot
 	#TODO: if grab_focus -> jump(space) will function as a click -> might cause problems
 	slot.grab_focus()
-	if slot.item is Tool:
-		print("TrueTool")
-		item.switchTool(slot.item)
-		hand.switchTool(slot.item)
-	elif slot.item is PlaceObject:
+	item.switchTool(slot.item)
+	hand.switchTool(slot.item)
+	if slot.item is PlaceObject:
 		slot.item.holding()
 
 const TARGET_FPS: int = 30
