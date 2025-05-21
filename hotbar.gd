@@ -28,10 +28,10 @@ func activateSlot(slotID: int) -> void:
 	if slot.item is PlaceObject:
 		slot.item.holding()
 
-const TARGET_FPS: int = 30
-const INTERVAL: float = 1.0 / TARGET_FPS
-
-var time_passed: float = 0.0
+#const TARGET_FPS: int = 30
+#const INTERVAL: float = 1.0 / TARGET_FPS
+#
+#var time_passed: float = 0.0
 
 func _process(delta: float) -> void:
 	if not activeSlot.item is PlaceObject:

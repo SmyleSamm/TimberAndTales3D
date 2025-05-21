@@ -66,17 +66,13 @@ func handleUIINputs(event: InputEvent) -> void:
 
 func handleKeyInputs(event: InputEvent) -> void:
 	if event.is_action_pressed("ESC"):
-		#quit()
 		esc.interact()
 		
-	if event.is_action_pressed("interact"):
-		interact()
-	
-	if event.is_action_pressed("attack"):
-		attack()
+	if event.is_action_pressed("interact") or event.is_action_pressed("attack"):
+		look.handleInput(event)
 	
 	if event.is_action_pressed("place"):
-		handlePlace()
+		look.handlePlace()
 	
 	if event.is_action_pressed("save"):
 		SaveGame.saveGame()
@@ -94,12 +90,6 @@ func handleKeyInputs(event: InputEvent) -> void:
 		inventory.updateInventory()
 		openUI(inventory)
 	handleHotbar(event)
-
-func handlePlace() -> void:
-	var item: Item = hotbar.activeSlot.item
-	if item is PlaceObject:
-		item.placeObject()
-		hotbar.decreaseCurrentSlot(1)
 
 func handleHotbar(event: InputEvent) -> void:
 	if isUIOpen or dialogue:
@@ -153,44 +143,6 @@ func _physics_process(delta: float) -> void:
 
 func quit() -> void:
 	get_tree().quit()
-
-func attack() -> void:	
-	if not look.is_colliding():
-		return
-	
-	var target = look.get_collider()
-	
-	if target is not Minable:
-		target = target.get_parent()
-	if target is not Minable:
-		target = target.get_parent()
-	if target is not Minable:
-		target = target.get_parent()
-	if target is Minable:
-		target.registerInteraction(hotbar.getAttack(), inventory)
-
-func interact() -> void:
-	if not look.is_colliding():
-		return
-	
-	var target = look.get_collider()
-	
-	if target is not Crafting and target is not Repairable and target is not NPC:
-		target = target.get_parent()
-	if target is not Crafting and target is not Repairable and target is not NPC:
-		target = target.get_parent()
-	if target is Crafting:
-		var ui: Control = target.getUI()
-		if not ui:
-			printerr("The target has no UI defined!")
-			return
-		openUI(ui)
-		
-	if target is Repairable:
-		target.interact()
-	
-	if target is NPC:
-		target.talkToPlayer()
 
 func openUI(ui: Control) -> void:
 	isUIOpen = true
