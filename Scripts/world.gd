@@ -89,3 +89,20 @@ func getItem(name: String) -> Item:
 	if file:
 		return load("res://Resources/Objects/"+name+".tres")
 	return 
+
+func createScan(node: Node) -> Area3D:
+	var scan: Area3D = Area3D.new()
+	
+	var cs: CollisionShape3D = CollisionShape3D.new()
+	var ss: SphereShape3D = SphereShape3D.new()
+	ss.radius = 4.0
+	
+	cs.shape = ss
+	
+	scan.add_child(cs)
+	
+	node.add_child(scan)
+	
+	scan.global_transform.origin = node.position
+	
+	return scan

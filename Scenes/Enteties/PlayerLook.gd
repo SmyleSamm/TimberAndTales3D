@@ -2,14 +2,66 @@ extends RayCast3D
 
 @onready var player: Player = $"../.."
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass
+var closeToObject: bool
+var objectsInRange: Array[Node]
+var tipp: Label
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if is_colliding():
-		pass
+	if not closeToObject:
+		return
+	
+	handleInput(null)
+
+func showText(target: Node, type: String) -> void:
+	
+	if tipp:
+		return
+	
+	var canvas: CanvasLayer = World.get_current_debug()
+	
+	var label: Label = Label.new()
+	var text: String = "Press 'E' to "
+	
+	if type == "Repairable":
+		text += "repair!\nYou need:"+target.getResourceText()
+	else:
+		text += "interact"
+	
+	label.text = text
+	label.add_theme_color_override("font_color", Color(0.0, 1.0, 0.0))
+	
+	var width: int = get_viewport().get_visible_rect().size.x
+	var height: int = get_viewport().get_visible_rect().size.y
+	#var offset: Vector2 = Vector2(0, 50)
+	
+	var position: Vector2 = Vector2(width / 2, height / 2) #+ offset
+	
+	label.position = position
+	
+	tipp = label
+	
+	canvas.add_child(label)
+
+func inRange(obj: Node) -> void:
+	objectsInRange.append(obj)
+	closeToObject = true
+
+func tooFaar(obj: Node) -> void:
+	if not removeObject(obj):
+		printerr("Removal of close Object in PlayerLook.gd failed!")
+	if len(objectsInRange) < 1:
+		closeToObject = false
+		if tipp:
+			tipp.queue_free()
+			tipp = null
+
+func removeObject(obj: Node) -> bool:
+	for i in range(len(objectsInRange)):
+		var object: Node = objectsInRange[i]
+		if object == obj:
+			objectsInRange.remove_at(i)
+			return true
+	return false
 
 func handlePlace() -> void:
 	var item: Item = player.hotbar.activeSlot.item
@@ -19,6 +71,9 @@ func handlePlace() -> void:
 
 func handleInput(event: InputEvent) -> void:
 	if not is_colliding():
+		if tipp:
+			tipp.queue_free()
+			tipp = null
 		return
 	
 	var target: Node = get_collider()
@@ -27,12 +82,12 @@ func handleInput(event: InputEvent) -> void:
 	if not collection:
 		return
 	
-	print(collection)
-	
 	var type: String = collection.keys()[0]
 	target = collection[type]
 	
-	if event.is_action_pressed("attack"):
+	if not event:
+		showText(target, type)
+	elif event.is_action_pressed("attack"):
 		handleAttack(target, type)
 	elif event.is_action_pressed("interact"):
 		handleInteraction(target, type)
@@ -50,14 +105,10 @@ func handleInteraction(target: Node, type: String) -> void:
 			printerr("The target has no UI defined!")
 			return
 		player.openUI(ui)
-	
 
 func handleAttack(target: Node, type: String) -> void:
 	if type == "Minable":
 		target.registerInteraction(player.hotbar.getAttack(), player.inventory)
-	
-
-#FIXME: Check what type look is currently colliding with (Minable etc.)
 
 func findTargetType(target: Node) -> Dictionary:
 	var current: Node = target

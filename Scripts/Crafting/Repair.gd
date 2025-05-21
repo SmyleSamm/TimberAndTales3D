@@ -10,44 +10,15 @@ class_name Repairable extends StaticBody3D
 var currentPopupLabel: PopupLabel
 
 func _ready() -> void:
-	createScan()
-
-func createScan() -> void:
-	var scan: Area3D = Area3D.new()
-	
-	var cs: CollisionShape3D = CollisionShape3D.new()
-	var ss: SphereShape3D = SphereShape3D.new()
-	ss.radius = 4.0
-	
-	cs.shape = ss
-	
-	scan.add_child(cs)
-	
+	var scan: Area3D = World.createScan(self)
 	scan.connect("body_entered", Callable(self, "_on_scan_body_entered"))
 	scan.connect("body_exited", Callable(self, "_on_scan_body_exited"))
-	
-	add_child(scan)
-	
-	scan.global_transform.origin = position
-
-func openPopupLabel(text: String) -> void:
-	closePopupLabel()
-	var pl: PopupLabel = PopupLabel.new()
-	pl.setUp(self, text, labelOffset, labelRotation)
-	pl.play_scale_animation()
-	currentPopupLabel = pl
-
-func closePopupLabel() -> void:
-	if currentPopupLabel:
-		currentPopupLabel.queue_free()
-		currentPopupLabel = null
 
 func _on_scan_body_entered(body) -> void:
-	var text = "Press 'E' to\ninteract"
-	openPopupLabel(text)
+	body.look.inRange(self)
 
 func _on_scan_body_exited(body) -> void:
-	closePopupLabel()
+	body.look.tooFaar(self)
 
 func interact() -> void:
 	print("Interacting")
@@ -58,7 +29,7 @@ func interact() -> void:
 		_reduceResources()
 	else:
 		var text = "You need:"+getResourceText()
-		openPopupLabel(text)
+		#openPopupLabel(text)
 
 func getResourceText() -> String:
 	var text: String = ""
