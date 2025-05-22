@@ -1,0 +1,56 @@
+[gd_scene load_steps=5 format=3 uid="uid://bcb3anhnb4y3i"]
+
+[ext_resource type="Script" path="res://Scripts/simple_crafting_ui.gd" id="1_b62yh"]
+[ext_resource type="Script" path="res://Scripts/Resources/Recepie.gd" id="2_8enx3"]
+[ext_resource type="Resource" uid="uid://3olr63taiu3b" path="res://Resources/Recipies/Test.tres" id="3_ykvja"]
+[ext_resource type="Resource" uid="uid://b7klrwntaktl1" path="res://Resources/Recipies/Planks.tres" id="4_i33me"]
+
+[node name="SimpleCraftingUI" type="Control"]
+layout_mode = 3
+anchor_left = 0.404687
+anchor_top = 0.0944444
+anchor_right = 0.939688
+anchor_bottom = 0.629444
+offset_right = 297.6
+offset_bottom = 167.4
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.535, 0.535)
+script = ExtResource("1_b62yh")
+recipies = Array[ExtResource("2_8enx3")]([ExtResource("3_ykvja"), ExtResource("3_ykvja"), ExtResource("4_i33me")])
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.176471, 0.176471, 0.176471, 0.866667)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 30.0
+offset_right = 590.0
+offset_bottom = 330.0
+color = Color(0.176471, 0.176471, 0.176471, 1)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = 30.0
+offset_right = -50.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+metadata/_edit_use_anchors_ = true

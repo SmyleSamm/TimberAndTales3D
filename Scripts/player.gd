@@ -13,6 +13,7 @@ const ATTACKDAMAGE = 10
 @onready var hand: Node3D = $Head/Hand
 @onready var esc: Control = $UI/esc_menu
 @onready var cam: Camera3D = $Camera3D
+#@onready var inventoryContainer: Control = $UI/InventoryContainer
 
 var isUIOpen: bool = false
 var currentUI: Control

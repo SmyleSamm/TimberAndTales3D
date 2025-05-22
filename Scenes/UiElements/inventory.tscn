@@ -1,24 +1,41 @@
-[gd_scene load_steps=2 format=3 uid="uid://dnihwnwmrxxvm"]
+[gd_scene load_steps=3 format=3 uid="uid://dnihwnwmrxxvm"]
 
 [ext_resource type="Script" path="res://Scripts/inventory.gd" id="1_8rsrq"]
+[ext_resource type="PackedScene" uid="uid://bcb3anhnb4y3i" path="res://inventory_crafting_station.tscn" id="2_y2feo"]
 
 [node name="Inventory" type="Control"]
 clip_contents = true
+custom_minimum_size = Vector2(580, 300)
 layout_mode = 3
-anchors_preset = 0
-offset_left = 50.0
-offset_top = 50.0
-offset_right = 250.0
-offset_bottom = 250.0
-mouse_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -290.0
+offset_top = -180.0
+offset_right = 290.0
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_8rsrq")
 columns = 4
 depth = 8
 
+[node name="SimpleCraftingUI" parent="." instance=ExtResource("2_y2feo")]
+layout_mode = 1
+anchor_left = 0.368966
+anchor_top = 0.0633333
+anchor_right = 0.903966
+anchor_bottom = 0.598334
+
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 0
-offset_right = 200.0
-offset_bottom = 200.0
+offset_left = 16.0
+offset_top = 26.0
+offset_right = 216.0
+offset_bottom = 226.0
 
 [node name="GridContainer" type="GridContainer" parent="ScrollContainer"]
 clip_contents = true
