@@ -112,6 +112,7 @@ size_flags_horizontal = 8
 size_flags_vertical = 0
 mouse_filter = 2
 script = ExtResource("6_ea81n")
+metadata/_edit_use_anchors_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Debug/Control"]
 layout_mode = 0
@@ -140,6 +141,7 @@ grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
 text = "+"
+metadata/_edit_use_anchors_ = true
 
 [node name="stone" parent="." instance=ExtResource("9_q4mj4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -0.634912, -6)

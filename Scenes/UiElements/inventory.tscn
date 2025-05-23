@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://dnihwnwmrxxvm"]
+[gd_scene load_steps=5 format=3 uid="uid://dnihwnwmrxxvm"]
 
 [ext_resource type="Script" path="res://Scripts/inventory.gd" id="1_8rsrq"]
 [ext_resource type="PackedScene" uid="uid://bcb3anhnb4y3i" path="res://inventory_crafting_station.tscn" id="2_y2feo"]
+[ext_resource type="Script" path="res://Scripts/Resources/Recepie.gd" id="3_ly233"]
+[ext_resource type="Resource" uid="uid://dfyelocs2ct08" path="res://Resources/Recipies/crafting_table.tres" id="4_booq1"]
 
 [node name="Inventory" type="Control"]
 clip_contents = true
@@ -27,8 +29,9 @@ depth = 8
 layout_mode = 1
 anchor_left = 0.368966
 anchor_top = 0.0633333
-anchor_right = 0.903966
-anchor_bottom = 0.598334
+anchor_right = 0.954138
+anchor_bottom = 0.702
+recipies = Array[ExtResource("3_ly233")]([ExtResource("4_booq1")])
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 0

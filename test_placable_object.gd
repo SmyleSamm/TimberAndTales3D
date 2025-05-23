@@ -20,8 +20,6 @@ func test() -> void:
 	if not isHolding:
 		return
 	
-	print("Holding")
-	
 	player = World.getCurrentPlayer()
 	
 	if not player:
@@ -62,14 +60,15 @@ func holding() -> void:
 
 func showObject() -> void:
 	if not isHolding:
-		print("Can't hold")
 		return
 	obj.position = calculatePosition()
 
 func hideObject() -> void:
 	isHolding = false
-	obj.queue_free()
+	if obj:
+		obj.queue_free()
+		obj = null
 
 func placeObject() -> void:
 	isHolding = false
-	
+	obj = null

@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Recipe" load_steps=7 format=3 uid="uid://dfyelocs2ct08"]
+
+[ext_resource type="Script" path="res://Scripts/Resources/ItemDrops.gd" id="1_ix6h8"]
+[ext_resource type="Resource" uid="uid://ddaes6vdh54to" path="res://Resources/Objects/crafting_table.tres" id="2_hf657"]
+[ext_resource type="Resource" uid="uid://cdm73wjuahi2v" path="res://Resources/ItemData/wood.tres" id="3_8rnwb"]
+[ext_resource type="Script" path="res://Scripts/Resources/Recepie.gd" id="4_4375u"]
+
+[sub_resource type="Resource" id="Resource_ht7vq"]
+script = ExtResource("1_ix6h8")
+item = ExtResource("2_hf657")
+maxCount = 1
+
+[sub_resource type="Resource" id="Resource_ccbos"]
+script = ExtResource("1_ix6h8")
+item = ExtResource("3_8rnwb")
+maxCount = 10
+
+[resource]
+script = ExtResource("4_4375u")
+item = Array[ExtResource("1_ix6h8")]([SubResource("Resource_ht7vq")])
+requirements = Array[ExtResource("1_ix6h8")]([SubResource("Resource_ccbos")])

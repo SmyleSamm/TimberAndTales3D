@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="PlaceObject" load_steps=4 format=3 uid="uid://ddaes6vdh54to"]
+
+[ext_resource type="Script" path="res://test_placable_object.gd" id="1_dyncv"]
+[ext_resource type="Texture2D" uid="uid://dds3g7xr7t1lj" path="res://Assets/2D/Items/Misc/Crate.png" id="1_r3u3y"]
+[ext_resource type="PackedScene" uid="uid://iu036fe11crv" path="res://Scenes/Objects/craftingstation.tscn" id="2_hkauk"]
+
+[resource]
+script = ExtResource("1_dyncv")
+canBePlaced = true
+object = ExtResource("2_hkauk")
+name = "Crafting Table"
+icon = ExtResource("1_r3u3y")
+maxStackSize = 999

@@ -1,6 +1,8 @@
-[gd_scene load_steps=17 format=3 uid="uid://ddsseoc2uayal"]
+[gd_scene load_steps=19 format=3 uid="uid://ddsseoc2uayal"]
 
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="1_87nar"]
+[ext_resource type="Script" path="res://Scripts/Debug.gd" id="1_x4u7o"]
+[ext_resource type="Theme" uid="uid://cmfdi20b1ov7n" path="res://Resources/Fonts/pixelStyleSlot.tres" id="2_ctsrh"]
 [ext_resource type="Resource" path="res://Terrain/data.hterrain" id="2_gonrn"]
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="3_mverg"]
 [ext_resource type="PackedScene" uid="uid://bha6k8g1hp2ws" path="res://Scenes/Enteties/player.tscn" id="4_e6x15"]
@@ -41,6 +43,52 @@ points = PackedVector3Array(-1, 0, -1, -1, 0, 1, 1, 0, -1, 1, 0, 1)
 points = PackedVector3Array(-1, 0, -1, -1, 0, 1, 1, 0, -1, 1, 0, 1)
 
 [node name="TutorialWorld" type="Node3D"]
+
+[node name="Debug" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="Debug"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 360.0
+offset_bottom = -227.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+mouse_filter = 2
+script = ExtResource("1_x4u7o")
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Debug/Control"]
+layout_mode = 0
+offset_right = 280.0
+offset_bottom = 360.0
+mouse_filter = 2
+
+[node name="FPS" type="Label" parent="Debug/Control/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_ctsrh")
+text = "100 Fps"
+horizontal_alignment = 2
+
+[node name="Label" type="Label" parent="Debug"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -11.5
+offset_right = 5.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+text = "+"
+metadata/_edit_use_anchors_ = true
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)

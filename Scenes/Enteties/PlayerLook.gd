@@ -14,16 +14,25 @@ func _process(delta: float) -> void:
 
 func showText(target: Node, type: String) -> void:
 	
-	if tipp:
+	if tipp or type == "Minable":
 		return
 	
-	var canvas: CanvasLayer = World.get_current_debug()
+	var canvas: CanvasLayer
+	if World.get_current_debug():
+		canvas = World.get_current_debug()
+	elif World.getCurrentPlayer().UI:
+		canvas = World.getCurrentPlayer().UI
+	else:
+		printerr("No UI in PlayerLook.gd!")
+		return
 	
 	var label: Label = Label.new()
 	var text: String = "Press 'E' to "
 	
 	if type == "Repairable":
 		text += "repair!\nYou need:"+target.getResourceText()
+	elif type == "NPC":
+		text += "talk"
 	else:
 		text += "interact"
 	
