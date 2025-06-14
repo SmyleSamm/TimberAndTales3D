@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://bw5e3un27os07"]
+
+[ext_resource type="Script" path="res://Scripts/Crafting/Crafting.gd" id="1_o1jgu"]
+[ext_resource type="PackedScene" uid="uid://dyobdvrwhp8qj" path="res://Scenes/UiElements/simple_crafting_ui.tscn" id="2_622x2"]
+[ext_resource type="Script" path="res://Scripts/Resources/Recepie.gd" id="3_n81il"]
+
+[node name="Crafting" type="StaticBody3D" node_paths=PackedStringArray("ui")]
+script = ExtResource("1_o1jgu")
+ui = NodePath("SimpleCraftingUI")
+
+[node name="SimpleCraftingUI" parent="." instance=ExtResource("2_622x2")]
+recipies = Array[ExtResource("3_n81il")]([])
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+size = Vector3(2, 0.5, 1)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0.25, 0)
+size = Vector3(0.5, 0.5, 1)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.25, 0)
+size = Vector3(0.5, 0.5, 1)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 1.5, 0)
+size = Vector3(0.5, 1, 1)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 1.5, 0)
+size = Vector3(0.5, 1, 1)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 2, 0)
+size = Vector3(0.5, 1, 1)

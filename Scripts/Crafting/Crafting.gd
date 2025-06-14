@@ -4,7 +4,7 @@ class_name Crafting extends StaticBody3D
 
 func _ready() -> void:
 	ui.hide()
-	var scan: Area3D = World.createScan(self)
+	var scan: Area3D = World.createScan(self, 0)
 	scan.connect("body_entered", Callable(self, "_on_scan_body_entered"))
 	scan.connect("body_exited", Callable(self, "_on_scan_body_exited"))
 

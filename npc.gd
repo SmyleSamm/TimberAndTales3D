@@ -6,7 +6,7 @@ func _ready() -> void:
 	Dialogic.timeline_started.connect(_on_dialogic_started)
 	Dialogic.timeline_ended.connect(_on_dialogic_ended)
 	self.player = World.getCurrentPlayer()
-	var scan: Area3D = World.createScan(self)
+	var scan: Area3D = World.createScan(self, 0)
 	scan.connect("body_entered", Callable(self, "_on_scan_body_entered"))
 	scan.connect("body_exited", Callable(self, "_on_scan_body_exited"))
 

@@ -10,7 +10,7 @@ class_name Repairable extends StaticBody3D
 var currentPopupLabel: PopupLabel
 
 func _ready() -> void:
-	var scan: Area3D = World.createScan(self)
+	var scan: Area3D = World.createScan(self, 0)
 	scan.connect("body_entered", Callable(self, "_on_scan_body_entered"))
 	scan.connect("body_exited", Callable(self, "_on_scan_body_exited"))
 

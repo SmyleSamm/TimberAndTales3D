@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="PlaceObject" load_steps=4 format=3 uid="uid://cxcexacpllkwq"]
+
+[ext_resource type="Script" path="res://test_placable_object.gd" id="1_m64qg"]
+[ext_resource type="Texture2D" uid="uid://d02u825idrycr" path="res://Assets/2D/Items/Food/Bread.png" id="1_uews6"]
+[ext_resource type="PackedScene" uid="uid://bw5e3un27os07" path="res://houseCraftingStation.tscn" id="2_irsll"]
+
+[resource]
+script = ExtResource("1_m64qg")
+canBePlaced = true
+object = ExtResource("2_irsll")
+name = "House Crafting Station"
+icon = ExtResource("1_uews6")
+maxStackSize = 999
